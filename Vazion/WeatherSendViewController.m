@@ -19,7 +19,8 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        
+        _isWithThunderBolt = NO;
+        _isWithStrongWind = NO;
     }
     return self;
 }
@@ -49,25 +50,27 @@
 - (IBAction)rainyButtonPushed:(id)sender {
     [self buttonColorChange:@"rainy"];
 }
-/*
-- (IBAction)withThunderboltButtonPushed:(id)sender {
-    if(_isWithThunderbolt){
+
+- (IBAction)withThunderBoltButtonPushed:(id)sender {
+    if(_isWithThunderBolt){
         [_withThunderBoltButton setBackgroundColor:[UIColor whiteColor]];
-        _isWithThunderbolt = NO;
+        _isWithThunderBolt = NO;
     }else{
         [_withThunderBoltButton setBackgroundColor:[UIColor blackColor]];
-        _isWithThunderbolt = YES;
+        _isWithThunderBolt = YES;
     }
 }
 
 - (IBAction)withStrongWindButtonPushed:(id)sender {
     if(_isWithStrongWind){
         [_withStrongWindButton setBackgroundColor:[UIColor whiteColor]];
+        _isWithStrongWind = NO;
     }else{
         [_withStrongWindButton setBackgroundColor:[UIColor blackColor]];
+        _isWithStrongWind = YES;
     }
 }
-*/
+
 - (void)buttonColorChange:(NSString*)button{
     if([button isEqualToString:@"sunny"]){
         [_sunnyButton setBackgroundColor:[UIColor blackColor]];

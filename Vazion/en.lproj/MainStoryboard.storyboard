@@ -162,6 +162,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="withThunderBoltButtonPushed:" destination="wsW-uy-dqk" eventType="touchUpInside" id="vSU-Qq-7EH"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="48b-wL-tMc">
                                 <constraints>
@@ -176,6 +179,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="withStrongWindButtonPushed:" destination="wsW-uy-dqk" eventType="touchUpInside" id="bJs-7I-gcO"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -206,6 +212,8 @@
                         <outlet property="rainyButton" destination="mib-MZ-EBS" id="srK-bY-obu"/>
                         <outlet property="sunnyButton" destination="Ahm-Lo-q4Q" id="4cU-hf-6Hh"/>
                         <outlet property="view" destination="GSM-6o-1CV" id="IiP-Sq-0nN"/>
+                        <outlet property="withStrongWindButton" destination="48b-wL-tMc" id="ZYx-xM-2Gu"/>
+                        <outlet property="withThunderBoltButton" destination="fHy-aO-P67" id="BlN-hT-ZaG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ard-7D-mZs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -213,23 +221,6 @@
             <point key="canvasLocation" x="721" y="-3"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="WeatherSendViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WeatherSendViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cloudyButtonPushed:"/>
-                <relationship kind="action" name="rainyButtonPushed:"/>
-                <relationship kind="action" name="sunnyButtonPushed:"/>
-                <relationship kind="outlet" name="cloudyButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="rainyButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="sunnyButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="view" candidateClass="UIView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

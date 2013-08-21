@@ -9,14 +9,19 @@
 #import <UIKit/UIKit.h>
 
 @interface WeatherSendViewController : UIViewController
-
+@property Boolean isWithThunderBolt;
+@property Boolean isWithStrongWind;
 @property (strong, nonatomic) IBOutlet UIView *view;
 @property (weak, nonatomic) IBOutlet UIButton *sunnyButton;
 @property (weak, nonatomic) IBOutlet UIButton *cloudyButton;
 @property (weak, nonatomic) IBOutlet UIButton *rainyButton;
+@property (weak, nonatomic) IBOutlet UIButton *withThunderBoltButton;
+@property (weak, nonatomic) IBOutlet UIButton *withStrongWindButton;
 
 - (IBAction)sunnyButtonPushed:(id)sender;
 - (IBAction)cloudyButtonPushed:(id)sender;
 - (IBAction)rainyButtonPushed:(id)sender;
+- (IBAction)withThunderBoltButtonPushed:(id)sender;
+- (IBAction)withStrongWindButtonPushed:(id)sender;
 
 @end
