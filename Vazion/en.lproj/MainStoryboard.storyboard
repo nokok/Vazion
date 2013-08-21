@@ -190,6 +190,23 @@
                                     <action selector="withStrongWindButtonPushed:" destination="wsW-uy-dqk" eventType="touchUpInside" id="bJs-7I-gcO"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VoM-0R-hnf">
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="55" id="Nof-Eo-5L9"/>
+                                    <constraint firstAttribute="height" constant="44" id="hIt-46-EK7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="戻る">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="2" kind="modal" modalTransitionStyle="coverVertical" id="a1d-Ws-m7G"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -199,9 +216,11 @@
                             <constraint firstAttribute="trailing" secondItem="Ahm-Lo-q4Q" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="8zd-hT-Tqd"/>
                             <constraint firstAttribute="trailing" secondItem="r4i-Sm-kYa" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="AhF-LS-Ncq"/>
                             <constraint firstItem="cFh-FB-ARF" firstAttribute="leading" secondItem="GSM-6o-1CV" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Mtk-Cp-hoY"/>
+                            <constraint firstItem="VoM-0R-hnf" firstAttribute="leading" secondItem="GSM-6o-1CV" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Oyl-lt-CUj"/>
                             <constraint firstItem="fHy-aO-P67" firstAttribute="top" secondItem="mib-MZ-EBS" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="PBf-BL-j9U"/>
                             <constraint firstAttribute="trailing" secondItem="48b-wL-tMc" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="T4r-mb-j8D"/>
                             <constraint firstItem="fHy-aO-P67" firstAttribute="leading" secondItem="GSM-6o-1CV" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="UCm-nV-RJH"/>
+                            <constraint firstAttribute="bottom" secondItem="VoM-0R-hnf" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="Ydc-oC-Sez"/>
                             <constraint firstItem="cFh-FB-ARF" firstAttribute="top" secondItem="48b-wL-tMc" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="avw-wj-fwO"/>
                             <constraint firstAttribute="trailing" secondItem="mib-MZ-EBS" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="d1c-V7-zcX"/>
                             <constraint firstItem="48b-wL-tMc" firstAttribute="top" secondItem="mib-MZ-EBS" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="eaU-3R-6qU"/>
