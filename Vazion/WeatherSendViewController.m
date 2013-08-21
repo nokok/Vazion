@@ -1,6 +1,6 @@
 //
 //  WeatherSendViewController.m
-//  hoge
+//  Vazion
 //
 //  Created by noko on 2013/08/21.
 //  Copyright (c) 2013年 noko. All rights reserved.
@@ -18,57 +18,69 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Initialization code here.
-        _isWithThunderbolt = NO;
-        _isWithStrongWind = NO;
+        // Custom initialization
+        
     }
     return self;
 }
 
+- (void)viewDidLoad
+{
+    NSLog(@"viewDidLoading");
+    [super viewDidLoad];
+	// Do any additional setup after loading the view.
+    NSLog(@"viewDidLoaded");
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
 - (IBAction)sunnyButtonPushed:(id)sender {
-    _weather = @"Sunny";
     [self buttonColorChange:@"sunny"];
 }
 
-- (IBAction)rainyButtonPushed:(id)sender {
-    _weather = @"Rainy";
-    [self buttonColorChange:@"rainy"];
-}
-
 - (IBAction)cloudyButtonPushed:(id)sender {
-    _weather = @"Cloudy";
     [self buttonColorChange:@"cloudy"];
 }
 
+- (IBAction)rainyButtonPushed:(id)sender {
+    [self buttonColorChange:@"rainy"];
+}
+/*
 - (IBAction)withThunderboltButtonPushed:(id)sender {
-    _isWithThunderbolt = !_isWithThunderbolt;
-}
-
-- (IBAction)withStrongWIndButtonPushed:(id)sender {
-    _isWithStrongWind = !_isWithStrongWind;
-}
-
-- (IBAction)backButtonPushed:(id)sender {
-}
-
-- (IBAction)sendButtonPushed:(id)sender {
-    //送信処理
-}
-
-- (void)buttonColorChange:(NSString *)buttonName{
-    if([buttonName isEqual: @"sunny"]){
-        [_sunnyButton setBackgroundColor:[UIColor whiteColor]];
-        [_rainyButton setBackgroundColor:_view.backgroundColor];
-        [_cloudyButton setBackgroundColor:_view.backgroundColor];
-    }else if([buttonName isEqualToString:@"rainy"]){
-        [_sunnyButton setBackgroundColor:_view.backgroundColor];
-        [_rainyButton setBackgroundColor:[UIColor whiteColor]];
-        [_cloudyButton setBackgroundColor:_view.backgroundColor];
-    }else if([buttonName isEqualToString:@"cloudy"]){
-        [_sunnyButton setBackgroundColor:_view.backgroundColor];
-        [_rainyButton setBackgroundColor:_view.backgroundColor];
-        [_cloudyButton setBackgroundColor:[UIColor whiteColor]];
+    if(_isWithThunderbolt){
+        [_withThunderBoltButton setBackgroundColor:[UIColor whiteColor]];
+        _isWithThunderbolt = NO;
+    }else{
+        [_withThunderBoltButton setBackgroundColor:[UIColor blackColor]];
+        _isWithThunderbolt = YES;
     }
-    return;
+}
+
+- (IBAction)withStrongWindButtonPushed:(id)sender {
+    if(_isWithStrongWind){
+        [_withStrongWindButton setBackgroundColor:[UIColor whiteColor]];
+    }else{
+        [_withStrongWindButton setBackgroundColor:[UIColor blackColor]];
+    }
+}
+*/
+- (void)buttonColorChange:(NSString*)button{
+    if([button isEqualToString:@"sunny"]){
+        [_sunnyButton setBackgroundColor:[UIColor blackColor]];
+        [_cloudyButton setBackgroundColor:[UIColor whiteColor]];
+        [_rainyButton setBackgroundColor:[UIColor whiteColor]];
+    }else if([button isEqualToString:@"cloudy"]){
+        [_sunnyButton setBackgroundColor:[UIColor whiteColor]];
+        [_cloudyButton setBackgroundColor:[UIColor blackColor]];
+        [_rainyButton setBackgroundColor:[UIColor whiteColor]];
+    }else if([button isEqualToString:@"rainy"]){
+        [_sunnyButton setBackgroundColor:[UIColor whiteColor]];
+        [_cloudyButton setBackgroundColor:[UIColor whiteColor]];
+        [_rainyButton setBackgroundColor:[UIColor blackColor]];
+    }
 }
 @end

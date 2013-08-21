@@ -19,7 +19,7 @@
 		E3C501B717C48EB5004ADE4D /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3C501B517C48EB5004ADE4D /* MainStoryboard.storyboard */; };
 		E3C501BA17C48EB5004ADE4D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3C501B917C48EB5004ADE4D /* ViewController.m */; };
 		E3C501C117C48EE3004ADE4D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3C501C017C48EE3004ADE4D /* MapKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
-		E3C501C417C4C122004ADE4D /* WeatherSendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3C501C317C4C122004ADE4D /* WeatherSendViewController.m */; };
+		E3D75D3D17C4EDCF0055148F /* WeatherSendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D75D3C17C4EDCF0055148F /* WeatherSendViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,8 +40,8 @@
 		E3C501B817C48EB5004ADE4D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		E3C501B917C48EB5004ADE4D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		E3C501C017C48EE3004ADE4D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		E3C501C217C4C122004ADE4D /* WeatherSendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherSendViewController.h; sourceTree = "<group>"; };
-		E3C501C317C4C122004ADE4D /* WeatherSendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherSendViewController.m; sourceTree = "<group>"; };
+		E3D75D3B17C4EDCF0055148F /* WeatherSendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherSendViewController.h; sourceTree = "<group>"; };
+		E3D75D3C17C4EDCF0055148F /* WeatherSendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherSendViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,8 +92,8 @@
 				E3C501AC17C48EB5004ADE4D /* AppDelegate.h */,
 				E3C501AD17C48EB5004ADE4D /* AppDelegate.m */,
 				E3C501B517C48EB5004ADE4D /* MainStoryboard.storyboard */,
-				E3C501C217C4C122004ADE4D /* WeatherSendViewController.h */,
-				E3C501C317C4C122004ADE4D /* WeatherSendViewController.m */,
+				E3D75D3B17C4EDCF0055148F /* WeatherSendViewController.h */,
+				E3D75D3C17C4EDCF0055148F /* WeatherSendViewController.m */,
 				E3C501B817C48EB5004ADE4D /* ViewController.h */,
 				E3C501B917C48EB5004ADE4D /* ViewController.m */,
 				E3C501A417C48EB5004ADE4D /* Supporting Files */,
@@ -105,8 +105,8 @@
 			isa = PBXGroup;
 			children = (
 				E3C501C017C48EE3004ADE4D /* MapKit.framework */,
-				E3C501A517C48EB5004ADE4D /* Vazion-Info.plist */,
 				E3C501A617C48EB5004ADE4D /* InfoPlist.strings */,
+				E3C501A517C48EB5004ADE4D /* Vazion-Info.plist */,
 				E3C501A917C48EB5004ADE4D /* main.m */,
 				E3C501AB17C48EB5004ADE4D /* Vazion-Prefix.pch */,
 				E3C501AF17C48EB5004ADE4D /* Default.png */,
@@ -185,7 +185,7 @@
 				E3C501AA17C48EB5004ADE4D /* main.m in Sources */,
 				E3C501AE17C48EB5004ADE4D /* AppDelegate.m in Sources */,
 				E3C501BA17C48EB5004ADE4D /* ViewController.m in Sources */,
-				E3C501C417C4C122004ADE4D /* WeatherSendViewController.m in Sources */,
+				E3D75D3D17C4EDCF0055148F /* WeatherSendViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,8 +271,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "hoge/Vazion-Prefix.pch";
-				INFOPLIST_FILE = "hoge/Vazion-Info.plist";
+				GCC_PREFIX_HEADER = "Vazion/Vazion-Prefix.pch";
+				INFOPLIST_FILE = "Vazion/Vazion-Info.plist";
 				PRODUCT_NAME = Vazion;
 				WRAPPER_EXTENSION = app;
 			};
@@ -282,8 +282,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "hoge/Vazion-Prefix.pch";
-				INFOPLIST_FILE = "hoge/Vazion-Info.plist";
+				GCC_PREFIX_HEADER = "Vazion/Vazion-Prefix.pch";
+				INFOPLIST_FILE = "Vazion/Vazion-Info.plist";
 				PRODUCT_NAME = Vazion;
 				WRAPPER_EXTENSION = app;
 			};
