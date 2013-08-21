@@ -101,7 +101,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="晴れ">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
@@ -117,7 +117,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="曇り">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
@@ -128,9 +128,12 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mib-MZ-EBS">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="GeM-Dc-hCw"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="雨">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
@@ -140,10 +143,14 @@
                                     <action selector="rainyButtonPushed:" destination="wsW-uy-dqk" eventType="touchUpInside" id="Ei0-Nf-iXi"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cFh-FB-ARF">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cFh-FB-ARF">
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="w71-uu-aeG"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="送信する">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
@@ -153,10 +160,11 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fHy-aO-P67">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="130" id="Am4-aD-731"/>
+                                    <constraint firstAttribute="height" constant="35" id="upx-20-ffc"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="雷">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
@@ -169,11 +177,10 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="48b-wL-tMc">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="130" id="5sp-gF-pEV"/>
-                                    <constraint firstAttribute="height" constant="35" id="TTm-7c-Loi"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="強風">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
@@ -188,21 +195,21 @@
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="mib-MZ-EBS" firstAttribute="top" secondItem="r4i-Sm-kYa" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="5NQ-FD-VPN"/>
+                            <constraint firstAttribute="trailing" secondItem="cFh-FB-ARF" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="5bC-aE-FMf"/>
                             <constraint firstAttribute="trailing" secondItem="Ahm-Lo-q4Q" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="8zd-hT-Tqd"/>
                             <constraint firstAttribute="trailing" secondItem="r4i-Sm-kYa" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="AhF-LS-Ncq"/>
+                            <constraint firstItem="cFh-FB-ARF" firstAttribute="leading" secondItem="GSM-6o-1CV" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Mtk-Cp-hoY"/>
                             <constraint firstItem="fHy-aO-P67" firstAttribute="top" secondItem="mib-MZ-EBS" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="PBf-BL-j9U"/>
                             <constraint firstAttribute="trailing" secondItem="48b-wL-tMc" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="T4r-mb-j8D"/>
                             <constraint firstItem="fHy-aO-P67" firstAttribute="leading" secondItem="GSM-6o-1CV" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="UCm-nV-RJH"/>
                             <constraint firstItem="cFh-FB-ARF" firstAttribute="top" secondItem="48b-wL-tMc" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="avw-wj-fwO"/>
                             <constraint firstAttribute="trailing" secondItem="mib-MZ-EBS" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="d1c-V7-zcX"/>
+                            <constraint firstItem="48b-wL-tMc" firstAttribute="top" secondItem="mib-MZ-EBS" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="eaU-3R-6qU"/>
                             <constraint firstItem="Ahm-Lo-q4Q" firstAttribute="leading" secondItem="GSM-6o-1CV" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="epb-ub-smd"/>
                             <constraint firstItem="cFh-FB-ARF" firstAttribute="top" secondItem="fHy-aO-P67" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="gxK-ie-CrJ"/>
                             <constraint firstItem="r4i-Sm-kYa" firstAttribute="top" secondItem="Ahm-Lo-q4Q" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="igX-wm-98Z"/>
-                            <constraint firstItem="48b-wL-tMc" firstAttribute="baseline" secondItem="fHy-aO-P67" secondAttribute="baseline" type="default" id="k0K-39-x4D"/>
                             <constraint firstItem="r4i-Sm-kYa" firstAttribute="leading" secondItem="GSM-6o-1CV" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="sKK-sF-sUP"/>
                             <constraint firstItem="Ahm-Lo-q4Q" firstAttribute="top" secondItem="GSM-6o-1CV" secondAttribute="top" constant="20" symbolic="YES" type="default" id="soe-1Z-aJW"/>
-                            <constraint firstItem="48b-wL-tMc" firstAttribute="top" secondItem="GSM-6o-1CV" secondAttribute="top" constant="149" id="tHJ-4R-g3j"/>
-                            <constraint firstItem="cFh-FB-ARF" firstAttribute="centerX" secondItem="mib-MZ-EBS" secondAttribute="centerX" type="default" id="vB6-Q5-pkb"/>
                             <constraint firstItem="mib-MZ-EBS" firstAttribute="leading" secondItem="GSM-6o-1CV" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="ynM-sQ-ApM"/>
                         </constraints>
                     </view>
