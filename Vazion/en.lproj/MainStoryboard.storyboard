@@ -113,7 +113,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r4i-Sm-kYa">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="xkd-IM-JLR"/>
+                                    <constraint firstAttribute="height" constant="35" id="5uX-Uv-a7A"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="曇り">
@@ -128,9 +128,6 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mib-MZ-EBS">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="GeM-Dc-hCw"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="雨">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -207,6 +204,13 @@
                                     <segue destination="2" kind="modal" modalTransitionStyle="coverVertical" id="a1d-Ws-m7G"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="任意メッセージ" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3zh-Oc-zmu">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="gGt-d1-ig5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -215,18 +219,22 @@
                             <constraint firstAttribute="trailing" secondItem="cFh-FB-ARF" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="5bC-aE-FMf"/>
                             <constraint firstAttribute="trailing" secondItem="Ahm-Lo-q4Q" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="8zd-hT-Tqd"/>
                             <constraint firstAttribute="trailing" secondItem="r4i-Sm-kYa" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="AhF-LS-Ncq"/>
+                            <constraint firstItem="cFh-FB-ARF" firstAttribute="top" secondItem="GSM-6o-1CV" secondAttribute="top" constant="230" id="DJj-hu-Xdx"/>
+                            <constraint firstAttribute="trailing" secondItem="3zh-Oc-zmu" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Dpc-hj-j7W"/>
+                            <constraint firstItem="3zh-Oc-zmu" firstAttribute="top" secondItem="48b-wL-tMc" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="G6P-3I-V2T"/>
                             <constraint firstItem="cFh-FB-ARF" firstAttribute="leading" secondItem="GSM-6o-1CV" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Mtk-Cp-hoY"/>
                             <constraint firstItem="VoM-0R-hnf" firstAttribute="leading" secondItem="GSM-6o-1CV" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Oyl-lt-CUj"/>
                             <constraint firstItem="fHy-aO-P67" firstAttribute="top" secondItem="mib-MZ-EBS" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="PBf-BL-j9U"/>
+                            <constraint firstItem="3zh-Oc-zmu" firstAttribute="leading" secondItem="GSM-6o-1CV" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="PEc-aO-gZa"/>
                             <constraint firstAttribute="trailing" secondItem="48b-wL-tMc" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="T4r-mb-j8D"/>
                             <constraint firstItem="fHy-aO-P67" firstAttribute="leading" secondItem="GSM-6o-1CV" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="UCm-nV-RJH"/>
                             <constraint firstAttribute="bottom" secondItem="VoM-0R-hnf" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="Ydc-oC-Sez"/>
-                            <constraint firstItem="cFh-FB-ARF" firstAttribute="top" secondItem="48b-wL-tMc" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="avw-wj-fwO"/>
                             <constraint firstAttribute="trailing" secondItem="mib-MZ-EBS" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="d1c-V7-zcX"/>
                             <constraint firstItem="48b-wL-tMc" firstAttribute="top" secondItem="mib-MZ-EBS" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="eaU-3R-6qU"/>
                             <constraint firstItem="Ahm-Lo-q4Q" firstAttribute="leading" secondItem="GSM-6o-1CV" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="epb-ub-smd"/>
-                            <constraint firstItem="cFh-FB-ARF" firstAttribute="top" secondItem="fHy-aO-P67" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="gxK-ie-CrJ"/>
                             <constraint firstItem="r4i-Sm-kYa" firstAttribute="top" secondItem="Ahm-Lo-q4Q" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="igX-wm-98Z"/>
+                            <constraint firstItem="3zh-Oc-zmu" firstAttribute="top" secondItem="fHy-aO-P67" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="qiK-kR-2rf"/>
+                            <constraint firstItem="cFh-FB-ARF" firstAttribute="top" secondItem="3zh-Oc-zmu" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ruu-wx-7wz"/>
                             <constraint firstItem="r4i-Sm-kYa" firstAttribute="leading" secondItem="GSM-6o-1CV" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="sKK-sF-sUP"/>
                             <constraint firstItem="Ahm-Lo-q4Q" firstAttribute="top" secondItem="GSM-6o-1CV" secondAttribute="top" constant="20" symbolic="YES" type="default" id="soe-1Z-aJW"/>
                             <constraint firstItem="mib-MZ-EBS" firstAttribute="leading" secondItem="GSM-6o-1CV" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="ynM-sQ-ApM"/>
