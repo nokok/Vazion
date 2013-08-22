@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ServerConnection.h"
 
 @interface ViewController : UIViewController
+
+- (IBAction)debugButtonPushed:(id)sender;
 
 @end

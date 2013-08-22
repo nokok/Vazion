@@ -40,7 +40,7 @@
         <!--View Controller-->
         <scene sceneID="5">
             <objects>
-                <viewController id="2" sceneMemberID="viewController">
+                <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -97,25 +97,40 @@
                                     <segue destination="wsW-uy-dqk" kind="modal" id="Jog-cB-SNc"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ao-Tu-Lb1">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Debug">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="debugButtonPushed:" destination="2" eventType="touchUpInside" id="lZS-no-b4g"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="quf-OR-hYS" firstAttribute="centerX" secondItem="9K0-l9-TBd" secondAttribute="centerX" type="default" id="1pc-G2-DKO"/>
                             <constraint firstAttribute="bottom" secondItem="P6l-FU-MJt" secondAttribute="bottom" constant="54" id="3hz-bi-Dr2"/>
                             <constraint firstItem="agK-Z6-uah" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="6kn-of-hy5"/>
                             <constraint firstItem="agK-Z6-uah" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="FUr-ee-Tpa"/>
                             <constraint firstAttribute="trailing" secondItem="agK-Z6-uah" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Fdw-PP-cgG"/>
+                            <constraint firstAttribute="bottom" secondItem="3Ao-Tu-Lb1" secondAttribute="bottom" constant="174" id="OpF-I6-GH4"/>
                             <constraint firstItem="qz4-7a-egK" firstAttribute="top" secondItem="3" secondAttribute="top" constant="256" id="Qdb-v9-mKb"/>
                             <constraint firstAttribute="trailing" secondItem="XmX-dI-PDo" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="T3Q-uf-vGO"/>
                             <constraint firstAttribute="bottom" secondItem="XmX-dI-PDo" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="TIH-NS-qD6"/>
                             <constraint firstItem="9K0-l9-TBd" firstAttribute="centerX" secondItem="qz4-7a-egK" secondAttribute="centerX" type="default" id="ULl-lC-LuG"/>
+                            <constraint firstItem="3Ao-Tu-Lb1" firstAttribute="centerX" secondItem="quf-OR-hYS" secondAttribute="centerX" type="default" id="Vtn-Jn-1nv"/>
                             <constraint firstItem="4vG-ag-c8w" firstAttribute="baseline" secondItem="P6l-FU-MJt" secondAttribute="baseline" type="default" id="bh6-ax-QTg"/>
                             <constraint firstAttribute="trailing" secondItem="4vG-ag-c8w" secondAttribute="trailing" constant="127" id="cOd-ZQ-Iu6"/>
                             <constraint firstAttribute="bottom" secondItem="9K0-l9-TBd" secondAttribute="bottom" constant="236" id="daP-Xg-g4C"/>
                             <constraint firstItem="P6l-FU-MJt" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="121" id="hWd-l2-zMl"/>
                             <constraint firstAttribute="bottom" secondItem="quf-OR-hYS" secondAttribute="bottom" constant="77" id="jFj-EL-sxW"/>
                             <constraint firstItem="qz4-7a-egK" firstAttribute="centerX" secondItem="agK-Z6-uah" secondAttribute="centerX" type="default" id="x9m-qE-hFY"/>
+                            <constraint firstItem="3Ao-Tu-Lb1" firstAttribute="centerX" secondItem="9K0-l9-TBd" secondAttribute="centerX" type="default" id="ylN-70-XxD"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -123,10 +138,10 @@
             </objects>
             <point key="canvasLocation" x="202" y="1"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="oxr-Eg-vgr">
             <objects>
-                <viewController id="L0j-JY-0nw" sceneMemberID="viewController">
+                <viewController id="L0j-JY-0nw" customClass="MapViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="s85-wT-pFz">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -141,6 +156,9 @@
                             <constraint firstItem="xDo-L8-JFI" firstAttribute="bottom" secondItem="s85-wT-pFz" secondAttribute="bottom" type="default" id="gOZ-su-Ovm"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="xDo-L8-JFI" id="huy-aq-R2h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NrN-Xg-pTH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -313,29 +331,6 @@
             <point key="canvasLocation" x="721" y="-3"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="WeatherSendViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WeatherSendViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cloudyButtonPushed:"/>
-                <relationship kind="action" name="didEndOnExit:"/>
-                <relationship kind="action" name="rainyButtonPushed:"/>
-                <relationship kind="action" name="sunnyButtonPushed:"/>
-                <relationship kind="action" name="withStrongWindButtonPushed:"/>
-                <relationship kind="action" name="withThunderBoltButtonPushed:"/>
-                <relationship kind="outlet" name="cloudyButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="rainyButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="sunnyButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="textField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="view" candidateClass="UIView"/>
-                <relationship kind="outlet" name="withStrongWindButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="withThunderBoltButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
