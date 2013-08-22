@@ -77,7 +77,7 @@
     NSXMLParser *parser = [[NSXMLParser alloc]initWithContentsOfURL:[[NSURL alloc] initWithString:url]];
     [parser setDelegate:self];
     [parser parse];
-    
+    return parser;
 }
 
 - (void)parserDidStartDocument:(NSXMLParser *)parser {
@@ -103,8 +103,5 @@
 - (void)parserDidEndDocument:(NSXMLParser *)parser {
 	NSLog(@"解析が完了しました");
 }
-
-- (
-
 
 @end
