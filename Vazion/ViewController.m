@@ -28,6 +28,6 @@
 
 - (IBAction)debugButtonPushed:(id)sender {
     ServerConnection *connection = [[ServerConnection alloc] init];
-    [connection isConnected];
+    NSLog(@"%@",[connection getXMLFileFromAPI:@"北海道"]);
 }
 @end

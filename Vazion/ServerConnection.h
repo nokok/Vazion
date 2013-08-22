@@ -11,6 +11,6 @@
 @interface ServerConnection : NSObject
 
 -(id)init;
--(Boolean)isConnected;
+-(NSArray*)getXMLFileFromAPI:(NSString *)pref;
 
 @end
