@@ -28,6 +28,8 @@
 
 - (IBAction)debugButtonPushed:(id)sender {
     ServerConnection *connection = [[ServerConnection alloc] init];
-    NSLog(@"%@",[connection getXMLFileFromAPI:@"北海道"]);
+    NSArray *array = [connection getNSArrayFromAPI:@"福島県"];
+    
+    //NSLog(@"%@",[connection getNSArrayFromAPI:@"北海道"]);
 }
 @end

@@ -28,7 +28,7 @@
                        @"茨城県":@"08.js",
                        @"栃木県":@"09.js",
                        @"群馬県":@"10.js",
-                       @"埼玉県":@"1.js",
+                       @"埼玉県":@"11.js",
                        @"千葉県":@"12.js",
                        @"東京都":@"13.js",
                        @"神奈川県":@"14.js",
@@ -69,7 +69,7 @@
     return self;
 }
 
--(NSArray*)getXMLFileFromAPI:(NSString *)prefName{
+-(NSArray*)getNSArrayFromAPI:(NSString *)prefName{
     
     NSString *urlBase = @"http://www.drk7.jp/weather/json/";
     NSString *url = [urlBase stringByAppendingString:[dictionary objectForKey:prefName]];
