@@ -80,7 +80,6 @@
 		E3C5019117C48EB5004ADE4D = {
 			isa = PBXGroup;
 			children = (
-				E36911FE17C6198800EC83B6 /* CoreLocation.framework */,
 				E3C501A317C48EB5004ADE4D /* Vazion */,
 				E3C5019C17C48EB5004ADE4D /* Frameworks */,
 				E3C5019B17C48EB5004ADE4D /* Products */,
@@ -98,6 +97,7 @@
 		E3C5019C17C48EB5004ADE4D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E36911FE17C6198800EC83B6 /* CoreLocation.framework */,
 				E3C501C017C48EE3004ADE4D /* MapKit.framework */,
 				E3C5019D17C48EB5004ADE4D /* UIKit.framework */,
 				E3C5019F17C48EB5004ADE4D /* Foundation.framework */,

@@ -64,40 +64,25 @@
                                     <segue destination="wsW-uy-dqk" kind="modal" id="Jog-cB-SNc"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ao-Tu-Lb1">
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Debug">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="debugButtonPushed:" destination="2" eventType="touchUpInside" id="QdC-1c-dMb"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="P6l-FU-MJt" secondAttribute="bottom" constant="54" id="3hz-bi-Dr2"/>
+                            <constraint firstItem="quf-OR-hYS" firstAttribute="centerX" secondItem="9K0-l9-TBd" secondAttribute="centerX" type="default" id="5Yd-kd-M7k"/>
                             <constraint firstItem="agK-Z6-uah" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="6kn-of-hy5"/>
                             <constraint firstItem="agK-Z6-uah" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="FUr-ee-Tpa"/>
                             <constraint firstAttribute="trailing" secondItem="agK-Z6-uah" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Fdw-PP-cgG"/>
-                            <constraint firstAttribute="bottom" secondItem="3Ao-Tu-Lb1" secondAttribute="bottom" constant="174" id="OpF-I6-GH4"/>
                             <constraint firstItem="qz4-7a-egK" firstAttribute="top" secondItem="3" secondAttribute="top" constant="256" id="Qdb-v9-mKb"/>
                             <constraint firstAttribute="trailing" secondItem="XmX-dI-PDo" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="T3Q-uf-vGO"/>
                             <constraint firstAttribute="bottom" secondItem="XmX-dI-PDo" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="TIH-NS-qD6"/>
                             <constraint firstItem="9K0-l9-TBd" firstAttribute="centerX" secondItem="qz4-7a-egK" secondAttribute="centerX" type="default" id="ULl-lC-LuG"/>
-                            <constraint firstItem="3Ao-Tu-Lb1" firstAttribute="centerX" secondItem="quf-OR-hYS" secondAttribute="centerX" type="default" id="Vtn-Jn-1nv"/>
                             <constraint firstItem="4vG-ag-c8w" firstAttribute="baseline" secondItem="P6l-FU-MJt" secondAttribute="baseline" type="default" id="bh6-ax-QTg"/>
                             <constraint firstAttribute="trailing" secondItem="4vG-ag-c8w" secondAttribute="trailing" constant="127" id="cOd-ZQ-Iu6"/>
                             <constraint firstAttribute="bottom" secondItem="9K0-l9-TBd" secondAttribute="bottom" constant="236" id="daP-Xg-g4C"/>
                             <constraint firstItem="P6l-FU-MJt" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="121" id="hWd-l2-zMl"/>
                             <constraint firstAttribute="bottom" secondItem="quf-OR-hYS" secondAttribute="bottom" constant="77" id="jFj-EL-sxW"/>
                             <constraint firstItem="qz4-7a-egK" firstAttribute="centerX" secondItem="agK-Z6-uah" secondAttribute="centerX" type="default" id="lLV-nT-tz4"/>
-                            <constraint firstItem="3Ao-Tu-Lb1" firstAttribute="centerX" secondItem="9K0-l9-TBd" secondAttribute="centerX" type="default" id="ylN-70-XxD"/>
                         </constraints>
                     </view>
                 </viewController>
