@@ -6,8 +6,11 @@
 //  Copyright (c) 2013年 noko. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
-@interface PlaceSelectViewController : NSObject
+@interface PlaceSelectViewController : UIViewController
+
+-(IBAction)searchButtonPushed:(id)sender;
 
 @end

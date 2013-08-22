@@ -10,4 +10,7 @@
 
 @implementation PlaceSelectViewController
 
+- (IBAction)searchButtonPushed:(id)sender {
+    
+}
 @end
