@@ -18,75 +18,93 @@
     self = [super init];
     if(self){
         dictionary = @{
-                       @"北海道":@"01.js",
-                       @"青森県":@"02.js",
-                       @"岩手県":@"03.js",
-                       @"宮城県":@"04.js",
-                       @"秋田県":@"05.js",
-                       @"山形県":@"06.js",
-                       @"福島県":@"07.js",
-                       @"茨城県":@"08.js",
-                       @"栃木県":@"09.js",
-                       @"群馬県":@"10.js",
-                       @"埼玉県":@"11.js",
-                       @"千葉県":@"12.js",
-                       @"東京都":@"13.js",
-                       @"神奈川県":@"14.js",
-                       @"新潟県":@"15.js",
-                       @"富山県":@"16.js",
-                       @"石川県":@"17.js",
-                       @"福井県":@"18.js",
-                       @"山梨県":@"19.js",
-                       @"長野県":@"20.js",
-                       @"岐阜県":@"21.js",
-                       @"静岡県":@"22.js",
-                       @"愛知県":@"23.js",
-                       @"三重県":@"24.js",
-                       @"滋賀県":@"25.js",
-                       @"京都府":@"26.js",
-                       @"大阪府":@"27.js",
-                       @"兵庫県":@"28.js",
-                       @"奈良県":@"29.js",
-                       @"和歌山県":@"30.js",
-                       @"鳥取県":@"31.js",
-                       @"島根県":@"32.js",
-                       @"岡山県":@"33.js",
-                       @"広島県":@"34.js",
-                       @"山口県":@"35.js",
-                       @"徳島県":@"36.js",
-                       @"香川県":@"37.js",
-                       @"愛媛県":@"38.js",
-                       @"高知県":@"39.js",
-                       @"福岡県":@"40.js",
-                       @"佐賀県":@"41.js",
-                       @"長崎県":@"42.js",
-                       @"熊本県":@"43.js",
-                       @"大分県":@"44.js",
-                       @"宮崎県":@"45.js",
-                       @"鹿児島県":@"46.js",
-                       @"沖縄県":@"47.js",};
+                       @"北海道":@"01.xml",
+                       @"青森県":@"02.xml",
+                       @"岩手県":@"03.xml",
+                       @"宮城県":@"04.xml",
+                       @"秋田県":@"05.xml",
+                       @"山形県":@"06.xml",
+                       @"福島県":@"07.xml",
+                       @"茨城県":@"08.xml",
+                       @"栃木県":@"09.xml",
+                       @"群馬県":@"10.xml",
+                       @"埼玉県":@"11.xml",
+                       @"千葉県":@"12.xml",
+                       @"東京都":@"13.xml",
+                       @"神奈川県":@"14.xml",
+                       @"新潟県":@"15.xml",
+                       @"富山県":@"16.xml",
+                       @"石川県":@"17.xml",
+                       @"福井県":@"18.xml",
+                       @"山梨県":@"19.xml",
+                       @"長野県":@"20.xml",
+                       @"岐阜県":@"21.xml",
+                       @"静岡県":@"22.xml",
+                       @"愛知県":@"23.xml",
+                       @"三重県":@"24.xml",
+                       @"滋賀県":@"25.xml",
+                       @"京都府":@"26.xml",
+                       @"大阪府":@"27.xml",
+                       @"兵庫県":@"28.xml",
+                       @"奈良県":@"29.xml",
+                       @"和歌山県":@"30.xml",
+                       @"鳥取県":@"31.xml",
+                       @"島根県":@"32.xml",
+                       @"岡山県":@"33.xml",
+                       @"広島県":@"34.xml",
+                       @"山口県":@"35.xml",
+                       @"徳島県":@"36.xml",
+                       @"香川県":@"37.xml",
+                       @"愛媛県":@"38.xml",
+                       @"高知県":@"39.xml",
+                       @"福岡県":@"40.xml",
+                       @"佐賀県":@"41.xml",
+                       @"長崎県":@"42.xml",
+                       @"熊本県":@"43.xml",
+                       @"大分県":@"44.xml",
+                       @"宮崎県":@"45.xml",
+                       @"鹿児島県":@"46.xml",
+                       @"沖縄県":@"47.xml",};
     }
     return self;
 }
 
--(NSArray*)getNSArrayFromAPI:(NSString *)prefName{
+-(id)getNSArrayFromAPI:(NSString *)prefName{
     
-    NSString *urlBase = @"http://www.drk7.jp/weather/json/";
+    NSString *urlBase = @"http://www.drk7.jp/weather/xml/";
     NSString *url = [urlBase stringByAppendingString:[dictionary objectForKey:prefName]];
-    NSURLRequest *request = [NSURLRequest requestWithURL:[[NSURL alloc] initWithString:url]];
-    NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
-    NSString *rawResponseData = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
-    NSString *jsonStr = [rawResponseData stringByReplacingOccurrencesOfString:@"drk7jpweather.callback(" withString:@""];
-    jsonStr = [jsonStr stringByReplacingOccurrencesOfString:@");" withString:@""];
     
-    NSError *error = nil;
-    NSData *formattedData = [jsonStr dataUsingEncoding:NSUTF8StringEncoding];
-    NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:formattedData options:NSJSONReadingAllowFragments error:&error];
-    return jsonArray;
+    NSXMLParser *parser = [[NSXMLParser alloc]initWithContentsOfURL:[[NSURL alloc] initWithString:url]];
+    [parser setDelegate:self];
+    [parser parse];
+    
 }
 
--(void)parse{
-    
+- (void)parserDidStartDocument:(NSXMLParser *)parser {
+	NSLog(@"解析を開始しました");
 }
+
+- (void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError {
+	NSLog(@"エラーが発生しました");
+}
+
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict{
+	NSLog(@"要素[%@]が見つかりました", elementName);
+}
+
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName{
+	NSLog(@"要素[%@]が終わりました", elementName);
+}
+
+- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string{
+	NSLog(@"文字列[%@]が見つかりました", string);
+}
+
+- (void)parserDidEndDocument:(NSXMLParser *)parser {
+	NSLog(@"解析が完了しました");
+}
+
+- (
+
 
 @end

@@ -28,8 +28,10 @@
 
 - (IBAction)debugButtonPushed:(id)sender {
     ServerConnection *connection = [[ServerConnection alloc] init];
-    NSArray *array = [connection getNSArrayFromAPI:@"福島県"];
-    
-    //NSLog(@"%@",[connection getNSArrayFromAPI:@"北海道"]);
+    NSDictionary *dictionary = [connection getNSArrayFromAPI:@"福島県"];
+    /*for(id obj in dictionary){
+        NSLog(@"%@",obj);
+        NSLog(@"%@",[dictionary objectForKey:obj]);
+    }*/
 }
 @end
