@@ -17,11 +17,13 @@
 @property (weak, nonatomic) IBOutlet UIButton *rainyButton;
 @property (weak, nonatomic) IBOutlet UIButton *withThunderBoltButton;
 @property (weak, nonatomic) IBOutlet UIButton *withStrongWindButton;
+@property (weak, nonatomic) IBOutlet UITextField *textField;
 
 - (IBAction)sunnyButtonPushed:(id)sender;
 - (IBAction)cloudyButtonPushed:(id)sender;
 - (IBAction)rainyButtonPushed:(id)sender;
 - (IBAction)withThunderBoltButtonPushed:(id)sender;
 - (IBAction)withStrongWindButtonPushed:(id)sender;
+- (IBAction)didEndOnExit:(id)sender;
 
 @end

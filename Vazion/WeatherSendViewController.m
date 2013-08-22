@@ -7,12 +7,15 @@
 //
 
 #import "WeatherSendViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface WeatherSendViewController ()
 
 @end
 
-@implementation WeatherSendViewController
+@implementation WeatherSendViewController{
+
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrUIControlStateNormal bundle:(NSBundle *)nibBundleOrUIControlStateNormal
 {
@@ -73,9 +76,13 @@
     }
 }
 
+- (IBAction)didEndOnExit:(id)sender {
+    [_textField endEditing:YES];
+}
+
 - (void)buttonColorChange:(NSString*)button{
     if([button isEqualToString:@"sunny"]){
-        [_sunnyButton setBackgroundColor:[UIColor blackColor]];
+        [_sunnyButton setBackgroundColor:[UIColor colorWithRed:0.5f green:0.0f blue:0.0f alpha:1.0f]];
         [_sunnyButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [_cloudyButton setBackgroundColor:[UIColor whiteColor]];
         [_cloudyButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -84,7 +91,7 @@
     }else if([button isEqualToString:@"cloudy"]){
         [_sunnyButton setBackgroundColor:[UIColor whiteColor]];
         [_sunnyButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        [_cloudyButton setBackgroundColor:[UIColor blackColor]];
+        [_cloudyButton setBackgroundColor:[UIColor colorWithRed:0.5f green:0.5f blue:0.5f alpha:1.0f]];
         [_cloudyButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [_rainyButton setBackgroundColor:[UIColor whiteColor]];
         [_rainyButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -93,7 +100,7 @@
         [_sunnyButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [_cloudyButton setBackgroundColor:[UIColor whiteColor]];
         [_cloudyButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        [_rainyButton setBackgroundColor:[UIColor blackColor]];
+        [_rainyButton setBackgroundColor:[UIColor colorWithRed:0.0f green:0.0f blue:0.5f alpha:1.0f]];
         [_rainyButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     }
 }
