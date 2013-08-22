@@ -53,6 +53,7 @@
 }
 
 - (IBAction)withThunderBoltButtonPushed:(id)sender {
+    
     if(_isWithThunderBolt){
         [_withThunderBoltButton setBackgroundColor:[UIColor whiteColor]];
         _isWithThunderBolt = NO;

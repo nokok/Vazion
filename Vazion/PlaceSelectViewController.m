@@ -10,7 +10,22 @@
 
 @implementation PlaceSelectViewController
 
+-(id)init{
+    self = [super init];
+    if(self){
+        _isSearching = NO;
+    }
+    return self;
+}
+
 - (IBAction)searchButtonPushed:(id)sender {
-    
+    if(_isSearching){
+        [_textLabel setText:@"今追加されている場所"];
+        //_searchListView.isHidden = YES;
+        _isSearching = NO;
+    }else{
+        [_textLabel setText:@"検索結果"];
+        _isSearching = YES;
+    }
 }
 @end

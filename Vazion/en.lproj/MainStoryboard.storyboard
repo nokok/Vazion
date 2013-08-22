@@ -96,7 +96,7 @@
                             <constraint firstAttribute="bottom" secondItem="9K0-l9-TBd" secondAttribute="bottom" constant="236" id="daP-Xg-g4C"/>
                             <constraint firstItem="P6l-FU-MJt" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="121" id="hWd-l2-zMl"/>
                             <constraint firstAttribute="bottom" secondItem="quf-OR-hYS" secondAttribute="bottom" constant="77" id="jFj-EL-sxW"/>
-                            <constraint firstItem="qz4-7a-egK" firstAttribute="centerX" secondItem="agK-Z6-uah" secondAttribute="centerX" type="default" id="x9m-qE-hFY"/>
+                            <constraint firstItem="qz4-7a-egK" firstAttribute="centerX" secondItem="agK-Z6-uah" secondAttribute="centerX" type="default" id="lLV-nT-tz4"/>
                             <constraint firstItem="3Ao-Tu-Lb1" firstAttribute="centerX" secondItem="9K0-l9-TBd" secondAttribute="centerX" type="default" id="ylN-70-XxD"/>
                         </constraints>
                     </view>
@@ -196,6 +196,11 @@
                             <constraint firstItem="EUt-he-1ty" firstAttribute="top" secondItem="3Hk-63-Cgo" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="uLN-cz-stC"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addedListView" destination="w9d-tN-YER" id="dQo-Cv-GLb"/>
+                        <outlet property="searchListView" destination="utk-tv-WEZ" id="7Ne-wr-T2q"/>
+                        <outlet property="textLabel" destination="EUt-he-1ty" id="hgt-Rd-sqe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FqN-23-fD0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -247,7 +252,8 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="sunnyButtonPushed:" destination="wsW-uy-dqk" eventType="touchUpInside" id="cRD-t7-lOV"/>
+                                    <action selector="sunnyButtonPushed:" destination="wsW-uy-dqk" eventType="touchDown" id="DUb-DS-J0e"/>
+                                    <action selector="sunnyButtonPushed:" destination="wsW-uy-dqk" eventType="touchDownRepeat" id="Ogn-wu-iCg"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r4i-Sm-kYa">
@@ -262,10 +268,14 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="cloudyButtonPushed:" destination="wsW-uy-dqk" eventType="touchUpInside" id="g62-CE-egn"/>
+                                    <action selector="cloudyButtonPushed:" destination="wsW-uy-dqk" eventType="touchDownRepeat" id="Dpf-bq-mxR"/>
+                                    <action selector="cloudyButtonPushed:" destination="wsW-uy-dqk" eventType="touchDown" id="vP1-Nb-3a1"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mib-MZ-EBS">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="94C-A3-cWL"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="雨">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -274,7 +284,8 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="rainyButtonPushed:" destination="wsW-uy-dqk" eventType="touchUpInside" id="Ei0-Nf-iXi"/>
+                                    <action selector="rainyButtonPushed:" destination="wsW-uy-dqk" eventType="touchDown" id="FCy-Qv-uvD"/>
+                                    <action selector="rainyButtonPushed:" destination="wsW-uy-dqk" eventType="touchDownRepeat" id="sle-fl-SZJ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cFh-FB-ARF">
@@ -304,7 +315,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="withThunderBoltButtonPushed:" destination="wsW-uy-dqk" eventType="touchUpInside" id="vSU-Qq-7EH"/>
+                                    <action selector="withThunderBoltButtonPushed:" destination="wsW-uy-dqk" eventType="touchDown" id="QQ7-oa-fMd"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="48b-wL-tMc">
@@ -319,7 +330,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="withStrongWindButtonPushed:" destination="wsW-uy-dqk" eventType="touchUpInside" id="bJs-7I-gcO"/>
+                                    <action selector="withStrongWindButtonPushed:" destination="wsW-uy-dqk" eventType="touchDown" id="pfm-o4-0eX"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VoM-0R-hnf">
@@ -353,11 +364,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="mib-MZ-EBS" firstAttribute="top" secondItem="r4i-Sm-kYa" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="5NQ-FD-VPN"/>
                             <constraint firstAttribute="trailing" secondItem="cFh-FB-ARF" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="5bC-aE-FMf"/>
                             <constraint firstAttribute="trailing" secondItem="Ahm-Lo-q4Q" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="8zd-hT-Tqd"/>
                             <constraint firstAttribute="trailing" secondItem="r4i-Sm-kYa" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="AhF-LS-Ncq"/>
-                            <constraint firstItem="cFh-FB-ARF" firstAttribute="top" secondItem="GSM-6o-1CV" secondAttribute="top" constant="230" id="DJj-hu-Xdx"/>
                             <constraint firstAttribute="trailing" secondItem="3zh-Oc-zmu" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Dpc-hj-j7W"/>
                             <constraint firstItem="3zh-Oc-zmu" firstAttribute="top" secondItem="48b-wL-tMc" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="G6P-3I-V2T"/>
                             <constraint firstItem="cFh-FB-ARF" firstAttribute="leading" secondItem="GSM-6o-1CV" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Mtk-Cp-hoY"/>
@@ -368,9 +377,10 @@
                             <constraint firstItem="fHy-aO-P67" firstAttribute="leading" secondItem="GSM-6o-1CV" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="UCm-nV-RJH"/>
                             <constraint firstAttribute="bottom" secondItem="VoM-0R-hnf" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="Ydc-oC-Sez"/>
                             <constraint firstAttribute="trailing" secondItem="mib-MZ-EBS" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="d1c-V7-zcX"/>
+                            <constraint firstItem="r4i-Sm-kYa" firstAttribute="top" secondItem="GSM-6o-1CV" secondAttribute="top" constant="64" id="d4w-VJ-LSR"/>
                             <constraint firstItem="48b-wL-tMc" firstAttribute="top" secondItem="mib-MZ-EBS" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="eaU-3R-6qU"/>
                             <constraint firstItem="Ahm-Lo-q4Q" firstAttribute="leading" secondItem="GSM-6o-1CV" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="epb-ub-smd"/>
-                            <constraint firstItem="r4i-Sm-kYa" firstAttribute="top" secondItem="Ahm-Lo-q4Q" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="igX-wm-98Z"/>
+                            <constraint firstItem="mib-MZ-EBS" firstAttribute="top" secondItem="GSM-6o-1CV" secondAttribute="top" constant="106" id="gND-H6-HPe"/>
                             <constraint firstItem="3zh-Oc-zmu" firstAttribute="top" secondItem="fHy-aO-P67" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="qiK-kR-2rf"/>
                             <constraint firstItem="cFh-FB-ARF" firstAttribute="top" secondItem="3zh-Oc-zmu" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ruu-wx-7wz"/>
                             <constraint firstItem="r4i-Sm-kYa" firstAttribute="leading" secondItem="GSM-6o-1CV" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="sKK-sF-sUP"/>
@@ -408,6 +418,9 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PlaceSelectViewController.h"/>
             <relationships>
                 <relationship kind="action" name="searchButtonPushed:"/>
+                <relationship kind="outlet" name="addedListView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="searchListView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="textLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="ViewController" superclassName="UIViewController">

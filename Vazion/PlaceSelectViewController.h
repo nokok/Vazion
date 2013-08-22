@@ -11,6 +11,11 @@
 
 @interface PlaceSelectViewController : UIViewController
 
+@property Boolean isSearching;
+@property (weak, nonatomic) IBOutlet UITableView *addedListView;
+@property (weak, nonatomic) IBOutlet UITableView *searchListView;
+@property (weak, nonatomic) IBOutlet UILabel *textLabel;
+
 -(IBAction)searchButtonPushed:(id)sender;
 
 @end
