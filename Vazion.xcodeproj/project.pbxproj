@@ -11,6 +11,7 @@
 		E34856A117C5A57100A13026 /* ServerConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = E34856A017C5A57100A13026 /* ServerConnection.m */; };
 		E36911F717C60A0D00EC83B6 /* RankingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E36911F617C60A0D00EC83B6 /* RankingViewController.m */; };
 		E36911FA17C60A2A00EC83B6 /* PlaceSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E36911F917C60A2A00EC83B6 /* PlaceSelectViewController.m */; };
+		E36911FD17C60C4F00EC83B6 /* GPS.m in Sources */ = {isa = PBXBuildFile; fileRef = E36911FC17C60C4F00EC83B6 /* GPS.m */; };
 		E3C5019E17C48EB5004ADE4D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3C5019D17C48EB5004ADE4D /* UIKit.framework */; };
 		E3C501A017C48EB5004ADE4D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3C5019F17C48EB5004ADE4D /* Foundation.framework */; };
 		E3C501A217C48EB5004ADE4D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3C501A117C48EB5004ADE4D /* CoreGraphics.framework */; };
@@ -35,6 +36,8 @@
 		E36911F617C60A0D00EC83B6 /* RankingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RankingViewController.m; sourceTree = "<group>"; };
 		E36911F817C60A2A00EC83B6 /* PlaceSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceSelectViewController.h; sourceTree = "<group>"; };
 		E36911F917C60A2A00EC83B6 /* PlaceSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceSelectViewController.m; sourceTree = "<group>"; };
+		E36911FB17C60C4F00EC83B6 /* GPS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPS.h; sourceTree = "<group>"; };
+		E36911FC17C60C4F00EC83B6 /* GPS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPS.m; sourceTree = "<group>"; };
 		E3C5019A17C48EB5004ADE4D /* Vazion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vazion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3C5019D17C48EB5004ADE4D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E3C5019F17C48EB5004ADE4D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -91,6 +94,7 @@
 		E3C5019C17C48EB5004ADE4D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E3C501C017C48EE3004ADE4D /* MapKit.framework */,
 				E3C5019D17C48EB5004ADE4D /* UIKit.framework */,
 				E3C5019F17C48EB5004ADE4D /* Foundation.framework */,
 				E3C501A117C48EB5004ADE4D /* CoreGraphics.framework */,
@@ -103,6 +107,8 @@
 			children = (
 				E3C501AC17C48EB5004ADE4D /* AppDelegate.h */,
 				E3C501AD17C48EB5004ADE4D /* AppDelegate.m */,
+				E36911FB17C60C4F00EC83B6 /* GPS.h */,
+				E36911FC17C60C4F00EC83B6 /* GPS.m */,
 				E3C501B517C48EB5004ADE4D /* MainStoryboard.storyboard */,
 				E348569C17C5A45700A13026 /* MapViewController.h */,
 				E348569D17C5A45700A13026 /* MapViewController.m */,
@@ -124,7 +130,6 @@
 		E3C501A417C48EB5004ADE4D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				E3C501C017C48EE3004ADE4D /* MapKit.framework */,
 				E3C501A617C48EB5004ADE4D /* InfoPlist.strings */,
 				E3C501A517C48EB5004ADE4D /* Vazion-Info.plist */,
 				E3C501A917C48EB5004ADE4D /* main.m */,
@@ -210,6 +215,7 @@
 				E34856A117C5A57100A13026 /* ServerConnection.m in Sources */,
 				E36911F717C60A0D00EC83B6 /* RankingViewController.m in Sources */,
 				E36911FA17C60A2A00EC83B6 /* PlaceSelectViewController.m in Sources */,
+				E36911FD17C60C4F00EC83B6 /* GPS.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
