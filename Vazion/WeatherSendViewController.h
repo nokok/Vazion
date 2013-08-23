@@ -11,12 +11,14 @@
 @interface WeatherSendViewController : UIViewController
 @property Boolean isWithThunderBolt;
 @property Boolean isWithStrongWind;
+@property Boolean isWithSnow;
 @property (strong, nonatomic) IBOutlet UIView *view;
 @property (weak, nonatomic) IBOutlet UIButton *sunnyButton;
 @property (weak, nonatomic) IBOutlet UIButton *cloudyButton;
 @property (weak, nonatomic) IBOutlet UIButton *rainyButton;
 @property (weak, nonatomic) IBOutlet UIButton *withThunderBoltButton;
 @property (weak, nonatomic) IBOutlet UIButton *withStrongWindButton;
+@property (weak, nonatomic) IBOutlet UIButton *withSnowButton;
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 
 - (IBAction)sunnyButtonPushed:(id)sender;
@@ -25,5 +27,8 @@
 - (IBAction)withThunderBoltButtonPushed:(id)sender;
 - (IBAction)withStrongWindButtonPushed:(id)sender;
 - (IBAction)didEndOnExit:(id)sender;
+- (IBAction)withSnowButtonPushed:(id)sender;
+- (IBAction)closeButtonPushed:(id)sender;
+
 
 @end

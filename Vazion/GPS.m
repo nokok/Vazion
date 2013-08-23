@@ -53,7 +53,6 @@
     _latitude = [newLocation coordinate].latitude;
     _longitude = [newLocation coordinate].longitude;
     [self updateMyAddress];
-    NSLog(@"%f,%f",_latitude,_longitude);
 }
 
 @end

@@ -21,11 +21,13 @@
 - (IBAction)searchButtonPushed:(id)sender {
     if(_isSearching){
         [_textLabel setText:@"今追加されている場所"];
-        //_searchListView.isHidden = YES;
+        [_searchButton setTitle:@"検索" forState:UIControlStateNormal];
         _isSearching = NO;
     }else{
         [_textLabel setText:@"検索結果"];
+        [_searchButton setTitle:@"中止" forState:UIControlStateNormal];
         _isSearching = YES;
     }
 }
+
 @end

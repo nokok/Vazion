@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *addedListView;
 @property (weak, nonatomic) IBOutlet UITableView *searchListView;
 @property (weak, nonatomic) IBOutlet UILabel *textLabel;
+@property (weak, nonatomic) IBOutlet UIButton *searchButton;
 
 -(IBAction)searchButtonPushed:(id)sender;
 
