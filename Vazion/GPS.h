@@ -8,11 +8,19 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
+#import <MapKit/MapKit.h>
 
-@class CLLocation;
+@interface GPS : NSObject<CLLocationManagerDelegate>
 
-@interface GPS : NSObject
+@property NSString *prefName;
+@property NSString *cityName;
+@property CLLocationDegrees latitude;
+@property CLLocationDegrees longitude;
 
+-(id)init;
 -(Boolean)isGPSEnabled;
+-(NSString*)updateMyAddress;
+-(void)refresh;
+
 
 @end

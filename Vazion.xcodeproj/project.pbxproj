@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E348569E17C5A45700A13026 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E348569D17C5A45700A13026 /* MapViewController.m */; };
-		E34856A117C5A57100A13026 /* ServerConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = E34856A017C5A57100A13026 /* ServerConnection.m */; };
+		E34856A117C5A57100A13026 /* XML.m in Sources */ = {isa = PBXBuildFile; fileRef = E34856A017C5A57100A13026 /* XML.m */; };
 		E36911F717C60A0D00EC83B6 /* RankingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E36911F617C60A0D00EC83B6 /* RankingViewController.m */; };
 		E36911FA17C60A2A00EC83B6 /* PlaceSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E36911F917C60A2A00EC83B6 /* PlaceSelectViewController.m */; };
 		E36911FD17C60C4F00EC83B6 /* GPS.m in Sources */ = {isa = PBXBuildFile; fileRef = E36911FC17C60C4F00EC83B6 /* GPS.m */; };
@@ -31,8 +31,8 @@
 /* Begin PBXFileReference section */
 		E348569C17C5A45700A13026 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		E348569D17C5A45700A13026 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
-		E348569F17C5A57100A13026 /* ServerConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerConnection.h; sourceTree = "<group>"; };
-		E34856A017C5A57100A13026 /* ServerConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerConnection.m; sourceTree = "<group>"; };
+		E348569F17C5A57100A13026 /* XML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XML.h; sourceTree = "<group>"; };
+		E34856A017C5A57100A13026 /* XML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XML.m; sourceTree = "<group>"; };
 		E36911F517C60A0D00EC83B6 /* RankingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RankingViewController.h; sourceTree = "<group>"; };
 		E36911F617C60A0D00EC83B6 /* RankingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RankingViewController.m; sourceTree = "<group>"; };
 		E36911F817C60A2A00EC83B6 /* PlaceSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceSelectViewController.h; sourceTree = "<group>"; };
@@ -116,8 +116,8 @@
 				E3C501B517C48EB5004ADE4D /* MainStoryboard.storyboard */,
 				E348569C17C5A45700A13026 /* MapViewController.h */,
 				E348569D17C5A45700A13026 /* MapViewController.m */,
-				E348569F17C5A57100A13026 /* ServerConnection.h */,
-				E34856A017C5A57100A13026 /* ServerConnection.m */,
+				E348569F17C5A57100A13026 /* XML.h */,
+				E34856A017C5A57100A13026 /* XML.m */,
 				E3D75D3B17C4EDCF0055148F /* WeatherSendViewController.h */,
 				E3D75D3C17C4EDCF0055148F /* WeatherSendViewController.m */,
 				E3C501B817C48EB5004ADE4D /* ViewController.h */,
@@ -216,7 +216,7 @@
 				E3C501BA17C48EB5004ADE4D /* ViewController.m in Sources */,
 				E3D75D3D17C4EDCF0055148F /* WeatherSendViewController.m in Sources */,
 				E348569E17C5A45700A13026 /* MapViewController.m in Sources */,
-				E34856A117C5A57100A13026 /* ServerConnection.m in Sources */,
+				E34856A117C5A57100A13026 /* XML.m in Sources */,
 				E36911F717C60A0D00EC83B6 /* RankingViewController.m in Sources */,
 				E36911FA17C60A2A00EC83B6 /* PlaceSelectViewController.m in Sources */,
 				E36911FD17C60C4F00EC83B6 /* GPS.m in Sources */,

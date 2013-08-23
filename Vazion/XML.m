@@ -6,17 +6,21 @@
 //  Copyright (c) 2013年 noko. All rights reserved.
 //
 
-#import "ServerConnection.h"
+#import "XML.h"
 @class NSXMLParser;
 
-@implementation ServerConnection{
+@implementation XML{
 @private
     NSDictionary *dictionary;
+    NSXMLParser *parser;
 }
 
 -(id)init{
     self = [super init];
     if(self){
+        
+        _prefName = @"";
+        
         dictionary = @{
                        @"北海道":@"01.xml",
                        @"青森県":@"02.xml",
@@ -69,15 +73,24 @@
     return self;
 }
 
--(id)getNSArrayFromAPI:(NSString *)prefName{
+-(id)getNSArrayFromAPI{
     
     NSString *urlBase = @"http://www.drk7.jp/weather/xml/";
-    NSString *url = [urlBase stringByAppendingString:[dictionary objectForKey:prefName]];
-    
-    NSXMLParser *parser = [[NSXMLParser alloc]initWithContentsOfURL:[[NSURL alloc] initWithString:url]];
-    [parser setDelegate:self];
-    [parser parse];
+    if([_prefName isEqualToString:@""]){
+        NSString *url = [urlBase stringByAppendingString:[dictionary objectForKey:_prefName]];
+        
+        parser = [[NSXMLParser alloc]initWithContentsOfURL:[[NSURL alloc] initWithString:url]];
+        [parser setDelegate:self];
+    }
     return parser;
+}
+
+-(void)parse{
+    [parser parse];
+}
+
+-(id)getValueFromKey:(NSString*)key{
+    
 }
 
 - (void)parserDidStartDocument:(NSXMLParser *)parser {

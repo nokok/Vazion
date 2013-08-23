@@ -8,7 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ServerConnection : NSObject
+@interface XML : NSObject
+
+@property NSString *prefName;
 
 -(id)init;
 -(NSArray*)getNSArrayFromAPI:(NSString *)pref;
