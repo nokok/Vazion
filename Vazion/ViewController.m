@@ -18,6 +18,14 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    /*
+     GPSで緯度経度取得
+     緯度経度から住所取得
+     住所から天気を取得
+     */
+    ServerConnection *connection = [[ServerConnection alloc] init];
+    [connection getNSArrayFromAPI:@"新潟県"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -26,9 +34,4 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)debugButtonPushed:(id)sender {
-    ServerConnection *connection = [[ServerConnection alloc] init];
-    [connection getNSArrayFromAPI:@"新潟県"];
-    
-}
 @end

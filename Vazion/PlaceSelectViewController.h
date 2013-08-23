@@ -6,8 +6,16 @@
 //  Copyright (c) 2013年 noko. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
-@interface PlaceSelectViewController : NSObject
+@interface PlaceSelectViewController : UIViewController
+
+@property Boolean isSearching;
+@property (weak, nonatomic) IBOutlet UITableView *addedListView;
+@property (weak, nonatomic) IBOutlet UITableView *searchListView;
+@property (weak, nonatomic) IBOutlet UILabel *textLabel;
+
+-(IBAction)searchButtonPushed:(id)sender;
 
 @end

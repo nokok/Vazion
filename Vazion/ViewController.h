@@ -11,6 +11,4 @@
 
 @interface ViewController : UIViewController
 
-- (IBAction)debugButtonPushed:(id)sender;
-
 @end

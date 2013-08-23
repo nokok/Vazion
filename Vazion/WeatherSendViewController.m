@@ -13,9 +13,13 @@
 
 @end
 
-@implementation WeatherSendViewController{
+@implementation WeatherSendViewController
 
-}
+typedef enum WeatherStatus : NSInteger {
+    SUNNY,
+    CLOUDY,
+    RAINY,
+} WeatherStatus;
 
 - (id)initWithNibName:(NSString *)nibNameOrUIControlStateNormal bundle:(NSBundle *)nibBundleOrUIControlStateNormal
 {
@@ -41,18 +45,19 @@
 }
 
 - (IBAction)sunnyButtonPushed:(id)sender {
-    [self buttonColorChange:@"sunny"];
+    [self buttonColorChange:SUNNY];
 }
 
 - (IBAction)cloudyButtonPushed:(id)sender {
-    [self buttonColorChange:@"cloudy"];
+    [self buttonColorChange:CLOUDY];
 }
 
 - (IBAction)rainyButtonPushed:(id)sender {
-    [self buttonColorChange:@"rainy"];
+    [self buttonColorChange:RAINY];
 }
 
 - (IBAction)withThunderBoltButtonPushed:(id)sender {
+    
     if(_isWithThunderBolt){
         [_withThunderBoltButton setBackgroundColor:[UIColor whiteColor]];
         _isWithThunderBolt = NO;
@@ -80,22 +85,22 @@
     [_textField endEditing:YES];
 }
 
-- (void)buttonColorChange:(NSString*)button{
-    if([button isEqualToString:@"sunny"]){
+- (void)buttonColorChange:(WeatherStatus)button{
+    if(button == SUNNY){
         [_sunnyButton setBackgroundColor:[UIColor colorWithRed:0.5f green:0.0f blue:0.0f alpha:1.0f]];
         [_sunnyButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [_cloudyButton setBackgroundColor:[UIColor whiteColor]];
         [_cloudyButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [_rainyButton setBackgroundColor:[UIColor whiteColor]];
         [_rainyButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    }else if([button isEqualToString:@"cloudy"]){
+    }else if(button == CLOUDY){
         [_sunnyButton setBackgroundColor:[UIColor whiteColor]];
         [_sunnyButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [_cloudyButton setBackgroundColor:[UIColor colorWithRed:0.5f green:0.5f blue:0.5f alpha:1.0f]];
         [_cloudyButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [_rainyButton setBackgroundColor:[UIColor whiteColor]];
         [_rainyButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    }else if([button isEqualToString:@"rainy"]){
+    }else if(button == RAINY){
         [_sunnyButton setBackgroundColor:[UIColor whiteColor]];
         [_sunnyButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [_cloudyButton setBackgroundColor:[UIColor whiteColor]];

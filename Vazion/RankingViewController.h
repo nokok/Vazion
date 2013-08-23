@@ -8,6 +8,5 @@
 
 #import <Foundation/Foundation.h>
 
-@interface RankingViewController : NSObject
-
+@interface RankingViewController : UITableViewController
 @end
