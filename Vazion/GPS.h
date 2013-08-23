@@ -7,7 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
+
+@class CLLocation;
 
 @interface GPS : NSObject
+
+-(Boolean)isGPSEnabled;
 
 @end
