@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
+#import "MainViewController.h"
 
 @interface GPS : NSObject<CLLocationManagerDelegate>
 
@@ -21,6 +22,5 @@
 -(Boolean)isGPSEnabled;
 -(NSString*)updateMyAddress;
 -(void)refresh;
-
 
 @end

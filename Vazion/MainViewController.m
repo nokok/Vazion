@@ -6,15 +6,16 @@
 //  Copyright (c) 2013年 noko. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "MainViewController.h"
 
-@interface ViewController ()
+@interface MainViewController ()
 
 @end
 
-@implementation ViewController{
+@implementation MainViewController{
     @private
     GPS *gps;
+    XML *xml;
 }
 
 - (void)viewDidLoad
@@ -23,6 +24,13 @@
     gps = [[GPS alloc] init];
     [gps refresh];
     [gps updateMyAddress];
+    xml = [[XML alloc]init];
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    xml.prefName = gps.prefName;
+    NSLog(@"%@",gps.prefName);
+    [xml getDictionary];
 }
 
 - (void)didReceiveMemoryWarning
@@ -31,9 +39,11 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)swipeDown:(id)sender {
-    [gps updateMyAddress];
-    NSLog(@"%@",gps.prefName);
-    [_placementButton setTitle:[gps updateMyAddress] forState:UIControlStateNormal];
++ (id)sharedInstance{
+    if (self) {
+        return self;
+    }
+    return nil;
 }
+
 @end

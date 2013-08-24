@@ -30,5 +30,4 @@
 - (IBAction)withSnowButtonPushed:(id)sender;
 - (IBAction)closeButtonPushed:(id)sender;
 
-
 @end

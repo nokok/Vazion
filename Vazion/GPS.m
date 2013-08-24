@@ -15,7 +15,7 @@
     CLGeocoder *geocoder;
 }
 
--(id)init{
+- (id)init{
     self = [super init];
     if(self){
         location = [[CLLocation alloc]initWithLatitude:_latitude longitude:_longitude];
@@ -26,11 +26,11 @@
     return self;
 }
 
--(Boolean)isGPSEnabled{
+- (Boolean)isGPSEnabled{
     return [CLLocationManager locationServicesEnabled];
 }
 
--(NSString*)updateMyAddress{
+- (NSString*)updateMyAddress{
     [locationManager startUpdatingLocation];
     [self refresh];
     [geocoder reverseGeocodeLocation:location
@@ -42,7 +42,7 @@
     return [NSString stringWithFormat:@"%@%@",_prefName,_cityName];
 }
 
--(void)refresh{
+- (void)refresh{
     location = [[CLLocation alloc]initWithLatitude:_latitude longitude:_longitude];
 }
 
@@ -52,7 +52,12 @@
     
     _latitude = [newLocation coordinate].latitude;
     _longitude = [newLocation coordinate].longitude;
+    NSLog(@"%f,%f",_latitude,_longitude);
     [self updateMyAddress];
+    MainViewController *mainViewController = [MainViewController sharedInstance];
+    if(_prefName != nil && ![_prefName isEqualToString:@""]){
+        [mainViewController.placementButton setTitle:_prefName forState:UIControlStateNormal];
+    }
 }
 
 @end

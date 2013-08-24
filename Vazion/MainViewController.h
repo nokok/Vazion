@@ -10,10 +10,12 @@
 #import "XML.h"
 #import "GPS.h"
 
-@interface ViewController : UIViewController
+@interface MainViewController : UIViewController
+
 @property (weak, nonatomic) IBOutlet UILabel *maxTemperature;
 @property (weak, nonatomic) IBOutlet UILabel *minTemperature;
 @property (weak, nonatomic) IBOutlet UIButton *placementButton;
-- (IBAction)swipeDown:(id)sender;
+- (void)setPrefName:(NSString*)prefName;
++ (id)sharedInstance;
 
 @end
