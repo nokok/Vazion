@@ -59,8 +59,8 @@
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="CloudSun.png" translatesAutoresizingMaskIntoConstraints="NO" id="1dY-bD-Q7s">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="256" id="MGf-bf-U8P"/>
-                                    <constraint firstAttribute="height" constant="256" id="sAm-CH-H5u"/>
+                                    <constraint firstAttribute="width" constant="200" id="1fS-mU-6P0"/>
+                                    <constraint firstAttribute="height" constant="160" id="lJf-Aj-xFR"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -74,9 +74,9 @@
                             <constraint firstAttribute="trailing" secondItem="XmX-dI-PDo" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="T3Q-uf-vGO"/>
                             <constraint firstAttribute="bottom" secondItem="XmX-dI-PDo" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="TIH-NS-qD6"/>
                             <constraint firstAttribute="bottom" secondItem="7FI-I8-g5g" secondAttribute="bottom" constant="124" id="ZtU-Ou-W1h"/>
+                            <constraint firstItem="1dY-bD-Q7s" firstAttribute="centerX" secondItem="agK-Z6-uah" secondAttribute="centerX" type="default" id="cII-rJ-iRJ"/>
                             <constraint firstItem="1dY-bD-Q7s" firstAttribute="top" secondItem="agK-Z6-uah" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="d0Z-1S-eED"/>
                             <constraint firstItem="sfD-HZ-dYK" firstAttribute="baseline" secondItem="7FI-I8-g5g" secondAttribute="baseline" type="default" id="gwO-4f-3DL"/>
-                            <constraint firstItem="1dY-bD-Q7s" firstAttribute="centerX" secondItem="agK-Z6-uah" secondAttribute="centerX" type="default" id="iM8-OC-gGf"/>
                             <constraint firstAttribute="trailing" secondItem="sfD-HZ-dYK" secondAttribute="trailing" constant="56" id="nRb-bg-ZAl"/>
                         </constraints>
                     </view>
@@ -483,7 +483,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="CloudSun.png" width="128" height="128"/>
+        <image name="CloudSun.png" width="100" height="80"/>
     </resources>
     <classes>
         <class className="MainViewController" superclassName="UIViewController">
