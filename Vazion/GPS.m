@@ -30,9 +30,12 @@
     return [CLLocationManager locationServicesEnabled];
 }
 
-- (NSString*)updateMyAddress{
+- (void)updateMyAddress{
     [locationManager startUpdatingLocation];
     [self refresh];
+}
+
+- (NSString*)getLocationString{
     [geocoder reverseGeocodeLocation:location
                    completionHandler:^(NSArray *placemarks,NSError *error){
                        CLPlacemark *placemark = [placemarks lastObject];
@@ -49,14 +52,15 @@
 - (void)locationManager:(CLLocationManager *)manager
     didUpdateToLocation:(CLLocation *)newLocation
            fromLocation:(CLLocation *)oldLocation {
-    
+    [self refresh];
+    [self getLocationString];
     _latitude = [newLocation coordinate].latitude;
     _longitude = [newLocation coordinate].longitude;
     NSLog(@"%f,%f",_latitude,_longitude);
-    [self updateMyAddress];
-    MainViewController *mainViewController = [MainViewController sharedInstance];
-    if(_prefName != nil && ![_prefName isEqualToString:@""]){
-        [mainViewController.placementButton setTitle:_prefName forState:UIControlStateNormal];
+    NSLog(@"%@%@",_prefName,_cityName);
+    if(_prefName != nil){
+        MainViewController *instance = [MainViewController sharedInstance];
+        [instance setButtonText:[NSString stringWithFormat:@"%@%@",_prefName,_cityName]];
     }
 }
 

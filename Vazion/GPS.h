@@ -20,7 +20,8 @@
 
 -(id)init;
 -(Boolean)isGPSEnabled;
--(NSString*)updateMyAddress;
+-(void)updateMyAddress;
+-(NSString*)getLocationString;
 -(void)refresh;
 
 @end

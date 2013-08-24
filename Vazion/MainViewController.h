@@ -14,8 +14,8 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *maxTemperature;
 @property (weak, nonatomic) IBOutlet UILabel *minTemperature;
-@property (weak, nonatomic) IBOutlet UIButton *placementButton;
-- (void)setPrefName:(NSString*)prefName;
+@property IBOutlet UIButton *placementButton;
+- (void)setButtonText:(NSString*)text;
 + (id)sharedInstance;
 
 @end

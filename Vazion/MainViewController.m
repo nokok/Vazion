@@ -13,7 +13,7 @@
 @end
 
 @implementation MainViewController{
-    @private
+@private
     GPS *gps;
     XML *xml;
 }
@@ -22,8 +22,12 @@
 {
     [super viewDidLoad];
     gps = [[GPS alloc] init];
-    [gps refresh];
-    [gps updateMyAddress];
+    if([gps isGPSEnabled]){
+        [gps refresh];
+        [gps updateMyAddress];
+    }else{
+        NSLog(@"GPS disabled");
+    }
     xml = [[XML alloc]init];
 }
 
@@ -33,17 +37,18 @@
     [xml getDictionary];
 }
 
+- (void)setButtonText:(NSString *)text{
+    [_placementButton setTitle:text forState:UIControlStateNormal];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-+ (id)sharedInstance{
-    if (self) {
-        return self;
-    }
-    return nil;
++ (MainViewController)getAddress{
+    return &self;
 }
 
 @end
