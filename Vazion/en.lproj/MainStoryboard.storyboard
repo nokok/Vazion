@@ -506,59 +506,6 @@
     <resources>
         <image name="CloudSun.png" width="128" height="128"/>
     </resources>
-    <classes>
-        <class className="MainViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="maxTemperature" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="minTemperature" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="placementButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="MapViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="PlaceSelectViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PlaceSelectViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="searchButtonPushed:"/>
-                <relationship kind="outlet" name="addedListView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="searchButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="searchListView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="textLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="RankingViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RankingViewController.h"/>
-        </class>
-        <class className="WeatherSendViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WeatherSendViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="closeButtonPushed:"/>
-                <relationship kind="action" name="cloudyButtonPushed:"/>
-                <relationship kind="action" name="didEndOnExit:"/>
-                <relationship kind="action" name="rainyButtonPushed:"/>
-                <relationship kind="action" name="sunnyButtonPushed:"/>
-                <relationship kind="action" name="withSnowButtonPushed:"/>
-                <relationship kind="action" name="withStrongWindButtonPushed:"/>
-                <relationship kind="action" name="withThunderBoltButtonPushed:"/>
-                <relationship kind="outlet" name="cloudyButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="rainyButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="sunnyButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="textField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="view" candidateClass="UIView"/>
-                <relationship kind="outlet" name="withSnowButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="withStrongWindButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="withThunderBoltButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

@@ -44,7 +44,7 @@
 		E36911FB17C60C4F00EC83B6 /* GPS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPS.h; sourceTree = "<group>"; };
 		E36911FC17C60C4F00EC83B6 /* GPS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPS.m; sourceTree = "<group>"; };
 		E36911FE17C6198800EC83B6 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		E3C1EA0C17C74A4B001242D0 /* CloudSun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = CloudSun.png; path = ../../Desktop/CloudSun.png; sourceTree = "<group>"; };
+		E3C1EA0C17C74A4B001242D0 /* CloudSun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = CloudSun.png; path = Resources/CloudSun.png; sourceTree = "<group>"; };
 		E3C5019A17C48EB5004ADE4D /* Vazion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vazion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3C5019D17C48EB5004ADE4D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E3C5019F17C48EB5004ADE4D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
