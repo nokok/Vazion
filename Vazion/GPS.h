@@ -10,6 +10,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
 #import "MainViewController.h"
+#import "AppDelegate.h"
 
 @interface GPS : NSObject<CLLocationManagerDelegate>
 

@@ -21,6 +21,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    AppDelegate *delegate = [[UIApplication sharedApplication]delegate];
+    delegate.locationSelectButton = _placementButton;
     gps = [[GPS alloc] init];
     if([gps isGPSEnabled]){
         [gps refresh];
@@ -37,9 +39,6 @@
     [xml getDictionary];
 }
 
-- (void)setButtonText:(NSString *)text{
-    [_placementButton setTitle:text forState:UIControlStateNormal];
-}
 
 - (void)didReceiveMemoryWarning
 {
@@ -47,8 +46,5 @@
     // Dispose of any resources that can be recreated.
 }
 
-+ (MainViewController)getAddress{
-    return &self;
-}
 
 @end

@@ -9,13 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "XML.h"
 #import "GPS.h"
+#import "AppDelegate.h"
 
 @interface MainViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UILabel *maxTemperature;
 @property (weak, nonatomic) IBOutlet UILabel *minTemperature;
 @property IBOutlet UIButton *placementButton;
-- (void)setButtonText:(NSString*)text;
-+ (id)sharedInstance;
-
 @end

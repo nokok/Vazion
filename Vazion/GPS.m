@@ -59,8 +59,9 @@
     NSLog(@"%f,%f",_latitude,_longitude);
     NSLog(@"%@%@",_prefName,_cityName);
     if(_prefName != nil){
-        MainViewController *instance = [MainViewController sharedInstance];
-        [instance setButtonText:[NSString stringWithFormat:@"%@%@",_prefName,_cityName]];
+        AppDelegate *delegate = [[UIApplication sharedApplication]delegate];
+        [delegate.locationSelectButton setTitle:[NSString stringWithFormat:@"%@%@",_prefName,_cityName]
+                                       forState:UIControlStateNormal];
     }
 }
 
