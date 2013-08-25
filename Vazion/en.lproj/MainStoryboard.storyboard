@@ -13,9 +13,6 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="agK-Z6-uah">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="J0M-Tb-hPX"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="取得中">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -45,20 +42,20 @@
                                     <segue destination="wsW-uy-dqk" kind="modal" id="uvq-le-wxB"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="30" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7FI-I8-g5g">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7FI-I8-g5g">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="yBw-ug-5cB"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="54"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="1" green="0.23722627737226276" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="30" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfD-HZ-dYK">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfD-HZ-dYK">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="90" id="qgA-HR-HEx"/>
+                                    <constraint firstAttribute="width" constant="90" id="ovW-rk-X34"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="54"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.75547445255474455" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="CloudSun.png" translatesAutoresizingMaskIntoConstraints="NO" id="1dY-bD-Q7s">
@@ -67,27 +64,32 @@
                                     <constraint firstAttribute="height" constant="160" id="lJf-Aj-xFR"/>
                                 </constraints>
                             </imageView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="QQT-lE-ZEF"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="7FI-I8-g5g" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="80" id="4dh-Sv-I6G"/>
+                            <constraint firstItem="QQT-lE-ZEF" firstAttribute="top" secondItem="agK-Z6-uah" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="1oh-Y2-zKC"/>
+                            <constraint firstItem="QQT-lE-ZEF" firstAttribute="centerX" secondItem="1dY-bD-Q7s" secondAttribute="centerX" type="default" id="2go-s5-vVK"/>
                             <constraint firstItem="agK-Z6-uah" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="6kn-of-hy5"/>
+                            <constraint firstItem="7FI-I8-g5g" firstAttribute="baseline" secondItem="sfD-HZ-dYK" secondAttribute="baseline" type="default" id="FHF-Eg-3Fl"/>
                             <constraint firstItem="agK-Z6-uah" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="FUr-ee-Tpa"/>
                             <constraint firstAttribute="trailing" secondItem="agK-Z6-uah" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Fdw-PP-cgG"/>
+                            <constraint firstItem="QQT-lE-ZEF" firstAttribute="centerX" secondItem="agK-Z6-uah" secondAttribute="centerX" type="default" id="H73-Nz-Kpv"/>
                             <constraint firstAttribute="trailing" secondItem="XmX-dI-PDo" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="T3Q-uf-vGO"/>
+                            <constraint firstItem="QQT-lE-ZEF" firstAttribute="top" secondItem="3" secondAttribute="top" constant="72" id="THU-Ey-c2v"/>
                             <constraint firstAttribute="bottom" secondItem="XmX-dI-PDo" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="TIH-NS-qD6"/>
-                            <constraint firstAttribute="bottom" secondItem="7FI-I8-g5g" secondAttribute="bottom" constant="140" id="ab3-WH-H3M"/>
-                            <constraint firstItem="1dY-bD-Q7s" firstAttribute="centerX" secondItem="agK-Z6-uah" secondAttribute="centerX" type="default" id="cII-rJ-iRJ"/>
+                            <constraint firstItem="7FI-I8-g5g" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="53" id="YhL-v2-h5m"/>
                             <constraint firstItem="1dY-bD-Q7s" firstAttribute="top" secondItem="agK-Z6-uah" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="d0Z-1S-eED"/>
                             <constraint firstItem="XmX-dI-PDo" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="d4F-fr-BC1"/>
-                            <constraint firstItem="sfD-HZ-dYK" firstAttribute="baseline" secondItem="7FI-I8-g5g" secondAttribute="baseline" type="default" id="gwO-4f-3DL"/>
-                            <constraint firstAttribute="trailing" secondItem="sfD-HZ-dYK" secondAttribute="trailing" constant="49" id="pLg-8y-Kwh"/>
+                            <constraint firstAttribute="bottom" secondItem="7FI-I8-g5g" secondAttribute="bottom" constant="140" id="kMY-yf-bvX"/>
+                            <constraint firstAttribute="trailing" secondItem="sfD-HZ-dYK" secondAttribute="trailing" constant="54" id="x7H-93-RSi"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="maxTemperature" destination="7FI-I8-g5g" id="pbm-U4-4nO"/>
-                        <outlet property="minTemperature" destination="sfD-HZ-dYK" id="7Wb-1g-fyg"/>
+                        <outlet property="activityIndicator" destination="QQT-lE-ZEF" id="72O-Tp-bGg"/>
+                        <outlet property="maxTemperatureLabel" destination="7FI-I8-g5g" id="GOo-pE-8we"/>
+                        <outlet property="minTemperatureLabel" destination="sfD-HZ-dYK" id="kMl-k6-ROl"/>
                         <outlet property="placementButton" destination="agK-Z6-uah" id="oYS-1y-JrI"/>
                     </connections>
                 </viewController>
@@ -109,7 +111,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JbQ-7d-6GT">
-                                <color key="backgroundColor" red="0.50196078431372548" green="0.66666666666666663" blue="0.78431372549019607" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="EJ2-6x-F8W"/>
                                     <constraint firstAttribute="width" constant="73" id="eEF-zY-rW8"/>
@@ -387,7 +389,6 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="gGt-d1-ig5"/>
                                 </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 <connections>
@@ -493,8 +494,9 @@
         <class className="MainViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MainViewController.h"/>
             <relationships>
-                <relationship kind="outlet" name="maxTemperature" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="minTemperature" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="maxTemperatureLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="minTemperatureLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="placementButton" candidateClass="UIButton"/>
             </relationships>
         </class>

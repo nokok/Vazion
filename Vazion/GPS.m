@@ -13,17 +13,33 @@
     CLLocation *location;
     CLLocationManager *locationManager;
     CLGeocoder *geocoder;
+    AppDelegate *delegate;
 }
 
-- (id)init{
++(GPS*)sharedManager{
+    static GPS* sharedInstance;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedInstance = [[GPS alloc]initSharedInstance];
+    });
+    return sharedInstance;
+}
+
+- (id)initSharedInstance{
     self = [super init];
     if(self){
+        delegate = [[UIApplication sharedApplication]delegate];
         location = [[CLLocation alloc]initWithLatitude:_latitude longitude:_longitude];
         locationManager = [[CLLocationManager alloc]init];
         locationManager.delegate = self;
         geocoder = [[CLGeocoder alloc]init];
     }
     return self;
+}
+
+- (id)init{
+    [self doesNotRecognizeSelector:_cmd];
+    return nil;
 }
 
 - (Boolean)isGPSEnabled{
@@ -46,7 +62,7 @@
 }
 
 - (void)refresh{
-    location = [[CLLocation alloc]initWithLatitude:_latitude longitude:_longitude];
+    location = [[CLLocation alloc]initWithLatitude:delegate.latitude longitude:delegate.longitude];
 }
 
 - (void)locationManager:(CLLocationManager *)manager
@@ -54,14 +70,16 @@
            fromLocation:(CLLocation *)oldLocation {
     [self refresh];
     [self getLocationString];
-    _latitude = [newLocation coordinate].latitude;
-    _longitude = [newLocation coordinate].longitude;
-    NSLog(@"%f,%f",_latitude,_longitude);
-    NSLog(@"%@%@",_prefName,_cityName);
+    delegate.latitude = [newLocation coordinate].latitude;
+    delegate.longitude = [newLocation coordinate].longitude;
     if(_prefName != nil){
-        AppDelegate *delegate = [[UIApplication sharedApplication]delegate];
         [delegate.locationSelectButton setTitle:[NSString stringWithFormat:@"%@%@",_prefName,_cityName]
                                        forState:UIControlStateNormal];
+        XML *xmlInstance = delegate.xmlInstance;
+        [xmlInstance refreshDictionary:_prefName];
+        [xmlInstance refreshInfomation];
+        [delegate.activityIndigator stopAnimating];
+        [((MainViewController*)delegate.mainViewController) refreshInfomation];
     }
 }
 

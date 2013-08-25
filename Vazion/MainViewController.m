@@ -15,30 +15,40 @@
 @implementation MainViewController{
 @private
     GPS *gps;
-    XML *xml;
+    AppDelegate *delegate;
+    XML *xmlInstance;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    AppDelegate *delegate = [[UIApplication sharedApplication]delegate];
-    delegate.locationSelectButton = _placementButton;
-    gps = [[GPS alloc] init];
-    if([gps isGPSEnabled]){
-        [gps refresh];
-        [gps updateMyAddress];
+    if(!_isInitialized){
+        delegate = [[UIApplication sharedApplication]delegate];
+        delegate.mainViewController = self;
+        delegate.locationSelectButton = _placementButton;
+        delegate.activityIndigator = _activityIndicator;
+        gps = [GPS sharedManager];
+        if([gps isGPSEnabled]){
+            [gps refresh];
+            [gps updateMyAddress];
+        }else{
+            NSLog(@"GPS disabled");
+        }
+        delegate.xmlInstance = [XML sharedManager];
+        delegate.mainViewController = self;
+        _isInitialized = NO;
     }else{
-        NSLog(@"GPS disabled");
+        
     }
-    xml = [[XML alloc]init];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
-    xml.prefName = gps.prefName;
-    NSLog(@"%@",gps.prefName);
-    [xml getDictionary];
+    xmlInstance = delegate.xmlInstance;
+    xmlInstance.prefName = gps.prefName;
+    [delegate.xmlInstance refreshDictionary:nil];
+    [xmlInstance refreshInfomation];
+    [_activityIndicator startAnimating];
 }
-
 
 - (void)didReceiveMemoryWarning
 {
@@ -46,5 +56,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)refreshInfomation{
+    [_maxTemperatureLabel setText:[NSString stringWithFormat:@"%d",delegate.maxTemperature]];
+    [_minTemperatureLabel setText:[NSString stringWithFormat:@"%d",delegate.minTemperature]];
+}
 
 @end

@@ -11,6 +11,7 @@
 #import <MapKit/MapKit.h>
 #import "MainViewController.h"
 #import "AppDelegate.h"
+#import "XML.h"
 
 @interface GPS : NSObject<CLLocationManagerDelegate>
 
@@ -24,5 +25,6 @@
 -(void)updateMyAddress;
 -(NSString*)getLocationString;
 -(void)refresh;
++(GPS*)sharedManager;
 
 @end

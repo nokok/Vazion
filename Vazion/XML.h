@@ -8,12 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import "XMLReader.h"
+#import "AppDelegate.h"
 
 @interface XML : NSObject
 
 @property NSString *prefName;
-
+@property NSDictionary *prefectureNameDictionary;
 -(id)init;
--(NSDictionary*)getDictionary;
-
+-(NSDictionary*)refreshDictionary:(NSString*)prefName;
+-(void)refreshInfomation;
++(XML*)sharedManager;
 @end
