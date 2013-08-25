@@ -18,7 +18,7 @@
 @property int minTemperature;
 @property UIActivityIndicatorView *activityIndigator;
 @property UIViewController *mainViewController;
-@property CLLocationDegrees latitude;
-@property CLLocationDegrees longitude;
-@property id xmlInstance;
+@property CLLocationDegrees myLatitude;
+@property CLLocationDegrees myLongitude;
+@property id sharedXmlInstance;
 @end

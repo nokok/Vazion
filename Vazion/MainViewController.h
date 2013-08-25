@@ -13,10 +13,10 @@
 
 @interface MainViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UILabel *maxTemperatureLabel;
-@property (weak, nonatomic) IBOutlet UILabel *minTemperatureLabel;
+@property (weak, nonatomic) IBOutlet UILabel *maxTemperatureTextLabel;
+@property (weak, nonatomic) IBOutlet UILabel *minTemperatureTextLabel;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
-@property IBOutlet UIButton *placementButton;
+@property IBOutlet UIButton *locationSelectButton;
 @property Boolean isInitialized;
 
 -(void)refreshInfomation;

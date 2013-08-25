@@ -25,16 +25,16 @@
     if(!_isInitialized){
         delegate = [[UIApplication sharedApplication]delegate];
         delegate.mainViewController = self;
-        delegate.locationSelectButton = _placementButton;
+        delegate.locationSelectButton = _locationSelectButton;
         delegate.activityIndigator = _activityIndicator;
         gps = [GPS sharedManager];
         if([gps isGPSEnabled]){
             [gps refresh];
             [gps updateMyAddress];
         }else{
-            NSLog(@"GPS disabled");
+            
         }
-        delegate.xmlInstance = [XML sharedManager];
+        delegate.sharedXmlInstance = [XML sharedManager];
         delegate.mainViewController = self;
         _isInitialized = NO;
     }else{
@@ -43,11 +43,12 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated{
-    xmlInstance = delegate.xmlInstance;
-    xmlInstance.prefName = gps.prefName;
-    [delegate.xmlInstance refreshDictionary:nil];
+    xmlInstance = delegate.sharedXmlInstance;
+    xmlInstance.prefectureName = gps.prefectureName;
+    [delegate.sharedXmlInstance refreshDictionary:nil];
     [xmlInstance refreshInfomation];
     [_activityIndicator startAnimating];
+    [gps updateMyAddress];
 }
 
 - (void)didReceiveMemoryWarning
@@ -57,8 +58,8 @@
 }
 
 -(void)refreshInfomation{
-    [_maxTemperatureLabel setText:[NSString stringWithFormat:@"%d",delegate.maxTemperature]];
-    [_minTemperatureLabel setText:[NSString stringWithFormat:@"%d",delegate.minTemperature]];
+    [_maxTemperatureTextLabel setText:[NSString stringWithFormat:@"%d",delegate.maxTemperature]];
+    [_minTemperatureTextLabel setText:[NSString stringWithFormat:@"%d",delegate.minTemperature]];
 }
 
 @end

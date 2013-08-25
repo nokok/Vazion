@@ -25,7 +25,7 @@
     self = [super init];
     if(self){
         
-        _prefName = @"";
+        _prefectureName = @"";
         
         _prefectureNameDictionary = @{
                         @"北海道":@"01.xml",
@@ -85,7 +85,7 @@
 }
 
 -(NSDictionary*)refreshDictionary:(NSString*)prefName{
-    _prefName = prefName;
+    prefName = prefName;
     NSString *urlBase = @"http://www.drk7.jp/weather/xml/";
     if(prefName != nil){
         NSString *xmlName = [_prefectureNameDictionary objectForKey:prefName];
@@ -103,7 +103,7 @@
 }
 
 -(void)refreshInfomation{
-    [self refreshDictionary:_prefName];
+    [self refreshDictionary:_prefectureName];
     AppDelegate *delegate = [[UIApplication sharedApplication]delegate];
     NSArray *resultSet = [[[parsedDictionary objectForKey:@"weatherforecast"]objectForKey:@"pref"]objectForKey:@"area"];
     NSDictionary *result = [resultSet objectAtIndex:0];

@@ -88,9 +88,9 @@
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="QQT-lE-ZEF" id="72O-Tp-bGg"/>
-                        <outlet property="maxTemperatureLabel" destination="7FI-I8-g5g" id="GOo-pE-8we"/>
-                        <outlet property="minTemperatureLabel" destination="sfD-HZ-dYK" id="kMl-k6-ROl"/>
-                        <outlet property="placementButton" destination="agK-Z6-uah" id="oYS-1y-JrI"/>
+                        <outlet property="locationSelectButton" destination="agK-Z6-uah" id="o8F-rG-aZi"/>
+                        <outlet property="maxTemperatureTextLabel" destination="7FI-I8-g5g" id="5iK-bh-oO9"/>
+                        <outlet property="minTemperatureTextLabel" destination="sfD-HZ-dYK" id="Xcy-gt-I6g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
@@ -495,9 +495,9 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MainViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
-                <relationship kind="outlet" name="maxTemperatureLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="minTemperatureLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="placementButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="locationSelectButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="maxTemperatureTextLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="minTemperatureTextLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="MapViewController" superclassName="UIViewController">

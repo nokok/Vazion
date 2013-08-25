@@ -12,7 +12,7 @@
 
 @interface XML : NSObject
 
-@property NSString *prefName;
+@property NSString *prefectureName;
 @property NSDictionary *prefectureNameDictionary;
 -(id)init;
 -(NSDictionary*)refreshDictionary:(NSString*)prefName;

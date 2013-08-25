@@ -16,7 +16,7 @@
     AppDelegate *delegate;
 }
 
-+(GPS*)sharedManager{
++ (GPS*)sharedManager{
     static GPS* sharedInstance;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -55,14 +55,14 @@
     [geocoder reverseGeocodeLocation:location
                    completionHandler:^(NSArray *placemarks,NSError *error){
                        CLPlacemark *placemark = [placemarks lastObject];
-                       _prefName = placemark.administrativeArea;
+                       _prefectureName = placemark.administrativeArea;
                        _cityName = placemark.locality;
                    }];
-    return [NSString stringWithFormat:@"%@%@",_prefName,_cityName];
+    return [NSString stringWithFormat:@"%@%@",_prefectureName,_cityName];
 }
 
 - (void)refresh{
-    location = [[CLLocation alloc]initWithLatitude:delegate.latitude longitude:delegate.longitude];
+    location = [[CLLocation alloc]initWithLatitude:delegate.myLatitude longitude:delegate.myLongitude];
 }
 
 - (void)locationManager:(CLLocationManager *)manager
@@ -70,16 +70,18 @@
            fromLocation:(CLLocation *)oldLocation {
     [self refresh];
     [self getLocationString];
-    delegate.latitude = [newLocation coordinate].latitude;
-    delegate.longitude = [newLocation coordinate].longitude;
-    if(_prefName != nil){
-        [delegate.locationSelectButton setTitle:[NSString stringWithFormat:@"%@%@",_prefName,_cityName]
+    delegate.myLatitude = [newLocation coordinate].latitude;
+    delegate.myLongitude = [newLocation coordinate].longitude;
+    if(_prefectureName != nil){
+        [delegate.locationSelectButton setTitle:[NSString stringWithFormat:@"%@%@",_prefectureName,_cityName]
                                        forState:UIControlStateNormal];
-        XML *xmlInstance = delegate.xmlInstance;
-        [xmlInstance refreshDictionary:_prefName];
+        XML *xmlInstance = delegate.sharedXmlInstance;
+        [xmlInstance refreshDictionary:_prefectureName];
         [xmlInstance refreshInfomation];
         [delegate.activityIndigator stopAnimating];
+        delegate.activityIndigator.hidden = YES;
         [((MainViewController*)delegate.mainViewController) refreshInfomation];
+        [locationManager stopUpdatingLocation];
     }
 }
 

@@ -15,16 +15,16 @@
 
 @interface GPS : NSObject<CLLocationManagerDelegate>
 
-@property NSString *prefName;
+@property NSString *prefectureName;
 @property NSString *cityName;
 @property CLLocationDegrees latitude;
 @property CLLocationDegrees longitude;
 
--(id)init;
--(Boolean)isGPSEnabled;
--(void)updateMyAddress;
--(NSString*)getLocationString;
--(void)refresh;
-+(GPS*)sharedManager;
+- (id)init;
+- (Boolean)isGPSEnabled;
+- (void)updateMyAddress;
+- (NSString*)getLocationString;
+- (void)refresh;
++ (GPS*)sharedManager;
 
 @end

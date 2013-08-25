@@ -14,8 +14,6 @@
 
 @implementation WeatherSendViewController{
     @private
-    UIColor *backgroundColor;
-    UIColor *buttonColor;
     UIColor *buttonTextColor;
     UIColor *selectedButtonTextColor;
 }
@@ -31,9 +29,6 @@ typedef enum WeatherStatus : NSInteger {
     self = [super initWithNibName:nibNameOrUIControlStateNormal bundle:nibBundleOrUIControlStateNormal];
     if (self) {
         // Custom initialization
-        backgroundColor = [UIColor blackColor];
-        buttonColor = [UIColor whiteColor];
-        buttonTextColor = [UIColor whiteColor];
         _isWithThunderBolt = NO;
         _isWithStrongWind = NO;
         _isWithSnow = NO;
@@ -66,7 +61,6 @@ typedef enum WeatherStatus : NSInteger {
 }
 
 - (IBAction)withThunderBoltButtonPushed:(id)sender {
-    
     if(_isWithThunderBolt){
         [_withThunderBoltButton setBackgroundColor:[UIColor whiteColor]];
         _isWithThunderBolt = NO;
@@ -113,15 +107,15 @@ typedef enum WeatherStatus : NSInteger {
 - (void)buttonColorChange:(WeatherStatus)button{
     if(button == SUNNY){
         [_sunnyButton setBackgroundColor:[UIColor colorWithRed:0.9f green:0.9f blue:0.4f alpha:1.0f]];
-        [_cloudyButton setBackgroundColor:buttonColor];
-        [_rainyButton setBackgroundColor:buttonColor];
+        [_cloudyButton setBackgroundColor:[UIColor whiteColor]];
+        [_rainyButton setBackgroundColor:[UIColor whiteColor]];
     }else if(button == CLOUDY){
-        [_sunnyButton setBackgroundColor:buttonColor];
+        [_sunnyButton setBackgroundColor:[UIColor whiteColor]];
         [_cloudyButton setBackgroundColor:[UIColor colorWithRed:0.5f green:0.5f blue:0.5f alpha:1.0f]];
-        [_rainyButton setBackgroundColor:buttonColor];
+        [_rainyButton setBackgroundColor:[UIColor whiteColor]];
     }else if(button == RAINY){
-        [_sunnyButton setBackgroundColor:buttonColor];
-        [_cloudyButton setBackgroundColor:buttonColor];
+        [_sunnyButton setBackgroundColor:[UIColor whiteColor]];
+        [_cloudyButton setBackgroundColor:[UIColor whiteColor]];
         [_rainyButton setBackgroundColor:[UIColor colorWithRed:0.4f green:0.6f blue:0.9f alpha:1.0f]];
     }
 }
