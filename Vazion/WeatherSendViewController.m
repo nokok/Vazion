@@ -13,7 +13,7 @@
 @end
 
 @implementation WeatherSendViewController{
-    @private
+@private
     UIColor *buttonTextColor;
     UIColor *selectedButtonTextColor;
 }
@@ -49,15 +49,22 @@ typedef enum WeatherStatus : NSInteger {
 }
 
 - (IBAction)sunnyButtonPushed:(id)sender {
-    [self buttonColorChange:SUNNY];
+    if(![_weather isEqualToString:@"S"]){
+        [self buttonColorChange:SUNNY];
+        _weather = @"S";
+    }else{
+        [self buttonColorReset];
+    }
 }
 
 - (IBAction)cloudyButtonPushed:(id)sender {
     [self buttonColorChange:CLOUDY];
+    _weather = @"C";
 }
 
 - (IBAction)rainyButtonPushed:(id)sender {
     [self buttonColorChange:RAINY];
+    _weather = @"R";
 }
 
 - (IBAction)withThunderBoltButtonPushed:(id)sender {
@@ -104,6 +111,28 @@ typedef enum WeatherStatus : NSInteger {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (IBAction)sendButtonPushed:(id)sender {
+    NSLog(@"sendButtonPushed Method Call");
+    AppDelegate *delegate = [[UIApplication sharedApplication]delegate];
+    
+    NSString *messageText = ([_textField.text isEqualToString:@""])?@"nocomment":_textField.text;
+    
+    NSString *requestURL = [NSString stringWithFormat:@"http://nokok.dip.jp/~noko/Weather.php?w=%@&sw=%d&th=%d&sn=%d&ms=%@&lat=%f&lon=%f"
+                            ,_weather
+                            ,_isWithStrongWind?1:0
+                            ,_isWithThunderBolt?1:0
+                            ,_isWithSnow?1:0
+                            ,messageText
+                            ,delegate.myLatitude
+                            ,delegate.myLongitude
+                            ];
+    
+    NSLog(@"%@",requestURL);
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:requestURL]];
+    NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+    NSLog(@"%@",responseData);
+}
+
 - (void)buttonColorChange:(WeatherStatus)button{
     if(button == SUNNY){
         [_sunnyButton setBackgroundColor:[UIColor colorWithRed:0.9f green:0.9f blue:0.4f alpha:1.0f]];
@@ -119,4 +148,12 @@ typedef enum WeatherStatus : NSInteger {
         [_rainyButton setBackgroundColor:[UIColor colorWithRed:0.4f green:0.6f blue:0.9f alpha:1.0f]];
     }
 }
+
+- (void)buttonColorReset{
+    [_sunnyButton setBackgroundColor:[UIColor whiteColor]];
+    [_cloudyButton setBackgroundColor:[UIColor whiteColor]];
+    [_rainyButton setBackgroundColor:[UIColor whiteColor]];
+    _weather = @"";
+}
+
 @end

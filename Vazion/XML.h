@@ -9,13 +9,14 @@
 #import <Foundation/Foundation.h>
 #import "XMLReader.h"
 #import "AppDelegate.h"
+#import "WeatherManager.h"
 
 @interface XML : NSObject
 
 @property NSString *prefectureName;
 @property NSDictionary *prefectureNameDictionary;
 -(id)init;
--(NSDictionary*)refreshDictionary:(NSString*)prefName;
+-(NSDictionary*)refreshDictionary:(NSString*)prefectureName;
 -(void)refreshInfomation;
 +(XML*)sharedManager;
 @end

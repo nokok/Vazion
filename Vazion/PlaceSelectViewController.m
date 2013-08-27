@@ -30,4 +30,8 @@
     }
 }
 
+- (IBAction)closeButtonPushed:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 @end

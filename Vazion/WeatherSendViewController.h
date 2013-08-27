@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
 
 @interface WeatherSendViewController : UIViewController
 @property Boolean isWithThunderBolt;
@@ -20,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *withStrongWindButton;
 @property (weak, nonatomic) IBOutlet UIButton *withSnowButton;
 @property (weak, nonatomic) IBOutlet UITextField *textField;
+@property NSString *weather;
 
 - (IBAction)sunnyButtonPushed:(id)sender;
 - (IBAction)cloudyButtonPushed:(id)sender;
@@ -29,5 +31,6 @@
 - (IBAction)didEndOnExit:(id)sender;
 - (IBAction)withSnowButtonPushed:(id)sender;
 - (IBAction)closeButtonPushed:(id)sender;
+- (IBAction)sendButtonPushed:(id)sender;
 
 @end

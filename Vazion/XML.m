@@ -26,7 +26,6 @@
     if(self){
         
         _prefectureName = @"";
-        
         _prefectureNameDictionary = @{
                         @"北海道":@"01.xml",
                         @"青森県":@"02.xml",
@@ -79,22 +78,23 @@
     return self;
 }
 
--(id)init{
+- (id)init{
     [self doesNotRecognizeSelector:_cmd];
     return nil;
 }
 
--(NSDictionary*)refreshDictionary:(NSString*)prefName{
-    prefName = prefName;
+- (NSDictionary*)refreshDictionary:(NSString*)prefectureName{
+    prefectureName = prefectureName;
     NSString *urlBase = @"http://www.drk7.jp/weather/xml/";
-    if(prefName != nil){
-        NSString *xmlName = [_prefectureNameDictionary objectForKey:prefName];
+    if(prefectureName != nil){
+        NSString *xmlName = [_prefectureNameDictionary objectForKey:prefectureName];
         if(xmlName != nil){
             NSString *url = [urlBase stringByAppendingString:xmlName];
             NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
             NSData *xmlData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
             NSError *error;
             parsedDictionary = [XMLReader dictionaryForXMLData:xmlData error:&error];
+            [[WeatherManager alloc]initWithDictionary:parsedDictionary];
         }
     }else{
         return nil;
@@ -102,7 +102,7 @@
     return parsedDictionary;
 }
 
--(void)refreshInfomation{
+- (void)refreshInfomation{
     [self refreshDictionary:_prefectureName];
     AppDelegate *delegate = [[UIApplication sharedApplication]delegate];
     NSArray *resultSet = [[[parsedDictionary objectForKey:@"weatherforecast"]objectForKey:@"pref"]objectForKey:@"area"];
@@ -110,5 +110,6 @@
     delegate.maxTemperature = [[[[[[[result objectForKey:@"info"]objectAtIndex:0] objectForKey:@"temperature"]objectForKey:@"range"]objectAtIndex:0]objectForKey:@"text"] intValue];
     delegate.minTemperature = [[[[[[[result objectForKey:@"info"]objectAtIndex:0] objectForKey:@"temperature"]objectForKey:@"range"]objectAtIndex:1]objectForKey:@"text"] intValue];
 }
+
 
 @end

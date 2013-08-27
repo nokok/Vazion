@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *textLabel;
 @property (weak, nonatomic) IBOutlet UIButton *searchButton;
 
--(IBAction)searchButtonPushed:(id)sender;
+- (IBAction)searchButtonPushed:(id)sender;
+- (IBAction)closeButtonPushed:(id)sender;
 
 @end

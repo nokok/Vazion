@@ -15,6 +15,7 @@
 		E359D1A517C9FDCE00F0722A /* sun.png in Resources */ = {isa = PBXBuildFile; fileRef = E359D1A117C9FDCE00F0722A /* sun.png */; };
 		E359D1A617C9FDCE00F0722A /* sunCloud.png in Resources */ = {isa = PBXBuildFile; fileRef = E359D1A217C9FDCE00F0722A /* sunCloud.png */; };
 		E359D1A917CA19D700F0722A /* Weather.m in Sources */ = {isa = PBXBuildFile; fileRef = E359D1A817CA19D700F0722A /* Weather.m */; };
+		E359D1B117CA5E9600F0722A /* WeatherManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E359D1B017CA5E9600F0722A /* WeatherManager.m */; };
 		E36911F717C60A0D00EC83B6 /* RankingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E36911F617C60A0D00EC83B6 /* RankingViewController.m */; };
 		E36911FA17C60A2A00EC83B6 /* PlaceSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E36911F917C60A2A00EC83B6 /* PlaceSelectViewController.m */; };
 		E36911FD17C60C4F00EC83B6 /* GPS.m in Sources */ = {isa = PBXBuildFile; fileRef = E36911FC17C60C4F00EC83B6 /* GPS.m */; };
@@ -48,6 +49,8 @@
 		E359D1A217C9FDCE00F0722A /* sunCloud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sunCloud.png; path = Resources/sunCloud.png; sourceTree = "<group>"; };
 		E359D1A717CA19D600F0722A /* Weather.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Weather.h; sourceTree = "<group>"; };
 		E359D1A817CA19D700F0722A /* Weather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Weather.m; sourceTree = "<group>"; };
+		E359D1AF17CA5E9600F0722A /* WeatherManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherManager.h; sourceTree = "<group>"; usesTabs = 0; };
+		E359D1B017CA5E9600F0722A /* WeatherManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherManager.m; sourceTree = "<group>"; };
 		E36911F517C60A0D00EC83B6 /* RankingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RankingViewController.h; sourceTree = "<group>"; };
 		E36911F617C60A0D00EC83B6 /* RankingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RankingViewController.m; sourceTree = "<group>"; };
 		E36911F817C60A2A00EC83B6 /* PlaceSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceSelectViewController.h; sourceTree = "<group>"; };
@@ -160,6 +163,8 @@
 				E3402F2417C7558E00B4318A /* XML.m */,
 				E359D1A717CA19D600F0722A /* Weather.h */,
 				E359D1A817CA19D700F0722A /* Weather.m */,
+				E359D1AF17CA5E9600F0722A /* WeatherManager.h */,
+				E359D1B017CA5E9600F0722A /* WeatherManager.m */,
 			);
 			path = Vazion;
 			sourceTree = "<group>";
@@ -260,6 +265,7 @@
 				E3402F2217C754B100B4318A /* XMLReader.m in Sources */,
 				E3402F2517C7558E00B4318A /* XML.m in Sources */,
 				E359D1A917CA19D700F0722A /* Weather.m in Sources */,
+				E359D1B117CA5E9600F0722A /* WeatherManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
