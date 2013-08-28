@@ -23,6 +23,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *toValue;
 @property (weak, nonatomic) IBOutlet UILabel *nextWeather;
 @property (weak, nonatomic) IBOutlet UIButton *enterSendViewButton;
+@property (weak, nonatomic) IBOutlet UIView *splashView;
+@property (weak, nonatomic) IBOutlet UIImageView *splashCompassIcon;
+@property (weak, nonatomic) IBOutlet UIImageView *splashSunIcon;
+@property (weak, nonatomic) IBOutlet UIImageView *splashCloudIcon;
+@property (weak, nonatomic) IBOutlet UIImageView *splashMoonIcon;
 
 -(void)refreshInfomation;
 @end

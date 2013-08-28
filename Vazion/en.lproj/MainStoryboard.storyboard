@@ -12,13 +12,12 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="QQT-lE-ZEF"/>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="agK-Z6-uah">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="U6g-Ea-uoo"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="取得中">
+                                <state key="normal" title="GPS Loading...">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -86,28 +85,52 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view autoresizesSubviews="NO" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="xl8-n7-a5f">
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="mobile.png" translatesAutoresizingMaskIntoConstraints="NO" id="pkS-kt-p7m"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="cloud.png" translatesAutoresizingMaskIntoConstraints="NO" id="2EU-dd-kJd"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="moon.png" translatesAutoresizingMaskIntoConstraints="NO" id="RHb-N0-cih"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="compass.png" translatesAutoresizingMaskIntoConstraints="NO" id="UTC-CV-LLf"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="sun.png" translatesAutoresizingMaskIntoConstraints="NO" id="qUH-d6-3pu"/>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="pkS-kt-p7m" firstAttribute="centerX" secondItem="xl8-n7-a5f" secondAttribute="centerX" type="default" id="Mha-FR-GLw"/>
+                                    <constraint firstItem="RHb-N0-cih" firstAttribute="trailing" secondItem="xl8-n7-a5f" secondAttribute="trailing" type="default" id="TNQ-8p-qJQ"/>
+                                    <constraint firstItem="UTC-CV-LLf" firstAttribute="leading" secondItem="pkS-kt-p7m" secondAttribute="leading" type="default" id="Y9z-Ht-NoH"/>
+                                    <constraint firstItem="RHb-N0-cih" firstAttribute="top" secondItem="pkS-kt-p7m" secondAttribute="top" type="default" id="YDo-UC-Tiz"/>
+                                    <constraint firstItem="qUH-d6-3pu" firstAttribute="top" secondItem="pkS-kt-p7m" secondAttribute="top" type="default" id="ZCV-Ha-MqI"/>
+                                    <constraint firstItem="2EU-dd-kJd" firstAttribute="leading" secondItem="pkS-kt-p7m" secondAttribute="leading" type="default" id="ilW-ni-pEO"/>
+                                    <constraint firstItem="pkS-kt-p7m" firstAttribute="centerY" secondItem="xl8-n7-a5f" secondAttribute="centerY" type="default" id="k4W-Bk-6Kh"/>
+                                    <constraint firstItem="qUH-d6-3pu" firstAttribute="leading" secondItem="xl8-n7-a5f" secondAttribute="leading" type="default" id="qPh-vi-uif"/>
+                                    <constraint firstItem="2EU-dd-kJd" firstAttribute="bottom" secondItem="xl8-n7-a5f" secondAttribute="bottom" type="default" id="wLl-gc-Xwf"/>
+                                    <constraint firstItem="UTC-CV-LLf" firstAttribute="top" secondItem="xl8-n7-a5f" secondAttribute="top" type="default" id="xrE-oN-MVc"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="sfD-HZ-dYK" firstAttribute="top" secondItem="7FI-I8-g5g" secondAttribute="top" type="default" id="1fF-J8-kB5"/>
                             <constraint firstItem="agK-Z6-uah" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="3gs-pv-hrh"/>
                             <constraint firstAttribute="bottom" secondItem="7FI-I8-g5g" secondAttribute="bottom" constant="64" id="5N1-7W-LY2"/>
                             <constraint firstItem="XmX-dI-PDo" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="6z7-d4-53B"/>
                             <constraint firstItem="7FI-I8-g5g" firstAttribute="baseline" secondItem="sfD-HZ-dYK" secondAttribute="baseline" type="default" id="8IQ-o9-Vc8"/>
-                            <constraint firstAttribute="bottom" secondItem="YUG-VA-2id" secondAttribute="bottom" constant="115" id="AwN-bN-MaB"/>
+                            <constraint firstItem="xl8-n7-a5f" firstAttribute="centerY" secondItem="3" secondAttribute="centerY" type="default" id="Ag2-95-yEg"/>
                             <constraint firstAttribute="trailing" secondItem="sfD-HZ-dYK" secondAttribute="trailing" constant="51" id="G6l-Cn-yXf"/>
+                            <constraint firstItem="Cjb-Ib-rPb" firstAttribute="centerX" secondItem="xl8-n7-a5f" secondAttribute="centerX" type="default" id="GEH-Us-ika"/>
                             <constraint firstAttribute="bottom" secondItem="Cjb-Ib-rPb" secondAttribute="bottom" constant="170" id="HZw-eH-cdY"/>
-                            <constraint firstItem="QQT-lE-ZEF" firstAttribute="centerX" secondItem="Cjb-Ib-rPb" secondAttribute="centerX" type="default" id="J4c-IH-y81"/>
+                            <constraint firstItem="sfD-HZ-dYK" firstAttribute="top" secondItem="7FI-I8-g5g" secondAttribute="top" type="default" id="Ha1-lg-1EE"/>
+                            <constraint firstItem="xl8-n7-a5f" firstAttribute="top" secondItem="3" secondAttribute="top" constant="150" id="Nhu-Ho-oiK"/>
+                            <constraint firstAttribute="bottom" secondItem="YUG-VA-2id" secondAttribute="bottom" constant="115" id="YfZ-nW-E4t"/>
                             <constraint firstItem="7FI-I8-g5g" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="51" id="Zoo-vh-gaa"/>
-                            <constraint firstItem="QQT-lE-ZEF" firstAttribute="top" secondItem="3" secondAttribute="top" constant="150" id="dWs-rX-eev"/>
+                            <constraint firstItem="xl8-n7-a5f" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="80" id="bOE-2q-Ftc"/>
                             <constraint firstItem="Cjb-Ib-rPb" firstAttribute="centerX" secondItem="YUG-VA-2id" secondAttribute="centerX" type="default" id="eGY-ns-mdy"/>
+                            <constraint firstItem="YUG-VA-2id" firstAttribute="centerX" secondItem="XmX-dI-PDo" secondAttribute="centerX" type="default" id="gJh-Hw-3s3"/>
                             <constraint firstItem="agK-Z6-uah" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="h2v-PW-8Po"/>
                             <constraint firstItem="phx-o0-PmI" firstAttribute="top" secondItem="3" secondAttribute="top" constant="39" id="hwb-bO-l7a"/>
                             <constraint firstItem="phx-o0-PmI" firstAttribute="centerX" secondItem="agK-Z6-uah" secondAttribute="centerX" type="default" id="kry-P1-dWV"/>
                             <constraint firstAttribute="bottom" secondItem="XmX-dI-PDo" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="qXt-Hf-xMb"/>
                             <constraint firstAttribute="trailing" secondItem="agK-Z6-uah" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="r7l-sY-wkG"/>
-                            <constraint firstItem="phx-o0-PmI" firstAttribute="centerX" secondItem="QQT-lE-ZEF" secondAttribute="centerX" type="default" id="rbn-WL-p3W"/>
                             <constraint firstAttribute="trailing" secondItem="XmX-dI-PDo" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="sOt-Ei-NCL"/>
                         </constraints>
                         <connections>
@@ -116,13 +139,17 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <outlet property="activityIndicator" destination="QQT-lE-ZEF" id="72O-Tp-bGg"/>
                         <outlet property="enterSendViewButton" destination="XmX-dI-PDo" id="jQ2-Qe-rzs"/>
                         <outlet property="locationSelectButton" destination="agK-Z6-uah" id="o8F-rG-aZi"/>
                         <outlet property="mainWeather" destination="phx-o0-PmI" id="USC-Qx-eMi"/>
                         <outlet property="maxTemperatureTextLabel" destination="7FI-I8-g5g" id="5iK-bh-oO9"/>
                         <outlet property="minTemperatureTextLabel" destination="sfD-HZ-dYK" id="Xcy-gt-I6g"/>
                         <outlet property="nextWeather" destination="YUG-VA-2id" id="iX3-sG-Lhj"/>
+                        <outlet property="splashCloudIcon" destination="2EU-dd-kJd" id="7sW-r2-ZFC"/>
+                        <outlet property="splashCompassIcon" destination="UTC-CV-LLf" id="RDp-nE-JwS"/>
+                        <outlet property="splashMoonIcon" destination="RHb-N0-cih" id="ggu-PO-j18"/>
+                        <outlet property="splashSunIcon" destination="qUH-d6-3pu" id="h2A-Z2-vcG"/>
+                        <outlet property="splashView" destination="xl8-n7-a5f" id="DUM-yX-sRg"/>
                         <outlet property="toValue" destination="Cjb-Ib-rPb" id="2Co-e4-LzQ"/>
                     </connections>
                 </viewController>
@@ -651,10 +678,81 @@
         </scene>
     </scenes>
     <resources>
+        <image name="cloud.png" width="32" height="32"/>
+        <image name="compass.png" width="32" height="32"/>
         <image name="location.png" width="25" height="25"/>
+        <image name="mobile.png" width="32" height="32"/>
+        <image name="moon.png" width="32" height="32"/>
+        <image name="sun.png" width="32" height="32"/>
         <image name="zoom-in.png" width="25" height="25"/>
         <image name="zoom-out.png" width="25" height="25"/>
     </resources>
+    <classes>
+        <class className="MainViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="enterSendViewButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="locationSelectButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="mainWeather" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="maxTemperatureTextLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="minTemperatureTextLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="nextWeather" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="splashCloudIcon" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="splashCompassIcon" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="splashMoonIcon" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="splashSunIcon" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="splashView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="toValue" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MapViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="closeButtonPushed:"/>
+                <relationship kind="action" name="showMyLocationButtonPushed:"/>
+                <relationship kind="action" name="zoomInButtonPushed:"/>
+                <relationship kind="action" name="zoomOutButtonPushed:"/>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="PlaceSelectViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PlaceSelectViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="closeButtonPushed:"/>
+                <relationship kind="action" name="searchButtonPushed:"/>
+                <relationship kind="outlet" name="addedListView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="searchButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="searchListView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="textLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="WeatherSendViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WeatherSendViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="closeButtonPushed:"/>
+                <relationship kind="action" name="cloudyButtonPushed:"/>
+                <relationship kind="action" name="rainyButtonPushed:"/>
+                <relationship kind="action" name="sendButtonPushed:"/>
+                <relationship kind="action" name="sunnyButtonPushed:"/>
+                <relationship kind="action" name="withSnowButtonPushed:"/>
+                <relationship kind="action" name="withStrongWindButtonPushed:"/>
+                <relationship kind="action" name="withThunderBoltButtonPushed:"/>
+                <relationship kind="outlet" name="closeButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="cloudyButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="rainyButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="sendButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="sunnyButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="view" candidateClass="UIView"/>
+                <relationship kind="outlet" name="withSnowButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="withStrongWindButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="withThunderBoltButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

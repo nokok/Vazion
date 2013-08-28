@@ -32,6 +32,12 @@
 		E3FD01F217CE162000C0E51E /* location.png in Resources */ = {isa = PBXBuildFile; fileRef = E3FD01F117CE162000C0E51E /* location.png */; };
 		E3FD01F517CE187200C0E51E /* zoom-in.png in Resources */ = {isa = PBXBuildFile; fileRef = E3FD01F317CE187200C0E51E /* zoom-in.png */; };
 		E3FD01F617CE187200C0E51E /* zoom-out.png in Resources */ = {isa = PBXBuildFile; fileRef = E3FD01F417CE187200C0E51E /* zoom-out.png */; };
+		E3FD01FC17CE1C4E00C0E51E /* cloud.png in Resources */ = {isa = PBXBuildFile; fileRef = E3FD01F717CE1C4E00C0E51E /* cloud.png */; };
+		E3FD01FD17CE1C4E00C0E51E /* compass.png in Resources */ = {isa = PBXBuildFile; fileRef = E3FD01F817CE1C4E00C0E51E /* compass.png */; };
+		E3FD01FE17CE1C4E00C0E51E /* mobile.png in Resources */ = {isa = PBXBuildFile; fileRef = E3FD01F917CE1C4E00C0E51E /* mobile.png */; };
+		E3FD01FF17CE1C4E00C0E51E /* moon.png in Resources */ = {isa = PBXBuildFile; fileRef = E3FD01FA17CE1C4E00C0E51E /* moon.png */; };
+		E3FD020017CE1C4E00C0E51E /* sun.png in Resources */ = {isa = PBXBuildFile; fileRef = E3FD01FB17CE1C4E00C0E51E /* sun.png */; };
+		E3FD020217CE203C00C0E51E /* transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = E3FD020117CE203C00C0E51E /* transparent.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +80,12 @@
 		E3FD01F117CE162000C0E51E /* location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = location.png; path = Resources/location.png; sourceTree = "<group>"; };
 		E3FD01F317CE187200C0E51E /* zoom-in.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "zoom-in.png"; path = "Resources/zoom-in.png"; sourceTree = "<group>"; };
 		E3FD01F417CE187200C0E51E /* zoom-out.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "zoom-out.png"; path = "Resources/zoom-out.png"; sourceTree = "<group>"; };
+		E3FD01F717CE1C4E00C0E51E /* cloud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cloud.png; path = Resources/cloud.png; sourceTree = "<group>"; };
+		E3FD01F817CE1C4E00C0E51E /* compass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = compass.png; path = Resources/compass.png; sourceTree = "<group>"; };
+		E3FD01F917CE1C4E00C0E51E /* mobile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mobile.png; path = Resources/mobile.png; sourceTree = "<group>"; };
+		E3FD01FA17CE1C4E00C0E51E /* moon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = moon.png; path = Resources/moon.png; sourceTree = "<group>"; };
+		E3FD01FB17CE1C4E00C0E51E /* sun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sun.png; path = Resources/sun.png; sourceTree = "<group>"; };
+		E3FD020117CE203C00C0E51E /* transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = transparent.png; path = Resources/transparent.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +107,12 @@
 		E3C1EA0B17C74A0C001242D0 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				E3FD020117CE203C00C0E51E /* transparent.png */,
+				E3FD01F717CE1C4E00C0E51E /* cloud.png */,
+				E3FD01F817CE1C4E00C0E51E /* compass.png */,
+				E3FD01F917CE1C4E00C0E51E /* mobile.png */,
+				E3FD01FA17CE1C4E00C0E51E /* moon.png */,
+				E3FD01FB17CE1C4E00C0E51E /* sun.png */,
 				E3FD01F317CE187200C0E51E /* zoom-in.png */,
 				E3FD01F417CE187200C0E51E /* zoom-out.png */,
 				E3FD01F117CE162000C0E51E /* location.png */,
@@ -236,6 +254,12 @@
 				E3FD01F217CE162000C0E51E /* location.png in Resources */,
 				E3FD01F517CE187200C0E51E /* zoom-in.png in Resources */,
 				E3FD01F617CE187200C0E51E /* zoom-out.png in Resources */,
+				E3FD01FC17CE1C4E00C0E51E /* cloud.png in Resources */,
+				E3FD01FD17CE1C4E00C0E51E /* compass.png in Resources */,
+				E3FD01FE17CE1C4E00C0E51E /* mobile.png in Resources */,
+				E3FD01FF17CE1C4E00C0E51E /* moon.png in Resources */,
+				E3FD020017CE1C4E00C0E51E /* sun.png in Resources */,
+				E3FD020217CE203C00C0E51E /* transparent.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

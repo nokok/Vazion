@@ -27,6 +27,40 @@
         delegate.mainViewController = self;
         delegate.locationSelectButton = _locationSelectButton;
         delegate.activityIndigator = _activityIndicator;
+        _splashSunIcon.animationImages = [NSArray arrayWithObjects:
+                                          [UIImage imageNamed:@"sun.png"],
+                                          [UIImage imageNamed:@"transparent.png"],
+                                          [UIImage imageNamed:@"transparent.png"],
+                                          [UIImage imageNamed:@"transparent.png"],
+                                          nil];
+        _splashCompassIcon.animationImages = [NSArray arrayWithObjects:
+                                          [UIImage imageNamed:@"transparent.png"],
+                                          [UIImage imageNamed:@"compass.png"],
+                                          [UIImage imageNamed:@"transparent.png"],
+                                          [UIImage imageNamed:@"transparent.png"],
+                                          nil];
+        _splashMoonIcon.animationImages = [NSArray arrayWithObjects:
+                                          [UIImage imageNamed:@"transparent.png"],
+                                          [UIImage imageNamed:@"transparent.png"],
+                                          [UIImage imageNamed:@"moon.png"],
+                                          [UIImage imageNamed:@"transparent.png"],
+                                          nil];
+        _splashCloudIcon.animationImages = [NSArray arrayWithObjects:
+                                          [UIImage imageNamed:@"transparent.png"],
+                                          [UIImage imageNamed:@"transparent.png"],
+                                          [UIImage imageNamed:@"transparent.png"],
+                                          [UIImage imageNamed:@"cloud.png"],
+                                          nil];
+        float duration = 1.5f;
+        _splashSunIcon.animationDuration = duration;
+        _splashCompassIcon.animationDuration = duration;
+        _splashMoonIcon.animationDuration = duration;
+        _splashCloudIcon.animationDuration = duration;
+        
+        [_splashSunIcon startAnimating];
+        [_splashCompassIcon startAnimating];
+        [_splashMoonIcon startAnimating];
+        [_splashCloudIcon startAnimating];
         gps = [GPS sharedManager];
         if([gps isGPSEnabled]){
             [gps refresh];
@@ -41,6 +75,8 @@
         //[gps refresh];
     }
 }
+
+
 
 - (void)viewWillAppear:(BOOL)animated{
     xmlInstance = delegate.sharedXmlInstance;
@@ -58,21 +94,17 @@
 }
 
 -(void)refreshInfomation{
-    //[_maxTemperatureTextLabel setText:[NSString stringWithFormat:@"%d",delegate.maxTemperature]];
-    //[_minTemperatureTextLabel setText:[NSString stringWithFormat:@"%d",delegate.minTemperature]];
     [_maxTemperatureTextLabel setText:[NSString stringWithFormat:@"%d", delegate.myWeather.maxTemperator]];
     [_minTemperatureTextLabel setText:[NSString stringWithFormat:@"%d", delegate.myWeather.minTemperator]];
-    //NSLog(@"main:%@ to:%@ next:%@",delegate.myWeather.mainWeather,delegate.myWeather.toValue,delegate.myWeather.nextWeather);
-    /*
-    if([delegate.myWeather.toValue isEqualToString:@""] && [delegate.myWeather.nextWeather isEqualToString:@""]){
-        CGPoint point = CGPointMake(0, 30);
-        _mainWeather.frame.origin = CGPointMake(_mainWeather.frame.origin.x,_mainWeather.frame.origin.y +50);
-    }
-     */
     _enterSendViewButton.hidden = NO;
     [_mainWeather setText:delegate.myWeather.mainWeather];
     [_toValue setText:delegate.myWeather.toValue];
     [_nextWeather setText:delegate.myWeather.nextWeather];
+    _splashView.hidden = YES;
+    [_splashSunIcon stopAnimating];
+    [_splashCloudIcon stopAnimating];
+    [_splashMoonIcon stopAnimating];
+    [_splashCompassIcon stopAnimating];
 }
 
 @end
