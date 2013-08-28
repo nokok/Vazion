@@ -126,6 +126,7 @@ typedef enum WeatherStatus : NSInteger {
                             ,delegate.myLatitude
                             ,delegate.myLongitude
                             ];
+    
     requestURL = [requestURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSLog(@"%@",requestURL);
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:requestURL]];

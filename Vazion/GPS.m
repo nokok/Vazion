@@ -82,7 +82,6 @@
         [delegate.activityIndigator stopAnimating];
         delegate.activityIndigator.hidden = YES;
         [((MainViewController*)delegate.mainViewController) refreshInfomation];
-        [locationManager stopUpdatingLocation];
     }
 }
 
