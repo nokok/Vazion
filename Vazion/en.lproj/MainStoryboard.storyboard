@@ -463,7 +463,6 @@
                                         </state>
                                         <connections>
                                             <action selector="sunnyButtonPushed:" destination="wsW-uy-dqk" eventType="touchDown" id="DUb-DS-J0e"/>
-                                            <action selector="sunnyButtonPushed:" destination="wsW-uy-dqk" eventType="touchDownRepeat" id="Ogn-wu-iCg"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r4i-Sm-kYa">
@@ -479,7 +478,6 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="cloudyButtonPushed:" destination="wsW-uy-dqk" eventType="touchDownRepeat" id="Dpf-bq-mxR"/>
                                             <action selector="cloudyButtonPushed:" destination="wsW-uy-dqk" eventType="touchDown" id="vP1-Nb-3a1"/>
                                         </connections>
                                     </button>
@@ -497,7 +495,6 @@
                                         </state>
                                         <connections>
                                             <action selector="rainyButtonPushed:" destination="wsW-uy-dqk" eventType="touchDown" id="FCy-Qv-uvD"/>
-                                            <action selector="rainyButtonPushed:" destination="wsW-uy-dqk" eventType="touchDownRepeat" id="sle-fl-SZJ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fHy-aO-P67">

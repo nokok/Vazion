@@ -32,9 +32,63 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    NSString *url = @"http://nokok.dip.jp/~noko/Get.php";
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
+    
+    NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+    
+    NSString *responseString = [[NSString alloc]initWithData:responseData encoding:NSUTF8StringEncoding];
+    
+    NSMutableArray *resultSet = [[NSMutableArray alloc] initWithArray:[responseString componentsSeparatedByString:@"<br>"]];
+    [resultSet removeLastObject];
+    NSMutableArray *weatherInfoArray;
+    NSLog(@"items:%@",[resultSet description]);
+    
+    for(NSString *result in resultSet){
+        NSArray *separatedResult = [result componentsSeparatedByString:@","];
+        WeatherInfo *weatherInfo = [[WeatherInfo alloc]init];
+        weatherInfo.latitude = [[separatedResult objectAtIndex:0]doubleValue];
+        weatherInfo.longitude = [[separatedResult objectAtIndex:1]doubleValue];
+        weatherInfo.weather = (WeatherStatus)[[separatedResult objectAtIndex:2]intValue];
+        weatherInfo.isWithThunderbolt = [[separatedResult objectAtIndex:3]boolValue];
+        weatherInfo.isWithStrongWind = [[separatedResult objectAtIndex:4]boolValue];
+        weatherInfo.isWithSnow = [[separatedResult objectAtIndex:5]boolValue];
+        weatherInfo.timestamp = [separatedResult objectAtIndex:6];
+        [weatherInfoArray addObject:weatherInfo];
+        CustomAnnotation *annotation = [[CustomAnnotation alloc]init];
+        annotation.coordinate = CLLocationCoordinate2DMake(weatherInfo.latitude, weatherInfo.longitude);
+        
+        switch ((int)weatherInfo.weather) {
+            case SUNNY:
+                annotation.title = @"晴れです";
+                break;
+            case CLOUDY:
+                annotation.title = @"くもりです";
+                break;
+            case RAINY:
+                annotation.title = @"雨です";
+                break;
+            default:
+                annotation.title = @"天気が入力されていません";
+                break;
+        }
+        if(weatherInfo.isWithThunderbolt){
+            annotation.subtitle = @"落雷";
+        }
+        if(weatherInfo.isWithStrongWind){
+            annotation.subtitle = [NSString stringWithFormat:@"%@ %@",annotation.subtitle,@"強風"];
+        }
+        if(weatherInfo.isWithSnow){
+            annotation.subtitle = [NSString stringWithFormat:@"%@ %@",annotation.subtitle,@"降雪"];
+        }
+        [_mapView addAnnotation:annotation];
+    }
+    
+    NSLog(@"data:%@",[resultSet description]);
+    
     delegate = [[UIApplication sharedApplication]delegate];
     _mapView.mapType = MKMapTypeStandard;
-    NSLog(@"%f,%f",delegate.myLatitude,delegate.myLongitude);
     coordinate = CLLocationCoordinate2DMake(delegate.myLatitude ,delegate.myLongitude);
     [_mapView setCenterCoordinate:coordinate animated:YES];
     span = MKCoordinateSpanMake(0.5, 0.5);
@@ -62,17 +116,11 @@
 
 - (IBAction)zoomOutButtonPushed:(id)sender {
     @try {
-        NSLog(@"1");
         span.latitudeDelta = span.latitudeDelta * 2.0;
-        NSLog(@"2");
         span.longitudeDelta = span.longitudeDelta * 2.0;
-        NSLog(@"3");
         coordinate = _mapView.centerCoordinate;
-        NSLog(@"4");
         region = MKCoordinateRegionMake(coordinate,span);
-        NSLog(@"5");
         [_mapView setRegion:region animated:YES];
-        NSLog(@"6");
     }
     @catch (NSException *exception) {
         

@@ -20,13 +20,7 @@
     UIColor *selectedButtonColor;
 }
 
-typedef enum WeatherStatus : NSInteger {
-    SUNNY,
-    CLOUDY,
-    RAINY,
-} WeatherStatus;
-
-- (id)initWithNibName:(NSString *)nibNameOrUIControlStateNormal bundle:(NSBundle *)nibBundleOrUIControlStateNormal
+-(id)initWithNibName:(NSString *)nibNameOrUIControlStateNormal bundle:(NSBundle *)nibBundleOrUIControlStateNormal
 {
     self = [super initWithNibName:nibNameOrUIControlStateNormal bundle:nibBundleOrUIControlStateNormal];
     if (self) {
@@ -38,6 +32,7 @@ typedef enum WeatherStatus : NSInteger {
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    _weather = UNDEFINED;
     defaultButtonColor = [UIColor colorWithRed:0.95f green:0.95f blue:0.95f alpha:1.0f];
     white = [UIColor whiteColor];
     black = [UIColor blackColor];
@@ -55,30 +50,29 @@ typedef enum WeatherStatus : NSInteger {
 }
 
 - (IBAction)sunnyButtonPushed:(id)sender {
-    if(![_weather isEqualToString:@"S"]){
+    if(_weather != SUNNY){
         [self buttonColorChange:SUNNY];
-        _weather = @"S";
+        _weather = SUNNY;
     }else{
-        [self buttonColorReset];
-        _weather = @"";
+        [self buttonReset];
     }
 }
 
 - (IBAction)cloudyButtonPushed:(id)sender {
-    if(![_weather isEqualToString:@"C"]){
+    if(_weather != CLOUDY){
         [self buttonColorChange:CLOUDY];
-        _weather = @"C";
+        _weather = CLOUDY;
     }else{
-        _weather = @"";
+        [self buttonReset];
     }
 }
 
 - (IBAction)rainyButtonPushed:(id)sender {
-    if(![_weather isEqualToString:@"R"]){
+    if(_weather != RAINY){
         [self buttonColorChange:RAINY];
-        _weather = @"R";
+        _weather = RAINY;
     }else{
-        _weather = @"";
+        [self buttonReset];
     }
 }
 
@@ -120,25 +114,24 @@ typedef enum WeatherStatus : NSInteger {
     NSLog(@"sendButtonPushed Method Call");
     AppDelegate *delegate = [[UIApplication sharedApplication]delegate];
     
-    NSString *requestURL = [NSString stringWithFormat:@"http://nokok.dip.jp/~noko/Weather.php?w=%@&sw=%d&th=%d&sn=%d&ms=%@&lat=%f&lon=%f"
+    NSString *requestURL = [NSString stringWithFormat:@"http://nokok.dip.jp/~noko/Weather.php?w=%d&sw=%d&th=%d&sn=%d&lat=%f&lon=%f"
                             ,_weather
                             ,_isWithStrongWind?1:0
                             ,_isWithThunderBolt?1:0
                             ,_isWithSnow?1:0
-                            ,@""
                             ,delegate.myLatitude
                             ,delegate.myLongitude
                             ];
     
     requestURL = [requestURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    NSLog(@"%@",requestURL);
+    NSLog(@"url:%@",requestURL);
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:requestURL]];
     NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
-    NSLog(@"%@",responseData);
-    [_sendButton setTitle:@"投票完了!" forState:UIControlStateNormal]  ;
+    NSLog(@"data:%@",responseData);
+    [_sendButton setTitle:@"投票完了!" forState:UIControlStateNormal];
     [_sendButton setBackgroundColor:[UIColor colorWithRed:0.3f green:0.3f blue:0.6f alpha:1.0f]];
     [_closeButton setBackgroundColor:[UIColor colorWithRed:0.6f green:0.3f blue:0.3f alpha:1.0f]];
-    [self buttonColorReset];
+    [self buttonReset];
 }
 
 - (void)buttonColorChange:(WeatherStatus)button{
@@ -157,11 +150,11 @@ typedef enum WeatherStatus : NSInteger {
     }
 }
 
-- (void)buttonColorReset{
+- (void)buttonReset{
     [_sunnyButton setBackgroundColor:defaultButtonColor];
     [_cloudyButton setBackgroundColor:defaultButtonColor];
     [_rainyButton setBackgroundColor:defaultButtonColor];
-    _weather = @"";
+    _weather = UNDEFINED;
 }
 
 @end

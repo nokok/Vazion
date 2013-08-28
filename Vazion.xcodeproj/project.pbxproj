@@ -12,6 +12,8 @@
 		E348569E17C5A45700A13026 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E348569D17C5A45700A13026 /* MapViewController.m */; };
 		E359D1A917CA19D700F0722A /* Weather.m in Sources */ = {isa = PBXBuildFile; fileRef = E359D1A817CA19D700F0722A /* Weather.m */; };
 		E359D1B117CA5E9600F0722A /* WeatherManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E359D1B017CA5E9600F0722A /* WeatherManager.m */; };
+		E36661D217CE718300FC8E3C /* WeatherInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E36661D117CE718300FC8E3C /* WeatherInfo.m */; };
+		E36661D517CE786900FC8E3C /* CustomAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = E36661D417CE786900FC8E3C /* CustomAnnotation.m */; };
 		E36911F717C60A0D00EC83B6 /* RankingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E36911F617C60A0D00EC83B6 /* RankingViewController.m */; };
 		E36911FA17C60A2A00EC83B6 /* PlaceSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E36911F917C60A2A00EC83B6 /* PlaceSelectViewController.m */; };
 		E36911FD17C60C4F00EC83B6 /* GPS.m in Sources */ = {isa = PBXBuildFile; fileRef = E36911FC17C60C4F00EC83B6 /* GPS.m */; };
@@ -51,6 +53,10 @@
 		E359D1A817CA19D700F0722A /* Weather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Weather.m; sourceTree = "<group>"; };
 		E359D1AF17CA5E9600F0722A /* WeatherManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherManager.h; sourceTree = "<group>"; usesTabs = 0; };
 		E359D1B017CA5E9600F0722A /* WeatherManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherManager.m; sourceTree = "<group>"; };
+		E36661D017CE718300FC8E3C /* WeatherInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherInfo.h; sourceTree = "<group>"; };
+		E36661D117CE718300FC8E3C /* WeatherInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherInfo.m; sourceTree = "<group>"; };
+		E36661D317CE786900FC8E3C /* CustomAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAnnotation.h; sourceTree = "<group>"; };
+		E36661D417CE786900FC8E3C /* CustomAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomAnnotation.m; sourceTree = "<group>"; };
 		E36911F517C60A0D00EC83B6 /* RankingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RankingViewController.h; sourceTree = "<group>"; };
 		E36911F617C60A0D00EC83B6 /* RankingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RankingViewController.m; sourceTree = "<group>"; };
 		E36911F817C60A2A00EC83B6 /* PlaceSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceSelectViewController.h; sourceTree = "<group>"; };
@@ -177,6 +183,10 @@
 				E359D1A817CA19D700F0722A /* Weather.m */,
 				E359D1AF17CA5E9600F0722A /* WeatherManager.h */,
 				E359D1B017CA5E9600F0722A /* WeatherManager.m */,
+				E36661D017CE718300FC8E3C /* WeatherInfo.h */,
+				E36661D117CE718300FC8E3C /* WeatherInfo.m */,
+				E36661D317CE786900FC8E3C /* CustomAnnotation.h */,
+				E36661D417CE786900FC8E3C /* CustomAnnotation.m */,
 			);
 			path = Vazion;
 			sourceTree = "<group>";
@@ -282,6 +292,8 @@
 				E3402F2517C7558E00B4318A /* XML.m in Sources */,
 				E359D1A917CA19D700F0722A /* Weather.m in Sources */,
 				E359D1B117CA5E9600F0722A /* WeatherManager.m in Sources */,
+				E36661D217CE718300FC8E3C /* WeatherInfo.m in Sources */,
+				E36661D517CE786900FC8E3C /* CustomAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

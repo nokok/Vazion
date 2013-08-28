@@ -9,6 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
 
+typedef enum WeatherStatus : NSInteger {
+    UNDEFINED = 0,
+    SUNNY = 1,
+    CLOUDY = 2,
+    RAINY = 3,
+} WeatherStatus;
+
 @interface WeatherSendViewController : UIViewController
 @property Boolean isWithThunderBolt;
 @property Boolean isWithStrongWind;
@@ -20,7 +27,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *withThunderBoltButton;
 @property (weak, nonatomic) IBOutlet UIButton *withStrongWindButton;
 @property (weak, nonatomic) IBOutlet UIButton *withSnowButton;
-@property NSString *weather;
+@property WeatherStatus weather;
 @property (weak, nonatomic) IBOutlet UIButton *sendButton;
 @property (weak, nonatomic) IBOutlet UIButton *closeButton;
 

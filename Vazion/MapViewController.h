@@ -10,6 +10,8 @@
 #import <MapKit/MapKit.h>
 #import "AppDelegate.h"
 #import "GPS.h"
+#import "WeatherInfo.h"
+#import "CustomAnnotation.h"
 
 @interface MapViewController : UIViewController
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
