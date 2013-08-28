@@ -20,15 +20,15 @@
 @property (weak, nonatomic) IBOutlet UIButton *withThunderBoltButton;
 @property (weak, nonatomic) IBOutlet UIButton *withStrongWindButton;
 @property (weak, nonatomic) IBOutlet UIButton *withSnowButton;
-@property (weak, nonatomic) IBOutlet UITextField *textField;
 @property NSString *weather;
+@property (weak, nonatomic) IBOutlet UIButton *sendButton;
+@property (weak, nonatomic) IBOutlet UIButton *closeButton;
 
 - (IBAction)sunnyButtonPushed:(id)sender;
 - (IBAction)cloudyButtonPushed:(id)sender;
 - (IBAction)rainyButtonPushed:(id)sender;
 - (IBAction)withThunderBoltButtonPushed:(id)sender;
 - (IBAction)withStrongWindButtonPushed:(id)sender;
-- (IBAction)didEndOnExit:(id)sender;
 - (IBAction)withSnowButtonPushed:(id)sender;
 - (IBAction)closeButtonPushed:(id)sender;
 - (IBAction)sendButtonPushed:(id)sender;

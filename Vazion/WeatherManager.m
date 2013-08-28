@@ -46,9 +46,6 @@
                                             objectAtIndex:0]
                                            objectForKey:@"weather"]
                                           objectForKey:@"text"];
-            
-            NSLog(@"%@",plainWeatherText); //晴れ時々くもり
-            plainWeatherText = @"晴れ山沿い雷雨";
             plainWeatherText = [plainWeatherText stringByReplacingOccurrencesOfString:@"朝の内" withString:@""];
             plainWeatherText = [plainWeatherText stringByReplacingOccurrencesOfString:@"で雷を伴う" withString:@"と雷"];
             plainWeatherText = [plainWeatherText stringByReplacingOccurrencesOfString:@"朝夕" withString:@""];

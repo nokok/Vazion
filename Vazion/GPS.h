@@ -12,6 +12,7 @@
 #import "MainViewController.h"
 #import "AppDelegate.h"
 #import "XML.h"
+#import "GPS.h"
 
 @interface GPS : NSObject<CLLocationManagerDelegate>
 

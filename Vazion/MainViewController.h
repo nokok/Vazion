@@ -22,6 +22,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *toValue;
 @property (weak, nonatomic) IBOutlet UILabel *nextWeather;
+@property (weak, nonatomic) IBOutlet UIButton *enterSendViewButton;
 
 -(void)refreshInfomation;
 @end

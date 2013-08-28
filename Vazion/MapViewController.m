@@ -12,14 +12,18 @@
 
 @end
 
-@implementation MapViewController
+@implementation MapViewController{
+    CLLocationCoordinate2D coordinate;
+    MKCoordinateSpan span;
+    MKCoordinateRegion region;
+    AppDelegate *delegate;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        _mapView.mapType = MKMapTypeStandard;
     }
     return self;
 }
@@ -28,6 +32,17 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    delegate = [[UIApplication sharedApplication]delegate];
+    _mapView.mapType = MKMapTypeStandard;
+    NSLog(@"%f,%f",delegate.myLatitude,delegate.myLongitude);
+    coordinate = CLLocationCoordinate2DMake(delegate.myLatitude ,delegate.myLongitude);
+    [_mapView setCenterCoordinate:coordinate animated:YES];
+    span = MKCoordinateSpanMake(0.5, 0.5);
+    region = MKCoordinateRegionMake(coordinate, span);
+    region.span.latitudeDelta = 0.5;
+    region.span.longitudeDelta = 0.5;
+    [_mapView setRegion:region animated:YES];
+    _mapView.showsUserLocation = YES;
 }
 
 - (void)didReceiveMemoryWarning
@@ -37,9 +52,31 @@
 }
 
 - (IBAction)showMyLocationButtonPushed:(id)sender {
+    [_mapView setCenterCoordinate:coordinate animated:YES];
 }
 
 - (IBAction)closeButtonPushed:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+- (IBAction)zoomOutButtonPushed:(id)sender {
+    span.latitudeDelta = span.latitudeDelta * 2.0;
+    span.longitudeDelta = span.longitudeDelta * 2.0;
+    coordinate = _mapView.centerCoordinate;
+    region = MKCoordinateRegionMake(coordinate,span);
+    [_mapView setRegion:region animated:YES];
+}
+
+- (IBAction)zoomInButtonPushed:(id)sender {
+    span.latitudeDelta = span.latitudeDelta * 0.4;
+    span.longitudeDelta = span.longitudeDelta * 0.4;
+    coordinate = _mapView.centerCoordinate;
+    region = MKCoordinateRegionMake(coordinate,span);
+    [_mapView setRegion:region animated:YES];
+}
+
+-(void)setCenterCoordinate:(CLLocationCoordinate2D)coordinate animated:(BOOL)animated{
+    
+}
+
 @end
