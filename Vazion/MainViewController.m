@@ -63,6 +63,12 @@
     [_maxTemperatureTextLabel setText:[NSString stringWithFormat:@"%d", delegate.myWeather.maxTemperator]];
     [_minTemperatureTextLabel setText:[NSString stringWithFormat:@"%d", delegate.myWeather.minTemperator]];
     NSLog(@"main:%@ to:%@ next:%@",delegate.myWeather.mainWeather,delegate.myWeather.toValue,delegate.myWeather.nextWeather);
+    /*
+    if([delegate.myWeather.toValue isEqualToString:@""] && [delegate.myWeather.nextWeather isEqualToString:@""]){
+        CGPoint point = CGPointMake(0, 30);
+        _mainWeather.frame.origin = CGPointMake(_mainWeather.frame.origin.x,_mainWeather.frame.origin.y +50);
+    }
+     */
     [_mainWeather setText:delegate.myWeather.mainWeather];
     [_toValue setText:delegate.myWeather.toValue];
     [_nextWeather setText:delegate.myWeather.nextWeather];
