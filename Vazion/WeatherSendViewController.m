@@ -15,6 +15,9 @@
 @implementation WeatherSendViewController{
 @private
     UIColor *defaultButtonColor;
+    UIColor *white;
+    UIColor *black;
+    UIColor *selectedButtonColor;
 }
 
 typedef enum WeatherStatus : NSInteger {
@@ -28,13 +31,6 @@ typedef enum WeatherStatus : NSInteger {
     self = [super initWithNibName:nibNameOrUIControlStateNormal bundle:nibBundleOrUIControlStateNormal];
     if (self) {
         // Custom initialization
-        defaultButtonColor = [UIColor colorWithRed:0.95f green:0.95f blue:0.95f alpha:1.0f];
-        [_sunnyButton setBackgroundColor:defaultButtonColor];
-        [_closeButton setBackgroundColor:defaultButtonColor];
-        [_rainyButton setBackgroundColor:defaultButtonColor];
-        _isWithThunderBolt = NO;
-        _isWithStrongWind = NO;
-        _isWithSnow = NO;
     }
     return self;
 }
@@ -42,6 +38,13 @@ typedef enum WeatherStatus : NSInteger {
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    defaultButtonColor = [UIColor colorWithRed:0.95f green:0.95f blue:0.95f alpha:1.0f];
+    white = [UIColor whiteColor];
+    black = [UIColor blackColor];
+    selectedButtonColor = [UIColor colorWithRed:0.5f green:0.5f blue:0.5f alpha:1.0f];
+    _isWithThunderBolt = NO;
+    _isWithStrongWind = NO;
+    _isWithSnow = NO;
 	// Do any additional setup after loading the view.
 }
 
@@ -57,51 +60,54 @@ typedef enum WeatherStatus : NSInteger {
         _weather = @"S";
     }else{
         [self buttonColorReset];
+        _weather = @"";
     }
 }
 
 - (IBAction)cloudyButtonPushed:(id)sender {
-    [self buttonColorChange:CLOUDY];
-    _weather = @"C";
+    if(![_weather isEqualToString:@"C"]){
+        [self buttonColorChange:CLOUDY];
+        _weather = @"C";
+    }else{
+        _weather = @"";
+    }
 }
 
 - (IBAction)rainyButtonPushed:(id)sender {
-    [self buttonColorChange:RAINY];
-    _weather = @"R";
+    if(![_weather isEqualToString:@"R"]){
+        [self buttonColorChange:RAINY];
+        _weather = @"R";
+    }else{
+        _weather = @"";
+    }
 }
 
 - (IBAction)withThunderBoltButtonPushed:(id)sender {
     if(_isWithThunderBolt){
-        [_withThunderBoltButton setBackgroundColor:[UIColor whiteColor]];
+        [_withThunderBoltButton setBackgroundColor:defaultButtonColor];
         _isWithThunderBolt = NO;
-        [_withThunderBoltButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     }else{
-        [_withThunderBoltButton setBackgroundColor:[UIColor blackColor]];
+        [_withThunderBoltButton setBackgroundColor:selectedButtonColor];
         _isWithThunderBolt = YES;
-        [_withThunderBoltButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     }
 }
 
 - (IBAction)withStrongWindButtonPushed:(id)sender {
     if(_isWithStrongWind){
-        [_withStrongWindButton setBackgroundColor:[UIColor whiteColor]];
+        [_withStrongWindButton setBackgroundColor:defaultButtonColor];
         _isWithStrongWind = NO;
-        [_withStrongWindButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     }else{
-        [_withStrongWindButton setBackgroundColor:[UIColor blackColor]];
+        [_withStrongWindButton setBackgroundColor:selectedButtonColor];
         _isWithStrongWind = YES;
-        [_withStrongWindButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     }
 }
 
 - (IBAction)withSnowButtonPushed:(id)sender {
     if(_isWithSnow){
-        [_withSnowButton setBackgroundColor:[UIColor whiteColor]];
-        [_withSnowButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [_withSnowButton setBackgroundColor:defaultButtonColor];
         _isWithSnow = NO;
     }else{
-        [_withSnowButton setBackgroundColor:[UIColor blackColor]];
-        [_withSnowButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [_withSnowButton setBackgroundColor:selectedButtonColor];
         _isWithSnow = YES;
     }
 }
@@ -113,7 +119,7 @@ typedef enum WeatherStatus : NSInteger {
 - (IBAction)sendButtonPushed:(id)sender {
     NSLog(@"sendButtonPushed Method Call");
     AppDelegate *delegate = [[UIApplication sharedApplication]delegate];
-
+    
     NSString *requestURL = [NSString stringWithFormat:@"http://nokok.dip.jp/~noko/Weather.php?w=%@&sw=%d&th=%d&sn=%d&ms=%@&lat=%f&lon=%f"
                             ,_weather
                             ,_isWithStrongWind?1:0
@@ -138,23 +144,23 @@ typedef enum WeatherStatus : NSInteger {
 - (void)buttonColorChange:(WeatherStatus)button{
     if(button == SUNNY){
         [_sunnyButton setBackgroundColor:[UIColor colorWithRed:0.9f green:0.9f blue:0.4f alpha:1.0f]];
-        [_cloudyButton setBackgroundColor:[UIColor whiteColor]];
-        [_rainyButton setBackgroundColor:[UIColor whiteColor]];
+        [_cloudyButton setBackgroundColor:defaultButtonColor];
+        [_rainyButton setBackgroundColor:defaultButtonColor];
     }else if(button == CLOUDY){
-        [_sunnyButton setBackgroundColor:[UIColor whiteColor]];
+        [_sunnyButton setBackgroundColor:defaultButtonColor];
         [_cloudyButton setBackgroundColor:[UIColor colorWithRed:0.8f green:0.8f blue:0.8f alpha:1.0f]];
-        [_rainyButton setBackgroundColor:[UIColor whiteColor]];
+        [_rainyButton setBackgroundColor:defaultButtonColor];
     }else if(button == RAINY){
-        [_sunnyButton setBackgroundColor:[UIColor whiteColor]];
-        [_cloudyButton setBackgroundColor:[UIColor whiteColor]];
+        [_sunnyButton setBackgroundColor:defaultButtonColor];
+        [_cloudyButton setBackgroundColor:defaultButtonColor];
         [_rainyButton setBackgroundColor:[UIColor colorWithRed:0.4f green:0.6f blue:0.9f alpha:1.0f]];
     }
 }
 
 - (void)buttonColorReset{
-    [_sunnyButton setBackgroundColor:[UIColor whiteColor]];
-    [_cloudyButton setBackgroundColor:[UIColor whiteColor]];
-    [_rainyButton setBackgroundColor:[UIColor whiteColor]];
+    [_sunnyButton setBackgroundColor:defaultButtonColor];
+    [_cloudyButton setBackgroundColor:defaultButtonColor];
+    [_rainyButton setBackgroundColor:defaultButtonColor];
     _weather = @"";
 }
 

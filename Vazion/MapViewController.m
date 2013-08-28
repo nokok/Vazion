@@ -52,6 +52,7 @@
 }
 
 - (IBAction)showMyLocationButtonPushed:(id)sender {
+    coordinate = CLLocationCoordinate2DMake(delegate.myLatitude ,delegate.myLongitude);
     [_mapView setCenterCoordinate:coordinate animated:YES];
 }
 
@@ -60,11 +61,22 @@
 }
 
 - (IBAction)zoomOutButtonPushed:(id)sender {
-    span.latitudeDelta = span.latitudeDelta * 2.0;
-    span.longitudeDelta = span.longitudeDelta * 2.0;
-    coordinate = _mapView.centerCoordinate;
-    region = MKCoordinateRegionMake(coordinate,span);
-    [_mapView setRegion:region animated:YES];
+    @try {
+        NSLog(@"1");
+        span.latitudeDelta = span.latitudeDelta * 2.0;
+        NSLog(@"2");
+        span.longitudeDelta = span.longitudeDelta * 2.0;
+        NSLog(@"3");
+        coordinate = _mapView.centerCoordinate;
+        NSLog(@"4");
+        region = MKCoordinateRegionMake(coordinate,span);
+        NSLog(@"5");
+        [_mapView setRegion:region animated:YES];
+        NSLog(@"6");
+    }
+    @catch (NSException *exception) {
+        
+    }
 }
 
 - (IBAction)zoomInButtonPushed:(id)sender {
