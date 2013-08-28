@@ -18,7 +18,10 @@
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property IBOutlet UIButton *locationSelectButton;
 @property Boolean isInitialized;
+@property (weak, nonatomic) IBOutlet UILabel *mainWeather;
+
+@property (weak, nonatomic) IBOutlet UILabel *toValue;
+@property (weak, nonatomic) IBOutlet UILabel *nextWeather;
 
 -(void)refreshInfomation;
-
 @end

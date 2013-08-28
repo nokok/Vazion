@@ -70,6 +70,7 @@
            fromLocation:(CLLocation *)oldLocation {
     [self refresh];
     [self getLocationString];
+    NSLog(@"GPS get");
     delegate.myLatitude = [newLocation coordinate].latitude;
     delegate.myLongitude = [newLocation coordinate].longitude;
     if(_prefectureName != nil){

@@ -62,7 +62,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="QQT-lE-ZEF"/>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="雨" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="phx-o0-PmI">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="雨" textAlignment="center" lineBreakMode="tailTruncation" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="phx-o0-PmI">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="176" id="MUl-5y-tTS"/>
                                 </constraints>
@@ -114,8 +114,11 @@
                     <connections>
                         <outlet property="activityIndicator" destination="QQT-lE-ZEF" id="72O-Tp-bGg"/>
                         <outlet property="locationSelectButton" destination="agK-Z6-uah" id="o8F-rG-aZi"/>
+                        <outlet property="mainWeather" destination="phx-o0-PmI" id="USC-Qx-eMi"/>
                         <outlet property="maxTemperatureTextLabel" destination="7FI-I8-g5g" id="5iK-bh-oO9"/>
                         <outlet property="minTemperatureTextLabel" destination="sfD-HZ-dYK" id="Xcy-gt-I6g"/>
+                        <outlet property="nextWeather" destination="YUG-VA-2id" id="iX3-sG-Lhj"/>
+                        <outlet property="toValue" destination="Cjb-Ib-rPb" id="2Co-e4-LzQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
@@ -259,13 +262,52 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="xDo-L8-JFI"/>
+                            <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1fc-pp-Cls">
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="iLm-fP-stY"/>
+                                    <constraint firstAttribute="width" constant="73" id="kJF-OC-xNw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="閉じる">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeButtonPushed:" destination="wsW-uy-dqk" eventType="touchUpInside" id="Ifx-RL-ImS"/>
+                                    <action selector="closeButtonPushed:" destination="L0j-JY-0nw" eventType="touchUpInside" id="szI-1A-wvG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" alpha="0.69999998807907104" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dlX-PA-7fG">
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="73" id="r4Z-9K-AZ8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="現在地">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showMyLocationButtonPushed:" destination="L0j-JY-0nw" eventType="touchUpInside" id="x1b-cF-6Zt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="xDo-L8-JFI" firstAttribute="bottom" secondItem="s85-wT-pFz" secondAttribute="bottom" type="default" id="046-eP-fjF"/>
                             <constraint firstItem="xDo-L8-JFI" firstAttribute="leading" secondItem="s85-wT-pFz" secondAttribute="leading" type="default" id="2Tl-DZ-Nx7"/>
                             <constraint firstItem="xDo-L8-JFI" firstAttribute="trailing" secondItem="s85-wT-pFz" secondAttribute="trailing" type="default" id="AdA-k0-Vhi"/>
+                            <constraint firstItem="dlX-PA-7fG" firstAttribute="top" secondItem="s85-wT-pFz" secondAttribute="top" constant="20" symbolic="YES" type="default" id="GZ9-5h-YUs"/>
+                            <constraint firstItem="dlX-PA-7fG" firstAttribute="leading" secondItem="1fc-pp-Cls" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="GzR-RA-flY"/>
+                            <constraint firstItem="1fc-pp-Cls" firstAttribute="leading" secondItem="s85-wT-pFz" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="UKE-hc-lTg"/>
                             <constraint firstItem="xDo-L8-JFI" firstAttribute="top" secondItem="s85-wT-pFz" secondAttribute="top" type="default" id="WVk-1T-bzD"/>
+                            <constraint firstItem="1fc-pp-Cls" firstAttribute="top" secondItem="s85-wT-pFz" secondAttribute="top" constant="20" symbolic="YES" type="default" id="Yz5-4u-uv3"/>
+                            <constraint firstItem="dlX-PA-7fG" firstAttribute="bottom" secondItem="1fc-pp-Cls" secondAttribute="bottom" type="default" id="yya-TG-UmM"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
@@ -441,7 +483,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="9GY-Qc-fLf" kind="modal" id="dKA-5C-dix"/>
+                                            <segue destination="L0j-JY-0nw" kind="modal" id="5si-qE-OwE"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i44-cX-GIm">
@@ -461,40 +503,43 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="VoM-0R-hnf" firstAttribute="leading" secondItem="M1o-QY-qgm" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="2Pj-0Q-XDU"/>
-                                    <constraint firstItem="r4i-Sm-kYa" firstAttribute="trailing" secondItem="Ahm-Lo-q4Q" secondAttribute="trailing" type="default" id="2sq-ef-WBG"/>
-                                    <constraint firstItem="mib-MZ-EBS" firstAttribute="trailing" secondItem="r4i-Sm-kYa" secondAttribute="trailing" type="default" id="580-f4-We5"/>
-                                    <constraint firstAttribute="bottom" secondItem="i44-cX-GIm" secondAttribute="bottom" constant="133" id="5Xy-NH-9r5"/>
+                                    <constraint firstAttribute="trailing" secondItem="cFh-FB-ARF" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="4rB-bq-ZaG"/>
+                                    <constraint firstAttribute="trailing" secondItem="i44-cX-GIm" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="5gU-K2-RSk"/>
+                                    <constraint firstItem="fHy-aO-P67" firstAttribute="baseline" secondItem="MBN-8q-x2b" secondAttribute="baseline" type="default" id="6zz-eG-xQa"/>
                                     <constraint firstItem="i44-cX-GIm" firstAttribute="top" secondItem="KC1-f4-qGQ" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="70f-ZI-FYj"/>
                                     <constraint firstItem="3zh-Oc-zmu" firstAttribute="top" secondItem="fHy-aO-P67" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="7bG-dW-gz5"/>
                                     <constraint firstItem="GjM-0a-yg8" firstAttribute="centerX" secondItem="Ahm-Lo-q4Q" secondAttribute="centerX" type="default" id="7yE-V1-Z3w"/>
                                     <constraint firstItem="KC1-f4-qGQ" firstAttribute="trailing" secondItem="cFh-FB-ARF" secondAttribute="trailing" type="default" id="AOh-1h-WZQ"/>
                                     <constraint firstItem="48b-wL-tMc" firstAttribute="trailing" secondItem="GjM-0a-yg8" secondAttribute="trailing" type="default" id="AiU-y3-KBP"/>
+                                    <constraint firstItem="cFh-FB-ARF" firstAttribute="centerX" secondItem="M1o-QY-qgm" secondAttribute="centerX" type="default" id="BkC-mU-DcK"/>
                                     <constraint firstItem="Ahm-Lo-q4Q" firstAttribute="top" secondItem="VoM-0R-hnf" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="DCf-ns-uDm"/>
-                                    <constraint firstItem="mib-MZ-EBS" firstAttribute="trailing" secondItem="MBN-8q-x2b" secondAttribute="trailing" type="default" id="I09-yM-l6k"/>
+                                    <constraint firstAttribute="trailing" secondItem="MBN-8q-x2b" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Iq8-es-sbe"/>
+                                    <constraint firstItem="fHy-aO-P67" firstAttribute="baseline" secondItem="48b-wL-tMc" secondAttribute="baseline" type="default" id="J2k-Pg-Lai"/>
+                                    <constraint firstItem="48b-wL-tMc" firstAttribute="baseline" secondItem="MBN-8q-x2b" secondAttribute="baseline" type="default" id="LRU-Xf-UUY"/>
                                     <constraint firstItem="KC1-f4-qGQ" firstAttribute="top" secondItem="M1o-QY-qgm" secondAttribute="top" constant="319" id="LS5-vy-eTU"/>
                                     <constraint firstItem="mib-MZ-EBS" firstAttribute="top" secondItem="r4i-Sm-kYa" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="LhE-XI-Vu5"/>
-                                    <constraint firstAttribute="trailing" secondItem="Ahm-Lo-q4Q" secondAttribute="trailing" constant="19" id="Qac-IE-u9g"/>
-                                    <constraint firstItem="cFh-FB-ARF" firstAttribute="trailing" secondItem="3zh-Oc-zmu" secondAttribute="trailing" type="default" id="Qrd-YZ-ROh"/>
                                     <constraint firstItem="fHy-aO-P67" firstAttribute="centerX" secondItem="VoM-0R-hnf" secondAttribute="centerX" type="default" id="RFo-yZ-XHU"/>
                                     <constraint firstItem="MBN-8q-x2b" firstAttribute="top" secondItem="mib-MZ-EBS" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="U0M-k1-NsQ"/>
                                     <constraint firstItem="GjM-0a-yg8" firstAttribute="top" secondItem="M1o-QY-qgm" secondAttribute="top" constant="24" id="UPe-Ey-qnt"/>
                                     <constraint firstItem="cFh-FB-ARF" firstAttribute="top" secondItem="3zh-Oc-zmu" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="UQT-fB-jwJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="3zh-Oc-zmu" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="bQa-vv-MXx"/>
                                     <constraint firstItem="VoM-0R-hnf" firstAttribute="top" secondItem="M1o-QY-qgm" secondAttribute="top" constant="20" symbolic="YES" type="default" id="cMP-o3-6BT"/>
                                     <constraint firstItem="fHy-aO-P67" firstAttribute="top" secondItem="mib-MZ-EBS" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="cbt-IG-ifW"/>
                                     <constraint firstItem="r4i-Sm-kYa" firstAttribute="leading" secondItem="M1o-QY-qgm" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="dj7-W9-9jk"/>
+                                    <constraint firstAttribute="trailing" secondItem="mib-MZ-EBS" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="f2h-A1-Twa"/>
                                     <constraint firstItem="48b-wL-tMc" firstAttribute="leading" secondItem="GjM-0a-yg8" secondAttribute="leading" type="default" id="ff9-05-icj"/>
+                                    <constraint firstAttribute="trailing" secondItem="r4i-Sm-kYa" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="ggp-ON-zt3"/>
                                     <constraint firstItem="r4i-Sm-kYa" firstAttribute="top" secondItem="Ahm-Lo-q4Q" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="heb-kH-2V0"/>
                                     <constraint firstItem="3zh-Oc-zmu" firstAttribute="leading" secondItem="M1o-QY-qgm" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="jSF-1t-4P7"/>
                                     <constraint firstItem="i44-cX-GIm" firstAttribute="leading" secondItem="M1o-QY-qgm" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="kAs-gB-w3b"/>
                                     <constraint firstItem="mib-MZ-EBS" firstAttribute="leading" secondItem="M1o-QY-qgm" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="lzj-ur-ZQZ"/>
-                                    <constraint firstItem="KC1-f4-qGQ" firstAttribute="trailing" secondItem="i44-cX-GIm" secondAttribute="trailing" type="default" id="nLU-Qf-b0z"/>
+                                    <constraint firstAttribute="bottom" secondItem="i44-cX-GIm" secondAttribute="bottom" constant="45" id="mEs-LH-4TZ"/>
                                     <constraint firstItem="cFh-FB-ARF" firstAttribute="leading" secondItem="M1o-QY-qgm" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="ntb-Pg-Bq1"/>
                                     <constraint firstItem="3zh-Oc-zmu" firstAttribute="top" secondItem="MBN-8q-x2b" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="oWF-rN-XYI"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ahm-Lo-q4Q" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="u6Z-E4-oZb"/>
                                     <constraint firstItem="48b-wL-tMc" firstAttribute="top" secondItem="mib-MZ-EBS" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="v35-Yq-pDc"/>
-                                    <constraint firstItem="3zh-Oc-zmu" firstAttribute="trailing" secondItem="MBN-8q-x2b" secondAttribute="trailing" type="default" id="vDx-sW-WFF"/>
                                     <constraint firstItem="Ahm-Lo-q4Q" firstAttribute="leading" secondItem="M1o-QY-qgm" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="vkD-r3-tIy"/>
                                     <constraint firstItem="3zh-Oc-zmu" firstAttribute="top" secondItem="48b-wL-tMc" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="wYd-tT-ZOE"/>
-                                    <constraint firstItem="Ahm-Lo-q4Q" firstAttribute="centerX" secondItem="M1o-QY-qgm" secondAttribute="centerX" type="default" id="wfL-E7-aFJ"/>
                                     <constraint firstItem="KC1-f4-qGQ" firstAttribute="leading" secondItem="M1o-QY-qgm" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="zgN-sf-shZ"/>
                                 </constraints>
                             </scrollView>
@@ -525,36 +570,6 @@
             </objects>
             <point key="canvasLocation" x="721" y="33"/>
         </scene>
-        <!--Ranking View Controller-->
-        <scene sceneID="az5-ei-rak">
-            <objects>
-                <tableViewController id="9GY-Qc-fLf" customClass="RankingViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="3NG-qY-GyD">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="aFL-Q8-zEj">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="9GY-Qc-fLf" id="oOq-Rs-E4F"/>
-                            <outlet property="delegate" destination="9GY-Qc-fLf" id="EuZ-DT-VfN"/>
-                        </connections>
-                    </tableView>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="enX-rX-yhI" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1156" y="33"/>
-        </scene>
     </scenes>
     <classes>
         <class className="MainViewController" superclassName="UIViewController">
@@ -562,13 +577,18 @@
             <relationships>
                 <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
                 <relationship kind="outlet" name="locationSelectButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="mainWeather" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="maxTemperatureTextLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="minTemperatureTextLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="nextWeather" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="toValue" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="MapViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
             <relationships>
+                <relationship kind="action" name="closeButtonPushed:"/>
+                <relationship kind="action" name="showMyLocationButtonPushed:"/>
                 <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
             </relationships>
         </class>
@@ -585,9 +605,6 @@
                 <relationship kind="outlet" name="searchListView" candidateClass="UITableView"/>
                 <relationship kind="outlet" name="textLabel" candidateClass="UILabel"/>
             </relationships>
-        </class>
-        <class className="RankingViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RankingViewController.h"/>
         </class>
         <class className="WeatherSendViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WeatherSendViewController.h"/>

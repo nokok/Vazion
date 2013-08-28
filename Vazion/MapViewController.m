@@ -36,4 +36,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)showMyLocationButtonPushed:(id)sender {
+}
+
+- (IBAction)closeButtonPushed:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end

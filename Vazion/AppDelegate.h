@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import "XML.h"
+#import "Weather.h"
+#import "WeatherManager.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -21,4 +23,5 @@
 @property CLLocationDegrees myLatitude;
 @property CLLocationDegrees myLongitude;
 @property id sharedXmlInstance;
+@property Weather *myWeather;
 @end

@@ -38,7 +38,7 @@
         delegate.mainViewController = self;
         _isInitialized = NO;
     }else{
-        
+        //[gps refresh];
     }
 }
 
@@ -58,8 +58,14 @@
 }
 
 -(void)refreshInfomation{
-    [_maxTemperatureTextLabel setText:[NSString stringWithFormat:@"%d",delegate.maxTemperature]];
-    [_minTemperatureTextLabel setText:[NSString stringWithFormat:@"%d",delegate.minTemperature]];
+    //[_maxTemperatureTextLabel setText:[NSString stringWithFormat:@"%d",delegate.maxTemperature]];
+    //[_minTemperatureTextLabel setText:[NSString stringWithFormat:@"%d",delegate.minTemperature]];
+    [_maxTemperatureTextLabel setText:[NSString stringWithFormat:@"%d", delegate.myWeather.maxTemperator]];
+    [_minTemperatureTextLabel setText:[NSString stringWithFormat:@"%d", delegate.myWeather.minTemperator]];
+    NSLog(@"main:%@ to:%@ next:%@",delegate.myWeather.mainWeather,delegate.myWeather.toValue,delegate.myWeather.nextWeather);
+    [_mainWeather setText:delegate.myWeather.mainWeather];
+    [_toValue setText:delegate.myWeather.toValue];
+    [_nextWeather setText:delegate.myWeather.nextWeather];
 }
 
 @end

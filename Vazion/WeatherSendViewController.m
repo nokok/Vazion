@@ -115,18 +115,18 @@ typedef enum WeatherStatus : NSInteger {
     NSLog(@"sendButtonPushed Method Call");
     AppDelegate *delegate = [[UIApplication sharedApplication]delegate];
     
-    NSString *messageText = ([_textField.text isEqualToString:@""])?@"nocomment":_textField.text;
+    //NSString *messageText = ([_textField.text isEqualToString:nil])?@"nocomment":_textField.text;
     
     NSString *requestURL = [NSString stringWithFormat:@"http://nokok.dip.jp/~noko/Weather.php?w=%@&sw=%d&th=%d&sn=%d&ms=%@&lat=%f&lon=%f"
                             ,_weather
                             ,_isWithStrongWind?1:0
                             ,_isWithThunderBolt?1:0
                             ,_isWithSnow?1:0
-                            ,messageText
+                            ,@""
                             ,delegate.myLatitude
                             ,delegate.myLongitude
                             ];
-    
+    requestURL = [requestURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSLog(@"%@",requestURL);
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:requestURL]];
     NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];

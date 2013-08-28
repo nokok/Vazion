@@ -12,4 +12,7 @@
 @interface MapViewController : UIViewController
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
+- (IBAction)showMyLocationButtonPushed:(id)sender;
+- (IBAction)closeButtonPushed:(id)sender;
+
 @end

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Weather.h"
+#import "AppDelegate.h"
 
 @interface WeatherManager : NSObject
 
