@@ -41,6 +41,8 @@
 		E3C501BA17C48EB5004ADE4D /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3C501B917C48EB5004ADE4D /* MainViewController.m */; };
 		E3C501C117C48EE3004ADE4D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3C501C017C48EE3004ADE4D /* MapKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		E3D75D3D17C4EDCF0055148F /* WeatherSendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D75D3C17C4EDCF0055148F /* WeatherSendViewController.m */; };
+		E3DBD2AB17CF70CA00E44A51 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E3DBD2AA17CF70CA00E44A51 /* icon.png */; };
+		E3DBD2AE17CF773600E44A51 /* SharedInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = E3DBD2AD17CF773500E44A51 /* SharedInstance.m */; };
 		E3FD01F217CE162000C0E51E /* location.png in Resources */ = {isa = PBXBuildFile; fileRef = E3FD01F117CE162000C0E51E /* location.png */; };
 		E3FD01F517CE187200C0E51E /* zoom-in.png in Resources */ = {isa = PBXBuildFile; fileRef = E3FD01F317CE187200C0E51E /* zoom-in.png */; };
 		E3FD01F617CE187200C0E51E /* zoom-out.png in Resources */ = {isa = PBXBuildFile; fileRef = E3FD01F417CE187200C0E51E /* zoom-out.png */; };
@@ -104,6 +106,10 @@
 		E3C501C017C48EE3004ADE4D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		E3D75D3B17C4EDCF0055148F /* WeatherSendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherSendViewController.h; sourceTree = "<group>"; };
 		E3D75D3C17C4EDCF0055148F /* WeatherSendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherSendViewController.m; sourceTree = "<group>"; };
+		E3DBD2A917CF5B1300E44A51 /* Vazion.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Vazion.entitlements; sourceTree = "<group>"; };
+		E3DBD2AA17CF70CA00E44A51 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../icon.png; sourceTree = "<group>"; };
+		E3DBD2AC17CF773500E44A51 /* SharedInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedInstance.h; sourceTree = "<group>"; };
+		E3DBD2AD17CF773500E44A51 /* SharedInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedInstance.m; sourceTree = "<group>"; };
 		E3FD01F117CE162000C0E51E /* location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = location.png; path = Resources/location.png; sourceTree = "<group>"; };
 		E3FD01F317CE187200C0E51E /* zoom-in.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "zoom-in.png"; path = "Resources/zoom-in.png"; sourceTree = "<group>"; };
 		E3FD01F417CE187200C0E51E /* zoom-out.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "zoom-out.png"; path = "Resources/zoom-out.png"; sourceTree = "<group>"; };
@@ -134,6 +140,7 @@
 		E3C1EA0B17C74A0C001242D0 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				E3DBD2AA17CF70CA00E44A51 /* icon.png */,
 				E390FA9217CF3F2C00C7150C /* cloud_color.png */,
 				E390FA9317CF3F2D00C7150C /* sun_color.png */,
 				E390FA9417CF3F2D00C7150C /* umbrella_color.png */,
@@ -188,6 +195,7 @@
 		E3C501A317C48EB5004ADE4D /* Vazion */ = {
 			isa = PBXGroup;
 			children = (
+				E3DBD2A917CF5B1300E44A51 /* Vazion.entitlements */,
 				E3C1EA0B17C74A0C001242D0 /* Resource */,
 				E3C501AC17C48EB5004ADE4D /* AppDelegate.h */,
 				E3C501AD17C48EB5004ADE4D /* AppDelegate.m */,
@@ -219,6 +227,8 @@
 				E36661D417CE786900FC8E3C /* CustomAnnotation.m */,
 				E390FA8317CED79A00C7150C /* YahooAPI.h */,
 				E390FA8417CED79A00C7150C /* YahooAPI.m */,
+				E3DBD2AC17CF773500E44A51 /* SharedInstance.h */,
+				E3DBD2AD17CF773500E44A51 /* SharedInstance.m */,
 			);
 			path = Vazion;
 			sourceTree = "<group>";
@@ -311,6 +321,7 @@
 				E390FA9517CF3F2D00C7150C /* cloud_color.png in Resources */,
 				E390FA9617CF3F2D00C7150C /* sun_color.png in Resources */,
 				E390FA9717CF3F2D00C7150C /* umbrella_color.png in Resources */,
+				E3DBD2AB17CF70CA00E44A51 /* icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,6 +347,7 @@
 				E36661D217CE718300FC8E3C /* WeatherInfo.m in Sources */,
 				E36661D517CE786900FC8E3C /* CustomAnnotation.m in Sources */,
 				E390FA8517CED79A00C7150C /* YahooAPI.m in Sources */,
+				E3DBD2AE17CF773600E44A51 /* SharedInstance.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

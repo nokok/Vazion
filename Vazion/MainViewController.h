@@ -12,9 +12,10 @@
 #import "AppDelegate.h"
 #import "WeatherInfo.h"
 #import "CustomAnnotation.h"
+#import "SharedInstance.h"
+@interface MainViewController : UIViewController <MKAnnotation, MKMapViewDelegate>
 
-@interface MainViewController : UIViewController
-
+@property (weak, nonatomic) IBOutlet UIButton *closeButton;
 @property (weak, nonatomic) IBOutlet UILabel *maxTemperatureTextLabel;
 @property (weak, nonatomic) IBOutlet UILabel *minTemperatureTextLabel;
 @property IBOutlet UIButton *gpsRefreshButton;
@@ -28,8 +29,16 @@
 @property (weak, nonatomic) IBOutlet UIImageView *splashSunIcon;
 @property (weak, nonatomic) IBOutlet UIImageView *splashCloudIcon;
 @property (weak, nonatomic) IBOutlet UIImageView *splashMoonIcon;
+@property (weak, nonatomic) IBOutlet UIView *mainView;
+@property (weak, nonatomic) IBOutlet UIButton *zoomOutButton;
+@property (weak, nonatomic) IBOutlet UIButton *zoomInButton;
+@property (weak, nonatomic) IBOutlet UIButton *showMyLocationButton;
 @property (weak, nonatomic) IBOutlet MKMapView *overlayedMapView;
-
+- (IBAction)enterDetailViewButtonPushed:(id)sender;
+- (IBAction)showMyLocationButtonPushed:(id)sender;
+- (IBAction)zoomOutButtonPushed:(id)sender;
+- (IBAction)zoomInButtonPushed:(id)sender;
 - (IBAction)gpsRefreshButtonLongPushed:(id)sender;
 - (IBAction)refreshInfomation;
+- (IBAction)closeButtonPushed:(id)sender;
 @end

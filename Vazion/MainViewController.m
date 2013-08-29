@@ -27,62 +27,57 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    if(!_isInitialized){
-        delegate = [[UIApplication sharedApplication]delegate];
-        delegate.mainViewController = self;
-        delegate.locationSelectButton = _gpsRefreshButton;
-        if([[UIScreen mainScreen] applicationFrame].size.height < 528){
-            _splashView.frame = CGRectMake(160, 230, 160, 160);
-        }else{
-            _splashView.frame = CGRectMake(160, 230, 160, 150);
-        }
-        _splashSunIcon.animationImages = [NSArray arrayWithObjects:
-                                          [UIImage imageNamed:@"sun.png"],
+    if(_isInitialized)
+        return;
+        
+    delegate = [[UIApplication sharedApplication]delegate];
+    delegate.mainViewController = self;
+    delegate.locationSelectButton = _gpsRefreshButton;
+    _splashSunIcon.animationImages = [NSArray arrayWithObjects:
+                                      [UIImage imageNamed:@"sun.png"],
+                                      [UIImage imageNamed:@"transparent.png"],
+                                      [UIImage imageNamed:@"transparent.png"],
+                                      [UIImage imageNamed:@"transparent.png"],
+                                      nil];
+    _splashCompassIcon.animationImages = [NSArray arrayWithObjects:
                                           [UIImage imageNamed:@"transparent.png"],
+                                          [UIImage imageNamed:@"compass.png"],
                                           [UIImage imageNamed:@"transparent.png"],
                                           [UIImage imageNamed:@"transparent.png"],
                                           nil];
-        _splashCompassIcon.animationImages = [NSArray arrayWithObjects:
-                                              [UIImage imageNamed:@"transparent.png"],
-                                              [UIImage imageNamed:@"compass.png"],
-                                              [UIImage imageNamed:@"transparent.png"],
-                                              [UIImage imageNamed:@"transparent.png"],
-                                              nil];
-        _splashMoonIcon.animationImages = [NSArray arrayWithObjects:
-                                           [UIImage imageNamed:@"transparent.png"],
-                                           [UIImage imageNamed:@"transparent.png"],
-                                           [UIImage imageNamed:@"moon.png"],
-                                           [UIImage imageNamed:@"transparent.png"],
-                                           nil];
-        _splashCloudIcon.animationImages = [NSArray arrayWithObjects:
-                                            [UIImage imageNamed:@"transparent.png"],
-                                            [UIImage imageNamed:@"transparent.png"],
-                                            [UIImage imageNamed:@"transparent.png"],
-                                            [UIImage imageNamed:@"cloud.png"],
-                                            nil];
-        float duration = 1.5f;
-        _splashSunIcon.animationDuration = duration;
-        _splashCompassIcon.animationDuration = duration;
-        _splashMoonIcon.animationDuration = duration;
-        _splashCloudIcon.animationDuration = duration;
-        
-        [_splashSunIcon startAnimating];
-        [_splashCompassIcon startAnimating];
-        [_splashMoonIcon startAnimating];
-        [_splashCloudIcon startAnimating];
-        gps = [GPS sharedManager];
-        if([gps isGPSEnabled]){
-            [gps refresh];
-            [gps updateMyAddress];
-        }else{
-            
-        }
-        delegate.sharedXmlInstance = [DrkAPI sharedManager];
-        delegate.mainViewController = self;
-        _isInitialized = NO;
+    _splashMoonIcon.animationImages = [NSArray arrayWithObjects:
+                                       [UIImage imageNamed:@"transparent.png"],
+                                       [UIImage imageNamed:@"transparent.png"],
+                                       [UIImage imageNamed:@"moon.png"],
+                                       [UIImage imageNamed:@"transparent.png"],
+                                       nil];
+    _splashCloudIcon.animationImages = [NSArray arrayWithObjects:
+                                        [UIImage imageNamed:@"transparent.png"],
+                                        [UIImage imageNamed:@"transparent.png"],
+                                        [UIImage imageNamed:@"transparent.png"],
+                                        [UIImage imageNamed:@"cloud.png"],
+                                        nil];
+    float duration = 1.5f;
+    _splashSunIcon.animationDuration = duration;
+    _splashCompassIcon.animationDuration = duration;
+    _splashMoonIcon.animationDuration = duration;
+    _splashCloudIcon.animationDuration = duration;
+    
+    [_splashSunIcon startAnimating];
+    [_splashCompassIcon startAnimating];
+    [_splashMoonIcon startAnimating];
+    [_splashCloudIcon startAnimating];
+    gps = [GPS sharedManager];
+    if([gps isGPSEnabled]){
+        [gps refresh];
+        [gps updateMyAddress];
     }else{
-        //[gps refresh];
+        
     }
+    delegate.sharedXmlInstance = [DrkAPI sharedManager];
+    delegate.mainViewController = self;
+    _isInitialized = NO;
+    
 }
 
 -(void)mapInitialize{
@@ -97,7 +92,6 @@
     NSMutableArray *resultSet = [[NSMutableArray alloc] initWithArray:[responseString componentsSeparatedByString:@"<br>"]];
     [resultSet removeLastObject];
     NSMutableArray *weatherInfoArray;
-    NSLog(@"items:%@",[resultSet description]);
     
     for(NSString *result in resultSet){
         NSArray *separatedResult = [result componentsSeparatedByString:@","];
@@ -158,6 +152,9 @@
     region.span.longitudeDelta = 0.2;
     [_overlayedMapView setRegion:region animated:YES];
     _overlayedMapView.showsUserLocation = YES;
+    SharedInstance *sharedInstance = [SharedInstance sharedManager];
+    
+    sharedInstance.sharedMapView = _overlayedMapView;
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -179,7 +176,6 @@
     if(nil == annotationView){
         annotationView = [[MKAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:identifier];
     }
-    NSLog(@"%@",[image autorelease);
     UIImageView *imageView = [[UIImageView alloc]initWithImage:image];
     imageView.alpha = 0.2f;
     annotationView.image = imageView.image;
@@ -191,6 +187,39 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)enterDetailViewButtonPushed:(id)sender {
+    _mainView.hidden = YES;
+    
+    _overlayedMapView.alpha = 1.0f;
+    _zoomInButton.hidden = NO;
+    _zoomOutButton.hidden = NO;
+    _showMyLocationButton.hidden = NO;
+    _closeButton.hidden = NO;
+}
+
+- (IBAction)showMyLocationButtonPushed:(id)sender {
+    coordinate = CLLocationCoordinate2DMake(delegate.myLatitude ,delegate.myLongitude);
+    [_overlayedMapView setCenterCoordinate:coordinate animated:YES];
+}
+
+- (IBAction)zoomOutButtonPushed:(id)sender {
+    span.latitudeDelta = _overlayedMapView.region.span.latitudeDelta * 2;
+    span.longitudeDelta = _overlayedMapView.region.span.longitudeDelta * 2;
+    coordinate = _overlayedMapView.centerCoordinate;
+    region = MKCoordinateRegionMake(coordinate,span);
+    [_overlayedMapView setRegion:region animated:YES];
+}
+
+- (IBAction)zoomInButtonPushed:(id)sender {
+    if(span.longitudeDelta * 0.5 > 0 ){
+        span.latitudeDelta = span.latitudeDelta * 0.5;
+        span.longitudeDelta = span.longitudeDelta * 0.5;
+        coordinate = _overlayedMapView.centerCoordinate;
+        region = MKCoordinateRegionMake(coordinate,span);
+        [_overlayedMapView setRegion:region animated:YES];
+    }
 }
 
 - (IBAction)gpsRefreshButtonLongPushed:(id)sender {
@@ -220,4 +249,12 @@
     [_splashCompassIcon stopAnimating];
 }
 
+- (IBAction)closeButtonPushed:(id)sender {
+    _mainView.hidden = NO;
+    _overlayedMapView.alpha = 0.2f;
+    _zoomInButton.hidden = YES;
+    _zoomOutButton.hidden = YES;
+    _showMyLocationButton.hidden = YES;
+    _closeButton.hidden = YES;
+}
 @end

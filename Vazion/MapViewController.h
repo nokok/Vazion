@@ -12,9 +12,11 @@
 #import "GPS.h"
 #import "WeatherInfo.h"
 #import "CustomAnnotation.h"
+#import "SharedInstance.h"
 
-@interface MapViewController : UIViewController
-@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@interface MapViewController : UIViewController<MKAnnotation,MKMapViewDelegate>
+
+@property (weak, nonatomic) IBOutlet MKMapView *mainMapView;
 
 - (IBAction)showMyLocationButtonPushed:(id)sender;
 - (IBAction)closeButtonPushed:(id)sender;
