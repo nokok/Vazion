@@ -16,7 +16,7 @@
 @private
     GPS *gps;
     AppDelegate *delegate;
-    XML *xmlInstance;
+    DrkAPI *xmlInstance;
 }
 
 - (void)viewDidLoad
@@ -25,8 +25,12 @@
     if(!_isInitialized){
         delegate = [[UIApplication sharedApplication]delegate];
         delegate.mainViewController = self;
-        delegate.locationSelectButton = _locationSelectButton;
-        delegate.activityIndigator = _activityIndicator;
+        delegate.locationSelectButton = _gpsRefreshButton;
+        if([[UIScreen mainScreen] applicationFrame].size.height < 528){
+            _splashView.frame = CGRectMake(160, 230, 160, 160);
+        }else{
+            _splashView.frame = CGRectMake(160, 230, 160, 150);
+        }
         _splashSunIcon.animationImages = [NSArray arrayWithObjects:
                                           [UIImage imageNamed:@"sun.png"],
                                           [UIImage imageNamed:@"transparent.png"],
@@ -34,23 +38,23 @@
                                           [UIImage imageNamed:@"transparent.png"],
                                           nil];
         _splashCompassIcon.animationImages = [NSArray arrayWithObjects:
-                                          [UIImage imageNamed:@"transparent.png"],
-                                          [UIImage imageNamed:@"compass.png"],
-                                          [UIImage imageNamed:@"transparent.png"],
-                                          [UIImage imageNamed:@"transparent.png"],
-                                          nil];
+                                              [UIImage imageNamed:@"transparent.png"],
+                                              [UIImage imageNamed:@"compass.png"],
+                                              [UIImage imageNamed:@"transparent.png"],
+                                              [UIImage imageNamed:@"transparent.png"],
+                                              nil];
         _splashMoonIcon.animationImages = [NSArray arrayWithObjects:
-                                          [UIImage imageNamed:@"transparent.png"],
-                                          [UIImage imageNamed:@"transparent.png"],
-                                          [UIImage imageNamed:@"moon.png"],
-                                          [UIImage imageNamed:@"transparent.png"],
-                                          nil];
+                                           [UIImage imageNamed:@"transparent.png"],
+                                           [UIImage imageNamed:@"transparent.png"],
+                                           [UIImage imageNamed:@"moon.png"],
+                                           [UIImage imageNamed:@"transparent.png"],
+                                           nil];
         _splashCloudIcon.animationImages = [NSArray arrayWithObjects:
-                                          [UIImage imageNamed:@"transparent.png"],
-                                          [UIImage imageNamed:@"transparent.png"],
-                                          [UIImage imageNamed:@"transparent.png"],
-                                          [UIImage imageNamed:@"cloud.png"],
-                                          nil];
+                                            [UIImage imageNamed:@"transparent.png"],
+                                            [UIImage imageNamed:@"transparent.png"],
+                                            [UIImage imageNamed:@"transparent.png"],
+                                            [UIImage imageNamed:@"cloud.png"],
+                                            nil];
         float duration = 1.5f;
         _splashSunIcon.animationDuration = duration;
         _splashCompassIcon.animationDuration = duration;
@@ -68,7 +72,7 @@
         }else{
             
         }
-        delegate.sharedXmlInstance = [XML sharedManager];
+        delegate.sharedXmlInstance = [DrkAPI sharedManager];
         delegate.mainViewController = self;
         _isInitialized = NO;
     }else{
@@ -83,7 +87,6 @@
     xmlInstance.prefectureName = gps.prefectureName;
     [delegate.sharedXmlInstance refreshDictionary:nil];
     [xmlInstance refreshInfomation];
-    [_activityIndicator startAnimating];
     [gps updateMyAddress];
 }
 
@@ -93,7 +96,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)gpsRefreshButtonLongPushed:(id)sender {
+    [gps refresh];
+    [gps updateMyAddress];
+    [_gpsRefreshButton setTitle:@"GPS情報を更新しました" forState:UIControlStateNormal];
+    [self performSelector:@selector(refreshInfomation) withObject:nil afterDelay:5.0];
+}
+
 -(void)refreshInfomation{
+    _gpsRefreshButton.enabled = YES;
     [_maxTemperatureTextLabel setText:[NSString stringWithFormat:@"%d", delegate.myWeather.maxTemperator]];
     [_minTemperatureTextLabel setText:[NSString stringWithFormat:@"%d", delegate.myWeather.minTemperator]];
     _enterSendViewButton.hidden = NO;

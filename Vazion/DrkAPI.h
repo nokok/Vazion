@@ -11,12 +11,12 @@
 #import "AppDelegate.h"
 #import "WeatherManager.h"
 
-@interface XML : NSObject
+@interface DrkAPI : NSObject
 
 @property NSString *prefectureName;
 @property NSDictionary *prefectureNameDictionary;
 -(id)init;
 -(NSDictionary*)refreshDictionary:(NSString*)prefectureName;
 -(void)refreshInfomation;
-+(XML*)sharedManager;
++(DrkAPI*)sharedManager;
 @end

@@ -36,7 +36,7 @@
     defaultButtonColor = [UIColor colorWithRed:0.95f green:0.95f blue:0.95f alpha:1.0f];
     white = [UIColor whiteColor];
     black = [UIColor blackColor];
-    selectedButtonColor = [UIColor colorWithRed:0.5f green:0.5f blue:0.5f alpha:1.0f];
+    selectedButtonColor = [UIColor colorWithRed:0.45f green:0.45f blue:0.45f alpha:1.0f];
     _isWithThunderBolt = NO;
     _isWithStrongWind = NO;
     _isWithSnow = NO;
@@ -47,6 +47,10 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)okButtonPushed:(id)sender {
+    _errorView.hidden = YES;
 }
 
 - (IBAction)sunnyButtonPushed:(id)sender {
@@ -111,6 +115,10 @@
 }
 
 - (IBAction)sendButtonPushed:(id)sender {
+    if(_weather == UNDEFINED){
+        _errorView.hidden = NO;
+        return;
+    }
     NSLog(@"sendButtonPushed Method Call");
     AppDelegate *delegate = [[UIApplication sharedApplication]delegate];
     
@@ -154,6 +162,9 @@
     [_sunnyButton setBackgroundColor:defaultButtonColor];
     [_cloudyButton setBackgroundColor:defaultButtonColor];
     [_rainyButton setBackgroundColor:defaultButtonColor];
+    [_withThunderBoltButton setBackgroundColor:defaultButtonColor];
+    [_withStrongWindButton setBackgroundColor:defaultButtonColor];
+    [_withSnowButton setBackgroundColor:defaultButtonColor];
     _weather = UNDEFINED;
 }
 

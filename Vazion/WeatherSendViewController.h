@@ -30,7 +30,9 @@ typedef enum WeatherStatus : NSInteger {
 @property WeatherStatus weather;
 @property (weak, nonatomic) IBOutlet UIButton *sendButton;
 @property (weak, nonatomic) IBOutlet UIButton *closeButton;
+@property (weak, nonatomic) IBOutlet UIView *errorView;
 
+- (IBAction)okButtonPushed:(id)sender;
 - (IBAction)sunnyButtonPushed:(id)sender;
 - (IBAction)cloudyButtonPushed:(id)sender;
 - (IBAction)rainyButtonPushed:(id)sender;

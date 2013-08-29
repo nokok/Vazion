@@ -13,6 +13,7 @@
 @interface CustomAnnotation : NSObject <MKAnnotation>
 
 @property CLLocationCoordinate2D coordinate;
+@property UIImage *image;
 @property NSString *title;
 @property NSString *subtitle;
 

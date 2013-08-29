@@ -11,7 +11,7 @@
 #import <MapKit/MapKit.h>
 #import "MainViewController.h"
 #import "AppDelegate.h"
-#import "XML.h"
+#import "DrkAPI.h"
 #import "GPS.h"
 
 @interface GPS : NSObject<CLLocationManagerDelegate>

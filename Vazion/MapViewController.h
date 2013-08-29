@@ -13,7 +13,7 @@
 #import "WeatherInfo.h"
 #import "CustomAnnotation.h"
 
-@interface MapViewController : UIViewController
+@interface MapViewController : UIViewController <MKMapViewDelegate>
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
 - (IBAction)showMyLocationButtonPushed:(id)sender;

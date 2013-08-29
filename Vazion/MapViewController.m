@@ -62,17 +62,23 @@
         switch ((int)weatherInfo.weather) {
             case SUNNY:
                 annotation.title = @"晴れです";
+                annotation.image = [UIImage imageNamed:@"sun.png"];
                 break;
             case CLOUDY:
                 annotation.title = @"くもりです";
+                annotation.image = [UIImage imageNamed:@"cloud.png"];
                 break;
             case RAINY:
                 annotation.title = @"雨です";
+                annotation.image = [UIImage imageNamed:@"umbrella.png"];
                 break;
             default:
                 annotation.title = @"天気が入力されていません";
+                annotation.image = [UIImage imageNamed:@"transparent.png"];
                 break;
         }
+        annotation.subtitle = @"";
+        
         if(weatherInfo.isWithThunderbolt){
             annotation.subtitle = @"落雷";
         }
@@ -83,6 +89,7 @@
             annotation.subtitle = [NSString stringWithFormat:@"%@ %@",annotation.subtitle,@"降雪"];
         }
         [_mapView addAnnotation:annotation];
+        _mapView.delegate = self;
     }
     
     NSLog(@"data:%@",[resultSet description]);
@@ -91,10 +98,10 @@
     _mapView.mapType = MKMapTypeStandard;
     coordinate = CLLocationCoordinate2DMake(delegate.myLatitude ,delegate.myLongitude);
     [_mapView setCenterCoordinate:coordinate animated:YES];
-    span = MKCoordinateSpanMake(0.5, 0.5);
+    span = MKCoordinateSpanMake(0.2, 0.2);
     region = MKCoordinateRegionMake(coordinate, span);
-    region.span.latitudeDelta = 0.5;
-    region.span.longitudeDelta = 0.5;
+    region.span.latitudeDelta = 0.2;
+    region.span.longitudeDelta = 0.2;
     [_mapView setRegion:region animated:YES];
     _mapView.showsUserLocation = YES;
 }
@@ -115,27 +122,24 @@
 }
 
 - (IBAction)zoomOutButtonPushed:(id)sender {
-    @try {
-        span.latitudeDelta = span.latitudeDelta * 2.0;
-        span.longitudeDelta = span.longitudeDelta * 2.0;
-        coordinate = _mapView.centerCoordinate;
-        region = MKCoordinateRegionMake(coordinate,span);
-        [_mapView setRegion:region animated:YES];
-    }
-    @catch (NSException *exception) {
-        
-    }
-}
-
-- (IBAction)zoomInButtonPushed:(id)sender {
-    span.latitudeDelta = span.latitudeDelta * 0.4;
-    span.longitudeDelta = span.longitudeDelta * 0.4;
+    span.latitudeDelta = _mapView.region.span.latitudeDelta * 2;
+    span.longitudeDelta = _mapView.region.span.longitudeDelta * 2;
     coordinate = _mapView.centerCoordinate;
     region = MKCoordinateRegionMake(coordinate,span);
     [_mapView setRegion:region animated:YES];
 }
 
--(void)setCenterCoordinate:(CLLocationCoordinate2D)coordinate animated:(BOOL)animated{
+- (IBAction)zoomInButtonPushed:(id)sender {
+    if(span.longitudeDelta * 0.5 > 0 ){
+        span.latitudeDelta = span.latitudeDelta * 0.5;
+        span.longitudeDelta = span.longitudeDelta * 0.5;
+        coordinate = _mapView.centerCoordinate;
+        region = MKCoordinateRegionMake(coordinate,span);
+        [_mapView setRegion:region animated:YES];
+    }
+}
+
+-(void)getAnnotation{
     
 }
 

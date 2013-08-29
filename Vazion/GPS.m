@@ -75,7 +75,7 @@
     if(_prefectureName != nil){
         [delegate.locationSelectButton setTitle:[NSString stringWithFormat:@"%@%@",_prefectureName,_cityName]
                                        forState:UIControlStateNormal];
-        XML *xmlInstance = delegate.sharedXmlInstance;
+        DrkAPI *xmlInstance = delegate.sharedXmlInstance;
         [xmlInstance refreshDictionary:_prefectureName];
         [xmlInstance refreshInfomation];
         [delegate.activityIndigator stopAnimating];

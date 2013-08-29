@@ -18,6 +18,23 @@
 - (id)initWithDictionary:(NSDictionary *)weatherDictionary{
     self = [super init];
     if(self){
+        
+        
+        /*
+        
+        
+        
+         「私の書いた正規表現は役に立ったんですよね。 何か直接の手柄はなくてもこの正規表現は天気の抽出の糧になったんですよね」
+         
+         「もちろん・・いや・・今回の実装で私は、いや、今回も・・くっ・・何も動きませんでしたぁぁ！！
+         私が無能なばかりにただいたずらに時間を浪費し、正規表現を動かすことが、できませんでしたぁぁ！！」
+        
+         
+        
+        
+        */
+        
+        
         AppDelegate *delegate = [[UIApplication sharedApplication]delegate];
         _weatherDictionary = weatherDictionary;
         NSArray *resultArray = [[[_weatherDictionary objectForKey:@"weatherforecast"]objectForKey:@"pref"]objectForKey:@"area"];

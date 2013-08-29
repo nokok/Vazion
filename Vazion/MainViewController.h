@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "XML.h"
+#import "DrkAPI.h"
 #import "GPS.h"
 #import "AppDelegate.h"
 
@@ -15,8 +15,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *maxTemperatureTextLabel;
 @property (weak, nonatomic) IBOutlet UILabel *minTemperatureTextLabel;
-@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
-@property IBOutlet UIButton *locationSelectButton;
+@property IBOutlet UIButton *gpsRefreshButton;
 @property Boolean isInitialized;
 @property (weak, nonatomic) IBOutlet UILabel *mainWeather;
 
@@ -29,5 +28,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *splashCloudIcon;
 @property (weak, nonatomic) IBOutlet UIImageView *splashMoonIcon;
 
--(void)refreshInfomation;
+- (IBAction)gpsRefreshButtonLongPushed:(id)sender;
+- (void)refreshInfomation;
 @end

@@ -6,17 +6,17 @@
 //  Copyright (c) 2013年 noko. All rights reserved.
 //
 
-#import "XML.h"
+#import "DrkAPI.h"
 
-@implementation XML{
+@implementation DrkAPI{
     NSDictionary *parsedDictionary;
 }
 
-+(XML*)sharedManager{
-    static XML* sharedInstance;
++(DrkAPI*)sharedManager{
+    static DrkAPI* sharedInstance;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        sharedInstance = [[XML alloc]initSharedInstance];
+        sharedInstance = [[DrkAPI alloc]initSharedInstance];
     });
     return sharedInstance;
 }
@@ -84,8 +84,8 @@
 }
 
 - (NSDictionary*)refreshDictionary:(NSString*)prefectureName{
-    prefectureName = prefectureName;
     NSString *urlBase = @"http://www.drk7.jp/weather/xml/";
+    
     if(prefectureName != nil){
         NSString *xmlName = [_prefectureNameDictionary objectForKey:prefectureName];
         if(xmlName != nil){
