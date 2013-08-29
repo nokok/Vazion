@@ -17,6 +17,11 @@
     GPS *gps;
     AppDelegate *delegate;
     DrkAPI *xmlInstance;
+    CLLocationCoordinate2D coordinate;
+    MKCoordinateSpan span;
+    MKCoordinateRegion region;
+    Boolean isMapViewInitialized;
+    UIImage *image;
 }
 
 - (void)viewDidLoad
@@ -80,7 +85,80 @@
     }
 }
 
-
+-(void)mapInitialize{
+    NSString *url = @"http://nokok.dip.jp/~noko/Get.php";
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
+    
+    NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+    
+    NSString *responseString = [[NSString alloc]initWithData:responseData encoding:NSUTF8StringEncoding];
+    
+    NSMutableArray *resultSet = [[NSMutableArray alloc] initWithArray:[responseString componentsSeparatedByString:@"<br>"]];
+    [resultSet removeLastObject];
+    NSMutableArray *weatherInfoArray;
+    NSLog(@"items:%@",[resultSet description]);
+    
+    for(NSString *result in resultSet){
+        NSArray *separatedResult = [result componentsSeparatedByString:@","];
+        WeatherInfo *weatherInfo = [[WeatherInfo alloc]init];
+        double randomNumX = fabs(sin(rand()%180)) * 0.01;
+        double randomNumY = fabs(sin(rand()%180)) * 0.01;
+        weatherInfo.latitude = [[separatedResult objectAtIndex:0]doubleValue] + randomNumX - (randomNumY * 2.0);
+        weatherInfo.longitude = [[separatedResult objectAtIndex:1]doubleValue] + randomNumY - (randomNumX * 2.0);
+        weatherInfo.weather = (WeatherStatus)[[separatedResult objectAtIndex:2]intValue];
+        weatherInfo.isWithThunderbolt = [[separatedResult objectAtIndex:3]boolValue];
+        weatherInfo.isWithStrongWind = [[separatedResult objectAtIndex:4]boolValue];
+        weatherInfo.isWithSnow = [[separatedResult objectAtIndex:5]boolValue];
+        weatherInfo.timestamp = [separatedResult objectAtIndex:6];
+        [weatherInfoArray addObject:weatherInfo];
+        CustomAnnotation *annotation = [[CustomAnnotation alloc]init];
+        annotation.coordinate = CLLocationCoordinate2DMake(weatherInfo.latitude, weatherInfo.longitude);
+        
+        switch ((int)weatherInfo.weather) {
+            case SUNNY:
+                annotation.title = @"晴れです";
+                image = [UIImage imageNamed:@"sun_color.png"];
+                break;
+            case CLOUDY:
+                annotation.title = @"くもりです";
+                image = [UIImage imageNamed:@"cloud_color.png"];
+                break;
+            case RAINY:
+                annotation.title = @"雨です";
+                image = [UIImage imageNamed:@"umbrella_color.png"];
+                break;
+            default:
+                annotation.title = @"天気が入力されていません";
+                image = [UIImage imageNamed:@"transparent.png"];
+                break;
+        }
+        annotation.subtitle = @"";
+        
+        if(weatherInfo.isWithThunderbolt){
+            annotation.subtitle = @"落雷";
+        }
+        if(weatherInfo.isWithStrongWind){
+            annotation.subtitle = [NSString stringWithFormat:@"%@ %@",annotation.subtitle,@"強風"];
+        }
+        if(weatherInfo.isWithSnow){
+            annotation.subtitle = [NSString stringWithFormat:@"%@ %@",annotation.subtitle,@"降雪"];
+        }
+        [_overlayedMapView addAnnotation:annotation];
+        _overlayedMapView.delegate = self;
+    }
+    
+    delegate = [[UIApplication sharedApplication]delegate];
+    _overlayedMapView.mapType = MKMapTypeStandard;
+    coordinate = CLLocationCoordinate2DMake(delegate.myLatitude ,delegate.myLongitude);
+    [_overlayedMapView setCenterCoordinate:coordinate animated:YES];
+    span = MKCoordinateSpanMake(0.2, 0.2);
+    region = MKCoordinateRegionMake(coordinate, span);
+    region.span.latitudeDelta = 0.2;
+    region.span.longitudeDelta = 0.2;
+    [_overlayedMapView setRegion:region animated:YES];
+    _overlayedMapView.showsUserLocation = YES;
+}
 
 - (void)viewWillAppear:(BOOL)animated{
     xmlInstance = delegate.sharedXmlInstance;
@@ -89,6 +167,25 @@
     [xmlInstance refreshInfomation];
     [gps updateMyAddress];
 }
+
+-(MKAnnotationView*)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
+    if(annotation == mapView.userLocation){
+        return nil;
+    }
+    
+    MKAnnotationView *annotationView;
+    NSString *identifier = @"Pin";
+    annotationView = (MKAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
+    if(nil == annotationView){
+        annotationView = [[MKAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:identifier];
+    }
+    NSLog(@"%@",[image autorelease);
+    UIImageView *imageView = [[UIImageView alloc]initWithImage:image];
+    imageView.alpha = 0.2f;
+    annotationView.image = imageView.image;
+    return annotationView;
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -104,6 +201,11 @@
 }
 
 -(void)refreshInfomation{
+    if(!isMapViewInitialized){
+        [self mapInitialize];
+        isMapViewInitialized = YES;
+    }
+    _overlayedMapView.showsUserLocation = YES;
     _gpsRefreshButton.enabled = YES;
     [_maxTemperatureTextLabel setText:[NSString stringWithFormat:@"%d", delegate.myWeather.maxTemperator]];
     [_minTemperatureTextLabel setText:[NSString stringWithFormat:@"%d", delegate.myWeather.minTemperator]];

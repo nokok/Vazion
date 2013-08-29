@@ -19,6 +19,7 @@
     self = [super init];
     if(self){
         
+    NSString *next = @"のち";
         
         /*
         
@@ -66,15 +67,15 @@
             plainWeatherText = [plainWeatherText stringByReplacingOccurrencesOfString:@"朝の内" withString:@""];
             plainWeatherText = [plainWeatherText stringByReplacingOccurrencesOfString:@"で雷を伴う" withString:@"と雷"];
             plainWeatherText = [plainWeatherText stringByReplacingOccurrencesOfString:@"朝夕" withString:@""];
-            plainWeatherText = [plainWeatherText stringByReplacingOccurrencesOfString:@"夕方" withString:@"のち"];
+            plainWeatherText = [plainWeatherText stringByReplacingOccurrencesOfString:@"夕方" withString:next];
             plainWeatherText = [plainWeatherText stringByReplacingOccurrencesOfString:@"一時強く降る" withString:@""];
             plainWeatherText = [plainWeatherText stringByReplacingOccurrencesOfString:@"山沿い雷雨" withString:@""];
             plainWeatherText = [plainWeatherText stringByReplacingOccurrencesOfString:@"山沿い雪" withString:@""];
-            plainWeatherText = [plainWeatherText stringByReplacingOccurrencesOfString:@"午後は" withString:@"のち"];
-            plainWeatherText = [plainWeatherText stringByReplacingOccurrencesOfString:@"昼頃から" withString:@"のち"];
-            plainWeatherText = [plainWeatherText stringByReplacingOccurrencesOfString:@"夕方から" withString:@"のち"];
-            plainWeatherText = [plainWeatherText stringByReplacingOccurrencesOfString:@"夜は" withString:@"のち"];
-            plainWeatherText = [plainWeatherText stringByReplacingOccurrencesOfString:@"夜半から" withString:@"のち"];
+            plainWeatherText = [plainWeatherText stringByReplacingOccurrencesOfString:@"午後は" withString:next];
+            plainWeatherText = [plainWeatherText stringByReplacingOccurrencesOfString:@"昼頃から" withString:next];
+            plainWeatherText = [plainWeatherText stringByReplacingOccurrencesOfString:@"夕方から" withString:next];
+            plainWeatherText = [plainWeatherText stringByReplacingOccurrencesOfString:@"夜は" withString:next];
+            plainWeatherText = [plainWeatherText stringByReplacingOccurrencesOfString:@"夜半から" withString:next];
             plainWeatherText = [plainWeatherText stringByReplacingOccurrencesOfString:@"明け方霧" withString:@""];
             plainWeatherText = [plainWeatherText stringByReplacingOccurrencesOfString:@"海上海岸は霧か霧雨" withString:@""];
             
@@ -95,11 +96,11 @@
                 [self labelSet:@"霧" toLabel:@"" next:@""];
             }else{
                 NSArray *splitArray;
-                if([self findString:plainWeatherText withKey:@"のち"]){
+                if([self findString:plainWeatherText withKey:next]){
                 
-                    splitArray = [plainWeatherText componentsSeparatedByString:@"のち"];
+                    splitArray = [plainWeatherText componentsSeparatedByString:next];
                     [self labelSet:[self getMainWeatherString:[splitArray objectAtIndex:0]]
-                                                      toLabel:@"のち"
+                                                      toLabel:next
                                                          next:[splitArray objectAtIndex:1]];
                     
                 }else if([self findString:plainWeatherText withKey:@"一時"]){
@@ -118,16 +119,16 @@
                 
                 }else if([self findString:plainWeatherText withKey:@"のち一時"]){
                     
-                    splitArray = [plainWeatherText componentsSeparatedByString:@"のち"];
+                    splitArray = [plainWeatherText componentsSeparatedByString:next];
                     [self labelSet:[self getMainWeatherString:[splitArray objectAtIndex:0]]
-                           toLabel:@"のち"
+                           toLabel:next
                               next:[splitArray objectAtIndex:1]];
                 
                 }else if([self findString:plainWeatherText withKey:@"のち時々"]){
                     
-                    splitArray = [plainWeatherText componentsSeparatedByString:@"のち"];
+                    splitArray = [plainWeatherText componentsSeparatedByString:next];
                     [self labelSet:[self getMainWeatherString:[splitArray objectAtIndex:0]]
-                           toLabel:@"のち"
+                           toLabel:next
                               next:[splitArray objectAtIndex:1]];
                 }
                 myWeather.latitude = [[[[result objectForKey:@"geo"]objectForKey:@"lat"] objectForKey:@"text"] doubleValue];

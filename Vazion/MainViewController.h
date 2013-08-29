@@ -10,6 +10,8 @@
 #import "DrkAPI.h"
 #import "GPS.h"
 #import "AppDelegate.h"
+#import "WeatherInfo.h"
+#import "CustomAnnotation.h"
 
 @interface MainViewController : UIViewController
 
@@ -18,7 +20,6 @@
 @property IBOutlet UIButton *gpsRefreshButton;
 @property Boolean isInitialized;
 @property (weak, nonatomic) IBOutlet UILabel *mainWeather;
-
 @property (weak, nonatomic) IBOutlet UILabel *toValue;
 @property (weak, nonatomic) IBOutlet UILabel *nextWeather;
 @property (weak, nonatomic) IBOutlet UIButton *enterSendViewButton;
@@ -27,7 +28,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *splashSunIcon;
 @property (weak, nonatomic) IBOutlet UIImageView *splashCloudIcon;
 @property (weak, nonatomic) IBOutlet UIImageView *splashMoonIcon;
+@property (weak, nonatomic) IBOutlet MKMapView *overlayedMapView;
 
 - (IBAction)gpsRefreshButtonLongPushed:(id)sender;
-- (void)refreshInfomation;
+- (IBAction)refreshInfomation;
 @end

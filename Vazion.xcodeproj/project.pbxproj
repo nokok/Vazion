@@ -25,6 +25,9 @@
 		E390FA8F17CF214F00C7150C /* rain.png in Resources */ = {isa = PBXBuildFile; fileRef = E390FA8A17CF214F00C7150C /* rain.png */; };
 		E390FA9017CF214F00C7150C /* snowy.png in Resources */ = {isa = PBXBuildFile; fileRef = E390FA8B17CF214F00C7150C /* snowy.png */; };
 		E390FA9117CF214F00C7150C /* wind.png in Resources */ = {isa = PBXBuildFile; fileRef = E390FA8C17CF214F00C7150C /* wind.png */; };
+		E390FA9517CF3F2D00C7150C /* cloud_color.png in Resources */ = {isa = PBXBuildFile; fileRef = E390FA9217CF3F2C00C7150C /* cloud_color.png */; };
+		E390FA9617CF3F2D00C7150C /* sun_color.png in Resources */ = {isa = PBXBuildFile; fileRef = E390FA9317CF3F2D00C7150C /* sun_color.png */; };
+		E390FA9717CF3F2D00C7150C /* umbrella_color.png in Resources */ = {isa = PBXBuildFile; fileRef = E390FA9417CF3F2D00C7150C /* umbrella_color.png */; };
 		E3C5019E17C48EB5004ADE4D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3C5019D17C48EB5004ADE4D /* UIKit.framework */; };
 		E3C501A017C48EB5004ADE4D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3C5019F17C48EB5004ADE4D /* Foundation.framework */; };
 		E3C501A217C48EB5004ADE4D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3C501A117C48EB5004ADE4D /* CoreGraphics.framework */; };
@@ -79,6 +82,9 @@
 		E390FA8A17CF214F00C7150C /* rain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rain.png; path = Resources/rain.png; sourceTree = "<group>"; };
 		E390FA8B17CF214F00C7150C /* snowy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = snowy.png; path = Resources/snowy.png; sourceTree = "<group>"; };
 		E390FA8C17CF214F00C7150C /* wind.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wind.png; path = Resources/wind.png; sourceTree = "<group>"; };
+		E390FA9217CF3F2C00C7150C /* cloud_color.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cloud_color.png; path = Resources/cloud_color.png; sourceTree = "<group>"; };
+		E390FA9317CF3F2D00C7150C /* sun_color.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sun_color.png; path = Resources/sun_color.png; sourceTree = "<group>"; };
+		E390FA9417CF3F2D00C7150C /* umbrella_color.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = umbrella_color.png; path = Resources/umbrella_color.png; sourceTree = "<group>"; };
 		E3C5019A17C48EB5004ADE4D /* Vazion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vazion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3C5019D17C48EB5004ADE4D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E3C5019F17C48EB5004ADE4D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -128,6 +134,9 @@
 		E3C1EA0B17C74A0C001242D0 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				E390FA9217CF3F2C00C7150C /* cloud_color.png */,
+				E390FA9317CF3F2D00C7150C /* sun_color.png */,
+				E390FA9417CF3F2D00C7150C /* umbrella_color.png */,
 				E390FA8817CF214F00C7150C /* bolt.png */,
 				E390FA8917CF214F00C7150C /* lightning.png */,
 				E390FA8A17CF214F00C7150C /* rain.png */,
@@ -299,6 +308,9 @@
 				E390FA8F17CF214F00C7150C /* rain.png in Resources */,
 				E390FA9017CF214F00C7150C /* snowy.png in Resources */,
 				E390FA9117CF214F00C7150C /* wind.png in Resources */,
+				E390FA9517CF3F2D00C7150C /* cloud_color.png in Resources */,
+				E390FA9617CF3F2D00C7150C /* sun_color.png in Resources */,
+				E390FA9717CF3F2D00C7150C /* umbrella_color.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
