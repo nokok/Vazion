@@ -22,14 +22,17 @@
     MKCoordinateRegion region;
     Boolean isMapViewInitialized;
     UIImage *image;
+    int i;
+    
 }
 
 - (void)viewDidLoad
 {
+    i=0;
     [super viewDidLoad];
     if(_isInitialized)
         return;
-        
+    
     delegate = [[UIApplication sharedApplication]delegate];
     delegate.mainViewController = self;
     delegate.locationSelectButton = _gpsRefreshButton;
@@ -80,7 +83,7 @@
     
 }
 
--(void)mapInitialize{
+-(void)loadAnnotation{
     NSString *url = @"http://nokok.dip.jp/~noko/Get.php";
     
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
@@ -96,10 +99,8 @@
     for(NSString *result in resultSet){
         NSArray *separatedResult = [result componentsSeparatedByString:@","];
         WeatherInfo *weatherInfo = [[WeatherInfo alloc]init];
-        double randomNumX = fabs(sin(rand()%180)) * 0.01;
-        double randomNumY = fabs(sin(rand()%180)) * 0.01;
-        weatherInfo.latitude = [[separatedResult objectAtIndex:0]doubleValue] + randomNumX - (randomNumY * 2.0);
-        weatherInfo.longitude = [[separatedResult objectAtIndex:1]doubleValue] + randomNumY - (randomNumX * 2.0);
+        weatherInfo.latitude = [[separatedResult objectAtIndex:0]doubleValue];
+        weatherInfo.longitude = [[separatedResult objectAtIndex:1]doubleValue];
         weatherInfo.weather = (WeatherStatus)[[separatedResult objectAtIndex:2]intValue];
         weatherInfo.isWithThunderbolt = [[separatedResult objectAtIndex:3]boolValue];
         weatherInfo.isWithStrongWind = [[separatedResult objectAtIndex:4]boolValue];
@@ -108,7 +109,6 @@
         [weatherInfoArray addObject:weatherInfo];
         CustomAnnotation *annotation = [[CustomAnnotation alloc]init];
         annotation.coordinate = CLLocationCoordinate2DMake(weatherInfo.latitude, weatherInfo.longitude);
-        
         switch ((int)weatherInfo.weather) {
             case SUNNY:
                 annotation.title = @"晴れです";
@@ -141,7 +141,10 @@
         [_overlayedMapView addAnnotation:annotation];
         _overlayedMapView.delegate = self;
     }
-    
+}
+
+-(void)mapInitialize{
+    [self loadAnnotation];
     delegate = [[UIApplication sharedApplication]delegate];
     _overlayedMapView.mapType = MKMapTypeStandard;
     coordinate = CLLocationCoordinate2DMake(delegate.myLatitude ,delegate.myLongitude);
@@ -166,22 +169,21 @@
 }
 
 -(MKAnnotationView*)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
-    if(annotation == mapView.userLocation){
-        return nil;
-    }
-    
     MKAnnotationView *annotationView;
     NSString *identifier = @"Pin";
     annotationView = (MKAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
     if(nil == annotationView){
         annotationView = [[MKAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:identifier];
     }
-    UIImageView *imageView = [[UIImageView alloc]initWithImage:image];
-    imageView.alpha = 0.2f;
-    annotationView.image = imageView.image;
+    annotationView.canShowCallout = YES;
+    if(i<64){
+        UIImageView *imageView = [[UIImageView alloc]initWithImage:image];
+        imageView.alpha = 0.2f;
+        annotationView.image = imageView.image;
+    }
+    i++;
     return annotationView;
 }
-
 
 - (void)didReceiveMemoryWarning
 {
@@ -190,13 +192,17 @@
 }
 
 - (IBAction)enterDetailViewButtonPushed:(id)sender {
-    _mainView.hidden = YES;
-    
-    _overlayedMapView.alpha = 1.0f;
-    _zoomInButton.hidden = NO;
-    _zoomOutButton.hidden = NO;
-    _showMyLocationButton.hidden = NO;
-    _closeButton.hidden = NO;
+    [UIView animateWithDuration:0.5f delay:0.0f options:UIViewAnimationOptionCurveEaseOut animations:^{
+        _mainView.alpha = 0.0f;
+        _overlayedMapView.alpha = 1.0f;
+    }completion:^(BOOL finished){
+        _mainView.hidden = YES;
+        _overlayedMapView.alpha = 1.0f;
+        _zoomInButton.hidden = NO;
+        _zoomOutButton.hidden = NO;
+        _showMyLocationButton.hidden = NO;
+        _closeButton.hidden = NO;
+    }];
 }
 
 - (IBAction)showMyLocationButtonPushed:(id)sender {
@@ -242,7 +248,12 @@
     [_mainWeather setText:delegate.myWeather.mainWeather];
     [_toValue setText:delegate.myWeather.toValue];
     [_nextWeather setText:delegate.myWeather.nextWeather];
-    _splashView.hidden = YES;
+    [UIView animateWithDuration:0.5f delay:0.0f options:UIViewAnimationCurveEaseIn animations:^{
+        _splashView.alpha = 0.0f;
+        _gpsRefreshButton.center = CGPointMake(160, 24);
+    }completion:^(BOOL finished){
+        _splashView.hidden = YES;
+    }];
     [_splashSunIcon stopAnimating];
     [_splashCloudIcon stopAnimating];
     [_splashMoonIcon stopAnimating];
@@ -250,11 +261,16 @@
 }
 
 - (IBAction)closeButtonPushed:(id)sender {
-    _mainView.hidden = NO;
-    _overlayedMapView.alpha = 0.2f;
-    _zoomInButton.hidden = YES;
-    _zoomOutButton.hidden = YES;
-    _showMyLocationButton.hidden = YES;
-    _closeButton.hidden = YES;
+    [UIView animateWithDuration:0.5f delay:0.0f options:UIViewAnimationOptionCurveEaseIn animations:^{
+        _mainView.alpha = 1.0f;
+        _overlayedMapView.alpha = 0.2f;
+    }completion:^(BOOL finished){
+        _mainView.hidden = NO;
+        _zoomInButton.hidden = YES;
+        _zoomOutButton.hidden = YES;
+        _showMyLocationButton.hidden = YES;
+        _closeButton.hidden = YES;
+    }];
 }
+
 @end

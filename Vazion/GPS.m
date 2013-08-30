@@ -78,8 +78,6 @@
         DrkAPI *xmlInstance = delegate.sharedXmlInstance;
         [xmlInstance refreshDictionary:_prefectureName];
         [xmlInstance refreshInfomation];
-        [delegate.activityIndigator stopAnimating];
-        delegate.activityIndigator.hidden = YES;
         [((MainViewController*)delegate.mainViewController) refreshInfomation];
     }
 }
