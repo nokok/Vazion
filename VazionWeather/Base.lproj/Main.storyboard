@@ -65,12 +65,17 @@
                                     <action selector="updateButtonClicked:" destination="8ba-r3-BVk" eventType="touchUpInside" id="c0a-q6-BYk"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" id="EQA-vh-KxB">
+                                <rect key="frame" x="150" y="203" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="天気" id="e5p-pf-EEm"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="EQA-vh-KxB" id="QUY-SZ-2Dx"/>
                         <outlet property="addressLabel" destination="mU8-1a-0Kj" id="VCR-Ru-Tf8"/>
                         <outlet property="updateTimeLabel" destination="Zc5-vF-kM7" id="zfi-uV-A2s"/>
                     </connections>

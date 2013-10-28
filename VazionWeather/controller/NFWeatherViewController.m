@@ -32,6 +32,7 @@
     locationInstance.delegate = self;
     [locationInstance updateMyGPSInfomation];
     [_addressLabel setText:@"取得中..."];
+    [_activityIndicator startAnimating];
 }
 
 - (void)didReceiveMemoryWarning
@@ -50,16 +51,17 @@
 
 - (void)gpsInfomationUpdating{
     [_addressLabel setText:@"GPS測位中..."];
+    [_activityIndicator startAnimating];
 }
 
 - (void)gpsInfomationUpdated{
     [_addressLabel setText:@"住所を取得しています..."];
 }
 
-- (void)addressUpdated:(NSString *)address{
+- (void)addressUpdated:(NSString *)address prefName:(NSString *)prefName cityName:(NSString *)cityName{
     [_addressLabel setText:[NSString stringWithFormat:@"%@%@",address,@"の天気"]];
     [_updateTimeLabel setText:@"たった今"];
-    NSLog(@"hgoe");
+    [_activityIndicator stopAnimating];
 }
 
 @end

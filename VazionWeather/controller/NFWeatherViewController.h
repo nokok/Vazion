@@ -13,7 +13,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *addressLabel;
 @property (weak, nonatomic) IBOutlet UILabel *updateTimeLabel;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 - (IBAction)updateButtonClicked:(id)sender;
-- (void)addressUpdated:(NSString *)address;
 @end
