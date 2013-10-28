@@ -62,12 +62,13 @@
     CLGeocoder *geocoder = [[CLGeocoder alloc]init];
     location = [[CLLocation alloc]initWithLatitude:latitude longitude:longitude];
     [geocoder reverseGeocodeLocation:location completionHandler:^(NSArray* placemarks,NSError *error){
-        NSLog(@"found:%d",[placemarks count]);
         if([placemarks count] > 0){
             CLPlacemark *placemark = [placemarks firstObject];
-            _myAddress = [NSString stringWithFormat:@"%@%@",placemark.administrativeArea, placemark.locality];
-            NSLog(@"%@",_myAddress);
-            [self.delegate addressUpdated:_myAddress];
+            _myPrefectureName = placemark.administrativeArea;
+            _myCityName = placemark.locality;
+            _myAddress = [NSString stringWithFormat:@"%@%@",_myPrefectureName,_myCityName];
+            
+            [self.delegate addressUpdated:_myAddress prefName:_myPrefectureName cityName:_myCityName];
         }
     }];
 }

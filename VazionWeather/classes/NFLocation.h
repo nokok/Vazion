@@ -15,11 +15,13 @@
 @optional
 - (void) gpsInfomationUpdating;
 - (void) gpsInfomationUpdated;
-- (void) addressUpdated:(NSString*)address;
+- (void) addressUpdated:(NSString*)address prefName:(NSString*)prefName cityName:(NSString*)cityName;
 @end
 
 @interface NFLocation : NSObject<CLLocationManagerDelegate,NFWeatherInfomationDelegate>
 
+@property (nonatomic, readonly)NSString *myPrefectureName;
+@property (nonatomic, readonly)NSString *myCityName;
 @property (nonatomic, readonly)NSString *myAddress;
 @property (nonatomic, readonly)Boolean isGPSEnabled;
 @property id<NFWeatherInfomationDelegate> delegate;
