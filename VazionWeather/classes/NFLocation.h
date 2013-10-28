@@ -10,10 +10,19 @@
 #import <CoreLocation/CoreLocation.h>
 #import <CoreLocation/CLGeocoder.h>
 #import <CoreLocation/CLPlacemark.h>
-@interface NFLocation : NSObject<CLLocationManagerDelegate>
+
+@protocol NFWeatherInfomationDelegate <NSObject>
+@optional
+- (void) gpsInfomationUpdating;
+- (void) gpsInfomationUpdated;
+- (void) addressUpdated:(NSString*)address;
+@end
+
+@interface NFLocation : NSObject<CLLocationManagerDelegate,NFWeatherInfomationDelegate>
 
 @property (nonatomic, readonly)NSString *myAddress;
 @property (nonatomic, readonly)Boolean isGPSEnabled;
+@property id<NFWeatherInfomationDelegate> delegate;
 
 -(id)init;
 -(void)updateMyGPSInfomation;

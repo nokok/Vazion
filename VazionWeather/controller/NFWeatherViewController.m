@@ -20,7 +20,6 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         
-        [[NFLocation sharedManager] updateMyGPSInfomation];
     }
     return self;
 }
@@ -29,6 +28,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    NFLocation *locationInstance = [NFLocation sharedManager];
+    locationInstance.delegate = self;
+    [locationInstance updateMyGPSInfomation];
+    [_addressLabel setText:@"取得中..."];
 }
 
 - (void)didReceiveMemoryWarning
@@ -39,6 +42,24 @@
 
 - (IBAction)updateButtonClicked:(id)sender {
     [[NFLocation sharedManager]updateMyGPSInfomation];
+}
+
+- (void)didUpdate{
+    [_addressLabel setText:[NSString stringWithFormat:@"%@%@",[NFLocation sharedManager].myAddress,@"の天気"]];
+}
+
+- (void)gpsInfomationUpdating{
+    [_addressLabel setText:@"GPS測位中..."];
+}
+
+- (void)gpsInfomationUpdated{
+    [_addressLabel setText:@"住所を取得しています..."];
+}
+
+- (void)addressUpdated:(NSString *)address{
+    [_addressLabel setText:[NSString stringWithFormat:@"%@%@",address,@"の天気"]];
+    [_updateTimeLabel setText:@"たった今"];
+    NSLog(@"hgoe");
 }
 
 @end

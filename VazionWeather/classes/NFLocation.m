@@ -43,6 +43,7 @@
 -(void)updateMyGPSInfomation{
     [locationManager stopUpdatingLocation];
     [locationManager startUpdatingLocation];
+    [self.delegate gpsInfomationUpdating];
 }
 
 - (void)locationManager:(CLLocationManager *)manager
@@ -54,6 +55,7 @@
     location = locationManager.location;
     [self reverseGeocordeWithLatitude:myLatitude longitude:myLongitude];
     [locationManager stopUpdatingLocation];
+    [self.delegate gpsInfomationUpdated];
 }
 
 - (void)reverseGeocordeWithLatitude:(double)latitude longitude:(double)longitude {
@@ -65,6 +67,7 @@
             CLPlacemark *placemark = [placemarks firstObject];
             _myAddress = [NSString stringWithFormat:@"%@%@",placemark.administrativeArea, placemark.locality];
             NSLog(@"%@",_myAddress);
+            [self.delegate addressUpdated:_myAddress];
         }
     }];
 }

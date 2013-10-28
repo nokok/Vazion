@@ -9,10 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "NFLocation.h"
 
-@interface NFWeatherViewController : UIViewController
+@interface NFWeatherViewController : UIViewController<NFWeatherInfomationDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *addressLabel;
 @property (weak, nonatomic) IBOutlet UILabel *updateTimeLabel;
 
 - (IBAction)updateButtonClicked:(id)sender;
+- (void)addressUpdated:(NSString *)address;
 @end
