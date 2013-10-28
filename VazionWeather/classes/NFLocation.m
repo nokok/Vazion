@@ -12,7 +12,6 @@
     @private
     CLLocation *location;
     CLLocationManager *locationManager;
-    double myLatitude,myLongitude;
 }
 
 -(id)init{
@@ -25,7 +24,7 @@
     if(self){
         locationManager = [[CLLocationManager alloc]init];
         locationManager.delegate = self;
-        locationManager.desiredAccuracy = kCLLocationAccuracyThreeKilometers;
+        locationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
         [locationManager startUpdatingLocation];
     }
     return self;
@@ -50,10 +49,10 @@
     didUpdateToLocation:(CLLocation *)newLocation
            fromLocation:(CLLocation *)oldLocation
 {
-    myLongitude = newLocation.coordinate.longitude;
-    myLatitude = newLocation.coordinate.latitude;
+    _longitude = newLocation.coordinate.longitude;
+    _latitude = newLocation.coordinate.latitude;
     location = locationManager.location;
-    [self reverseGeocordeWithLatitude:myLatitude longitude:myLongitude];
+    [self reverseGeocordeWithLatitude:_latitude longitude:_longitude];
     [locationManager stopUpdatingLocation];
     [self.delegate gpsInfomationUpdated];
 }

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "NFLocation.h"
+#import "NFWeather.h"
 
 @interface NFWeatherViewController : UIViewController<NFWeatherInfomationDelegate>
 

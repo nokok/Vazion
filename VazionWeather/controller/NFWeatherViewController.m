@@ -62,6 +62,7 @@
     [_addressLabel setText:[NSString stringWithFormat:@"%@%@",address,@"の天気"]];
     [_updateTimeLabel setText:[self getDate]];
     [_activityIndicator stopAnimating];
+    [[NFWeather sharedManager] fetchXMLData:prefName];
 }
 
 - (NSString*)getDate{

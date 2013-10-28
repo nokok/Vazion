@@ -24,6 +24,8 @@
 @property (nonatomic, readonly)NSString *myCityName;
 @property (nonatomic, readonly)NSString *myAddress;
 @property (nonatomic, readonly)Boolean isGPSEnabled;
+@property (nonatomic, readonly)double latitude;
+@property (nonatomic, readonly)double longitude;
 @property id<NFWeatherInfomationDelegate> delegate;
 
 -(id)init;

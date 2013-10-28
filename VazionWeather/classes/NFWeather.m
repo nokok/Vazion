@@ -16,7 +16,6 @@
 -(id)initSharedInstance{
     self = [super init];
     if(self){
-        [NFLocation sharedManager].delegate = self;
         prefectureNameDictionary = @{
                                      @"北海道":@"01.xml",
                                      @"青森県":@"02.xml",
@@ -86,22 +85,58 @@
     return self;
 }
 
-- (void)addressUpdated:(NSString *)address
-              prefName:(NSString *)prefName
-              cityName:(NSString *)cityName{
-    if([prefectureNameDictionary objectForKey:prefName] == nil){
-        NSLog(@"hoge");
-        return;
-    }
+-(void)fetchXMLData:(NSString *)prefName{
     NSURL *url = [NSURL URLWithString:[NSString
                                        stringWithFormat:@"%@%@",@"http://www.drk7.jp/weather/xml/",
                                        [prefectureNameDictionary objectForKey:prefName]]];
+    NSLog(@"URL:%@",url);
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     NSData *fetchedXMLData = [NSURLConnection
                               sendSynchronousRequest:request
                               returningResponse:nil
                               error:nil];
-    NSLog(@"%@",fetchedXMLData);
+    NSDictionary *parsedXMLData = [self encodingDataToDictionary:fetchedXMLData];
+    
+    NSLog(@"%d",[self chooseNearestData:parsedXMLData]);
+}
+
+- (NSDictionary*)encodingDataToDictionary:(NSData*)data{
+    NSError *error;
+    return [XMLReader dictionaryForXMLData:data error:&error];
+}
+
+- (int)chooseNearestData:(NSDictionary*)dic{
+    NSArray *resultSet = [[[dic objectForKey:@"weatherforecast"]objectForKey:@"pref"]objectForKey:@"area"];
+    
+    double myLatitude = [NFLocation sharedManager].latitude;
+    double myLongitude = [NFLocation sharedManager].longitude;
+    
+    int nearestIndex = 0;
+    double minDiff = 0.0f;
+    
+    int i=0;
+    for(NSDictionary *result in resultSet){
+        
+        double latitude = [[[[result objectForKey:@"geo"]objectForKey:@"lat"] objectForKey:@"text"] doubleValue];
+        double longitude = [[[[result objectForKey:@"geo"]objectForKey:@"long"] objectForKey:@"text"] doubleValue];
+
+        CLLocation *location = [[CLLocation alloc]initWithLatitude:latitude longitude:longitude];
+        double latDiff,lonDiff;
+        
+        latDiff = fabs(location.coordinate.latitude - myLatitude);
+        lonDiff = fabs(location.coordinate.longitude - myLongitude);
+        
+        if(minDiff == 0.0){
+            minDiff = latDiff * lonDiff;
+        }
+        if(minDiff > latDiff * lonDiff){
+            minDiff = latDiff * lonDiff;
+            nearestIndex = i;
+        }
+        NSLog(@"Diff:%lf",minDiff);
+        i++;
+    }
+    return nearestIndex;
 }
 
 @end
