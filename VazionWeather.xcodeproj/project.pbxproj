@@ -1,0 +1,541 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E35600FE18018A050021FDD5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E35600FD18018A050021FDD5 /* Foundation.framework */; };
+		E356010018018A050021FDD5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E35600FF18018A050021FDD5 /* CoreGraphics.framework */; };
+		E356010218018A050021FDD5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E356010118018A050021FDD5 /* UIKit.framework */; };
+		E356010818018A050021FDD5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E356010618018A050021FDD5 /* InfoPlist.strings */; };
+		E356010A18018A050021FDD5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E356010918018A050021FDD5 /* main.m */; };
+		E356010E18018A050021FDD5 /* NFAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E356010D18018A050021FDD5 /* NFAppDelegate.m */; };
+		E356011118018A050021FDD5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E356010F18018A050021FDD5 /* Main.storyboard */; };
+		E356011618018A050021FDD5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E356011518018A050021FDD5 /* Images.xcassets */; };
+		E356011D18018A050021FDD5 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E356011C18018A050021FDD5 /* XCTest.framework */; };
+		E356011E18018A050021FDD5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E35600FD18018A050021FDD5 /* Foundation.framework */; };
+		E356011F18018A060021FDD5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E356010118018A050021FDD5 /* UIKit.framework */; };
+		E356012718018A060021FDD5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E356012518018A060021FDD5 /* InfoPlist.strings */; };
+		E356012918018A060021FDD5 /* VazionWeatherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E356012818018A060021FDD5 /* VazionWeatherTests.m */; };
+		E356013618018DC60021FDD5 /* NFLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = E356013518018DC60021FDD5 /* NFLocation.m */; };
+		E356013C18018E050021FDD5 /* NFWeather.m in Sources */ = {isa = PBXBuildFile; fileRef = E356013B18018E050021FDD5 /* NFWeather.m */; };
+		E35601451801910C0021FDD5 /* NFRootTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = E35601441801910C0021FDD5 /* NFRootTabBarController.m */; };
+		E356014718019E950021FDD5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E356014618019E950021FDD5 /* MapKit.framework */; };
+		E3E2F769181E827D00A0498C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3E2F768181E827D00A0498C /* CoreLocation.framework */; };
+		E3E2F76D181E8D5C00A0498C /* NFWeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3E2F76C181E8D5C00A0498C /* NFWeatherViewController.m */; };
+		E3E2F770181E8DA200A0498C /* NFWeatherSendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3E2F76F181E8DA200A0498C /* NFWeatherSendViewController.m */; };
+		E3E2F773181E8DF800A0498C /* NFAroundInfomationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3E2F772181E8DF800A0498C /* NFAroundInfomationViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E356012018018A060021FDD5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E35600F218018A050021FDD5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E35600F918018A050021FDD5;
+			remoteInfo = VazionWeather;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E35600FA18018A050021FDD5 /* VazionWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VazionWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E35600FD18018A050021FDD5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E35600FF18018A050021FDD5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E356010118018A050021FDD5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E356010518018A050021FDD5 /* VazionWeather-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VazionWeather-Info.plist"; sourceTree = "<group>"; };
+		E356010718018A050021FDD5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E356010918018A050021FDD5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E356010B18018A050021FDD5 /* VazionWeather-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VazionWeather-Prefix.pch"; sourceTree = "<group>"; };
+		E356010C18018A050021FDD5 /* NFAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NFAppDelegate.h; sourceTree = "<group>"; };
+		E356010D18018A050021FDD5 /* NFAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NFAppDelegate.m; sourceTree = "<group>"; };
+		E356011018018A050021FDD5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E356011518018A050021FDD5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		E356011B18018A050021FDD5 /* VazionWeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VazionWeatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E356011C18018A050021FDD5 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		E356012418018A060021FDD5 /* VazionWeatherTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VazionWeatherTests-Info.plist"; sourceTree = "<group>"; };
+		E356012618018A060021FDD5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E356012818018A060021FDD5 /* VazionWeatherTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VazionWeatherTests.m; sourceTree = "<group>"; };
+		E356013418018DC60021FDD5 /* NFLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFLocation.h; sourceTree = "<group>"; };
+		E356013518018DC60021FDD5 /* NFLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFLocation.m; sourceTree = "<group>"; };
+		E356013A18018E050021FDD5 /* NFWeather.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFWeather.h; sourceTree = "<group>"; };
+		E356013B18018E050021FDD5 /* NFWeather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFWeather.m; sourceTree = "<group>"; };
+		E35601431801910C0021FDD5 /* NFRootTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFRootTabBarController.h; sourceTree = "<group>"; };
+		E35601441801910C0021FDD5 /* NFRootTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFRootTabBarController.m; sourceTree = "<group>"; };
+		E356014618019E950021FDD5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		E3E2F768181E827D00A0498C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		E3E2F76B181E8D5C00A0498C /* NFWeatherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFWeatherViewController.h; sourceTree = "<group>"; };
+		E3E2F76C181E8D5C00A0498C /* NFWeatherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFWeatherViewController.m; sourceTree = "<group>"; };
+		E3E2F76E181E8DA200A0498C /* NFWeatherSendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFWeatherSendViewController.h; sourceTree = "<group>"; };
+		E3E2F76F181E8DA200A0498C /* NFWeatherSendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFWeatherSendViewController.m; sourceTree = "<group>"; };
+		E3E2F771181E8DF800A0498C /* NFAroundInfomationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFAroundInfomationViewController.h; sourceTree = "<group>"; };
+		E3E2F772181E8DF800A0498C /* NFAroundInfomationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFAroundInfomationViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E35600F718018A050021FDD5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3E2F769181E827D00A0498C /* CoreLocation.framework in Frameworks */,
+				E356014718019E950021FDD5 /* MapKit.framework in Frameworks */,
+				E356010018018A050021FDD5 /* CoreGraphics.framework in Frameworks */,
+				E356010218018A050021FDD5 /* UIKit.framework in Frameworks */,
+				E35600FE18018A050021FDD5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E356011818018A050021FDD5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E356011D18018A050021FDD5 /* XCTest.framework in Frameworks */,
+				E356011F18018A060021FDD5 /* UIKit.framework in Frameworks */,
+				E356011E18018A050021FDD5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E35600F118018A050021FDD5 = {
+			isa = PBXGroup;
+			children = (
+				E356010318018A050021FDD5 /* VazionWeather */,
+				E356012218018A060021FDD5 /* VazionWeatherTests */,
+				E35600FC18018A050021FDD5 /* Frameworks */,
+				E35600FB18018A050021FDD5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E35600FB18018A050021FDD5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E35600FA18018A050021FDD5 /* VazionWeather.app */,
+				E356011B18018A050021FDD5 /* VazionWeatherTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E35600FC18018A050021FDD5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E3E2F768181E827D00A0498C /* CoreLocation.framework */,
+				E356014618019E950021FDD5 /* MapKit.framework */,
+				E35600FD18018A050021FDD5 /* Foundation.framework */,
+				E35600FF18018A050021FDD5 /* CoreGraphics.framework */,
+				E356010118018A050021FDD5 /* UIKit.framework */,
+				E356011C18018A050021FDD5 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E356010318018A050021FDD5 /* VazionWeather */ = {
+			isa = PBXGroup;
+			children = (
+				E3E2F76A181E8D3800A0498C /* controller */,
+				E356013218018ADB0021FDD5 /* classes */,
+				E356010F18018A050021FDD5 /* Main.storyboard */,
+				E356011518018A050021FDD5 /* Images.xcassets */,
+				E356010418018A050021FDD5 /* Supporting Files */,
+			);
+			path = VazionWeather;
+			sourceTree = "<group>";
+		};
+		E356010418018A050021FDD5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E356010518018A050021FDD5 /* VazionWeather-Info.plist */,
+				E356010618018A050021FDD5 /* InfoPlist.strings */,
+				E356010918018A050021FDD5 /* main.m */,
+				E356010B18018A050021FDD5 /* VazionWeather-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E356012218018A060021FDD5 /* VazionWeatherTests */ = {
+			isa = PBXGroup;
+			children = (
+				E356012818018A060021FDD5 /* VazionWeatherTests.m */,
+				E356012318018A060021FDD5 /* Supporting Files */,
+			);
+			path = VazionWeatherTests;
+			sourceTree = "<group>";
+		};
+		E356012318018A060021FDD5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E356012418018A060021FDD5 /* VazionWeatherTests-Info.plist */,
+				E356012518018A060021FDD5 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E356013218018ADB0021FDD5 /* classes */ = {
+			isa = PBXGroup;
+			children = (
+				E356010C18018A050021FDD5 /* NFAppDelegate.h */,
+				E356010D18018A050021FDD5 /* NFAppDelegate.m */,
+				E356013418018DC60021FDD5 /* NFLocation.h */,
+				E356013518018DC60021FDD5 /* NFLocation.m */,
+				E356013A18018E050021FDD5 /* NFWeather.h */,
+				E356013B18018E050021FDD5 /* NFWeather.m */,
+				E35601431801910C0021FDD5 /* NFRootTabBarController.h */,
+				E35601441801910C0021FDD5 /* NFRootTabBarController.m */,
+			);
+			path = classes;
+			sourceTree = "<group>";
+		};
+		E3E2F76A181E8D3800A0498C /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				E3E2F76B181E8D5C00A0498C /* NFWeatherViewController.h */,
+				E3E2F76C181E8D5C00A0498C /* NFWeatherViewController.m */,
+				E3E2F76E181E8DA200A0498C /* NFWeatherSendViewController.h */,
+				E3E2F76F181E8DA200A0498C /* NFWeatherSendViewController.m */,
+				E3E2F771181E8DF800A0498C /* NFAroundInfomationViewController.h */,
+				E3E2F772181E8DF800A0498C /* NFAroundInfomationViewController.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E35600F918018A050021FDD5 /* VazionWeather */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E356012C18018A060021FDD5 /* Build configuration list for PBXNativeTarget "VazionWeather" */;
+			buildPhases = (
+				E35600F618018A050021FDD5 /* Sources */,
+				E35600F718018A050021FDD5 /* Frameworks */,
+				E35600F818018A050021FDD5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VazionWeather;
+			productName = VazionWeather;
+			productReference = E35600FA18018A050021FDD5 /* VazionWeather.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E356011A18018A050021FDD5 /* VazionWeatherTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E356012F18018A060021FDD5 /* Build configuration list for PBXNativeTarget "VazionWeatherTests" */;
+			buildPhases = (
+				E356011718018A050021FDD5 /* Sources */,
+				E356011818018A050021FDD5 /* Frameworks */,
+				E356011918018A050021FDD5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E356012118018A060021FDD5 /* PBXTargetDependency */,
+			);
+			name = VazionWeatherTests;
+			productName = VazionWeatherTests;
+			productReference = E356011B18018A050021FDD5 /* VazionWeatherTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E35600F218018A050021FDD5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = NF;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = noko;
+				TargetAttributes = {
+					E35600F918018A050021FDD5 = {
+						SystemCapabilities = {
+							com.apple.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					E356011A18018A050021FDD5 = {
+						TestTargetID = E35600F918018A050021FDD5;
+					};
+				};
+			};
+			buildConfigurationList = E35600F518018A050021FDD5 /* Build configuration list for PBXProject "VazionWeather" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E35600F118018A050021FDD5;
+			productRefGroup = E35600FB18018A050021FDD5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E35600F918018A050021FDD5 /* VazionWeather */,
+				E356011A18018A050021FDD5 /* VazionWeatherTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E35600F818018A050021FDD5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E356011618018A050021FDD5 /* Images.xcassets in Resources */,
+				E356010818018A050021FDD5 /* InfoPlist.strings in Resources */,
+				E356011118018A050021FDD5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E356011918018A050021FDD5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E356012718018A060021FDD5 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E35600F618018A050021FDD5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E356013618018DC60021FDD5 /* NFLocation.m in Sources */,
+				E3E2F773181E8DF800A0498C /* NFAroundInfomationViewController.m in Sources */,
+				E356010E18018A050021FDD5 /* NFAppDelegate.m in Sources */,
+				E356010A18018A050021FDD5 /* main.m in Sources */,
+				E3E2F76D181E8D5C00A0498C /* NFWeatherViewController.m in Sources */,
+				E356013C18018E050021FDD5 /* NFWeather.m in Sources */,
+				E35601451801910C0021FDD5 /* NFRootTabBarController.m in Sources */,
+				E3E2F770181E8DA200A0498C /* NFWeatherSendViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E356011718018A050021FDD5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E356012918018A060021FDD5 /* VazionWeatherTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E356012118018A060021FDD5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E35600F918018A050021FDD5 /* VazionWeather */;
+			targetProxy = E356012018018A060021FDD5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E356010618018A050021FDD5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E356010718018A050021FDD5 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E356010F18018A050021FDD5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E356011018018A050021FDD5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E356012518018A060021FDD5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E356012618018A060021FDD5 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E356012A18018A060021FDD5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		E356012B18018A060021FDD5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E356012D18018A060021FDD5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VazionWeather/VazionWeather-Prefix.pch";
+				INFOPLIST_FILE = "VazionWeather/VazionWeather-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E356012E18018A060021FDD5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VazionWeather/VazionWeather-Prefix.pch";
+				INFOPLIST_FILE = "VazionWeather/VazionWeather-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		E356013018018A060021FDD5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/VazionWeather.app/VazionWeather";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VazionWeather/VazionWeather-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "VazionWeatherTests/VazionWeatherTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		E356013118018A060021FDD5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/VazionWeather.app/VazionWeather";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VazionWeather/VazionWeather-Prefix.pch";
+				INFOPLIST_FILE = "VazionWeatherTests/VazionWeatherTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E35600F518018A050021FDD5 /* Build configuration list for PBXProject "VazionWeather" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E356012A18018A060021FDD5 /* Debug */,
+				E356012B18018A060021FDD5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E356012C18018A060021FDD5 /* Build configuration list for PBXNativeTarget "VazionWeather" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E356012D18018A060021FDD5 /* Debug */,
+				E356012E18018A060021FDD5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E356012F18018A060021FDD5 /* Build configuration list for PBXNativeTarget "VazionWeatherTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E356013018018A060021FDD5 /* Debug */,
+				E356013118018A060021FDD5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E35600F218018A050021FDD5 /* Project object */;
+}
