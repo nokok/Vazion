@@ -60,8 +60,25 @@
 
 - (void)addressUpdated:(NSString *)address prefName:(NSString *)prefName cityName:(NSString *)cityName{
     [_addressLabel setText:[NSString stringWithFormat:@"%@%@",address,@"の天気"]];
-    [_updateTimeLabel setText:@"たった今"];
+    [_updateTimeLabel setText:[self getDate]];
     [_activityIndicator stopAnimating];
+}
+
+- (NSString*)getDate{
+    NSDate *now = [NSDate date];
+    
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSUInteger flags = NSMonthCalendarUnit | NSDayCalendarUnit |  NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;
+    
+    NSDateComponents *dateComponents = [calendar components:flags fromDate:now];
+    
+    return [NSString stringWithFormat:@"%d月%d日 %d:%d:%d %@",
+            dateComponents.month,
+            dateComponents.day,
+            dateComponents.hour,
+            dateComponents.minute,
+            dateComponents.second,
+            @"に更新しました"];
 }
 
 @end
