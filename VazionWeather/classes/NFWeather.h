@@ -7,9 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NFLocation.h"
 
-@interface NFWeather : NSObject
+@interface NFWeather : NSObject<NFWeatherInfomationDelegate>
 
 @property (readonly) NSString *myWeather;
+
+- (id)init;
++ (NFWeather*)sharedManager;
 
 @end
