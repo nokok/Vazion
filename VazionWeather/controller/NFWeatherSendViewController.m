@@ -35,4 +35,27 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)withThunderboltButtonPushed:(id)sender {
+}
+
+- (IBAction)withStrongwindButtonPushed:(id)sender {
+}
+
+- (IBAction)withHailButtonPushed:(id)sender {
+}
+
+- (IBAction)withFogButtonPushed:(id)sender {
+}
+
+- (IBAction)publishValueChanged:(id)sender {
+}
+
+- (IBAction)allowAnonymousPostValueChanged:(id)sender {
+}
+
+- (IBAction)sendButtonPushed:(id)sender {
+}
+
+- (IBAction)addPictureButtonPushed:(id)sender {
+}
 @end

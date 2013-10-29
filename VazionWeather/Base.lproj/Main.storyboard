@@ -203,6 +203,9 @@
                                 <state key="normal" title="画像を添付する">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="addPictureButtonPushed:" destination="RGL-TI-rnm" eventType="touchUpInside" id="FaL-Ci-VR4"/>
+                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="匿名で投稿する" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eeI-a4-mSV">
                                 <rect key="frame" x="20" y="244" width="119" height="21"/>
@@ -213,6 +216,9 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="RwB-rd-1jw">
                                 <rect key="frame" x="251" y="239" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="allowAnonymousPostValueChanged:" destination="RGL-TI-rnm" eventType="valueChanged" id="Jfw-eB-k5r"/>
+                                </connections>
                             </switch>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="公開する" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="d6O-WF-h0A">
                                 <rect key="frame" x="20" y="205" width="135" height="21"/>
@@ -223,6 +229,9 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="zbp-a6-PGd">
                                 <rect key="frame" x="251" y="200" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="publishValueChanged:" destination="RGL-TI-rnm" eventType="valueChanged" id="Jje-Xp-tWl"/>
+                                </connections>
                             </switch>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="MrP-YJ-THm">
                                 <rect key="frame" x="20" y="124" width="60" height="30"/>
@@ -230,6 +239,9 @@
                                 <state key="normal" title="雷">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="withThunderboltButtonPushed:" destination="RGL-TI-rnm" eventType="touchUpInside" id="V6q-fX-SaI"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="vOi-wd-In3">
                                 <rect key="frame" x="88" y="124" width="60" height="30"/>
@@ -237,6 +249,9 @@
                                 <state key="normal" title="強風">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="withStrongwindButtonPushed:" destination="RGL-TI-rnm" eventType="touchUpInside" id="QoF-JB-CCR"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="QuT-kJ-lcQ">
                                 <rect key="frame" x="240" y="124" width="60" height="30"/>
@@ -244,6 +259,9 @@
                                 <state key="normal" title="霧">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="withFogButtonPushed:" destination="RGL-TI-rnm" eventType="touchUpInside" id="mdo-lh-dTv"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="PkD-GM-Eid">
                                 <rect key="frame" x="172" y="124" width="60" height="30"/>
@@ -251,6 +269,9 @@
                                 <state key="normal" title="雹/霰">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="withHailButtonPushed:" destination="RGL-TI-rnm" eventType="touchUpInside" id="S3t-S7-dw0"/>
+                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="マップに表示される時の名前が非表示になります" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jA2-Fp-JzG">
                                 <rect key="frame" x="20" y="278" width="280" height="21"/>
@@ -272,12 +293,19 @@
                                 <state key="normal" title="入力した天気を送信する">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="sendButtonPushed:" destination="RGL-TI-rnm" eventType="touchUpInside" id="IhH-sv-VuX"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="送信" id="7zB-pG-Twg"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="weatherSelector" destination="vlX-Wf-t4H" id="HBX-Zj-Op0"/>
+                        <outlet property="withThunderboltButton" destination="MrP-YJ-THm" id="Lov-71-Q1M"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iRG-is-sKr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
