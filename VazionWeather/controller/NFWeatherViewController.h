@@ -10,11 +10,16 @@
 #import "NFLocation.h"
 #import "NFWeather.h"
 
-@interface NFWeatherViewController : UIViewController<NFWeatherInfomationDelegate>
+@interface NFWeatherViewController : UIViewController<NFGPSInfomationDelegate,NFWeatherInfomationDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *addressLabel;
 @property (weak, nonatomic) IBOutlet UILabel *updateTimeLabel;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (weak, nonatomic) IBOutlet UILabel *weatherLabel;
+@property (weak, nonatomic) IBOutlet UILabel *rainProbablityLabel;
+@property (weak, nonatomic) IBOutlet UILabel *temprature;
+@property (weak, nonatomic) IBOutlet UIImageView *weatherImageView;
+
 
 - (IBAction)updateButtonClicked:(id)sender;
 @end

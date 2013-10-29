@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E31A0BB2181EC93F00107DF6 /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = E31A0BB1181EC93F00107DF6 /* XMLReader.m */; };
+		E31A0BB4181FB94500107DF6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E31A0BB3181FB94500107DF6 /* QuartzCore.framework */; };
 		E35600FE18018A050021FDD5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E35600FD18018A050021FDD5 /* Foundation.framework */; };
 		E356010018018A050021FDD5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E35600FF18018A050021FDD5 /* CoreGraphics.framework */; };
 		E356010218018A050021FDD5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E356010118018A050021FDD5 /* UIKit.framework */; };
@@ -44,6 +45,7 @@
 /* Begin PBXFileReference section */
 		E31A0BB0181EC93F00107DF6 /* XMLReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLReader.h; sourceTree = "<group>"; };
 		E31A0BB1181EC93F00107DF6 /* XMLReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLReader.m; sourceTree = "<group>"; };
+		E31A0BB3181FB94500107DF6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		E35600FA18018A050021FDD5 /* VazionWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VazionWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E35600FD18018A050021FDD5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E35600FF18018A050021FDD5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -82,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E31A0BB4181FB94500107DF6 /* QuartzCore.framework in Frameworks */,
 				E3E2F769181E827D00A0498C /* CoreLocation.framework in Frameworks */,
 				E356014718019E950021FDD5 /* MapKit.framework in Frameworks */,
 				E356010018018A050021FDD5 /* CoreGraphics.framework in Frameworks */,
@@ -125,6 +128,7 @@
 		E35600FC18018A050021FDD5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E31A0BB3181FB94500107DF6 /* QuartzCore.framework */,
 				E3E2F768181E827D00A0498C /* CoreLocation.framework */,
 				E356014618019E950021FDD5 /* MapKit.framework */,
 				E35600FD18018A050021FDD5 /* Foundation.framework */,

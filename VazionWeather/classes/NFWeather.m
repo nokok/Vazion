@@ -97,7 +97,40 @@
                               error:nil];
     NSDictionary *parsedXMLData = [self encodingDataToDictionary:fetchedXMLData];
     
-    NSLog(@"%d",[self chooseNearestData:parsedXMLData]);
+    NSArray *resultSet = [[[parsedXMLData objectForKey:@"weatherforecast"]objectForKey:@"pref"]objectForKey:@"area"];
+    NSDictionary *result = [resultSet objectAtIndex:[self chooseNearestData:parsedXMLData]];
+    
+    NSDictionary *weather = [[result objectForKey:@"info"]objectAtIndex:0];
+    
+    NSData *imageData = [NSData dataWithContentsOfURL:
+                         [NSURL URLWithString:
+                          [[weather objectForKey:@"img"]objectForKey:@"text"]]];
+    UIImage *image = [[UIImage alloc]initWithData:imageData];
+    
+    NSDate *now = [NSDate date];
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDateComponents *dateComponents = [calendar components:NSHourCalendarUnit fromDate:now];
+    
+    NSString* rainfallchance;
+    
+    
+    if(dateComponents.hour >= 0 && 7 > dateComponents.hour){
+        rainfallchance = [[[[weather objectForKey:@"rainfallchance"]objectForKey:@"period"] objectAtIndex:0]objectForKey:@"text"];
+    }else if(dateComponents.hour >= 7 && 13 > dateComponents.hour){
+        rainfallchance = [[[[weather objectForKey:@"rainfallchance"]objectForKey:@"period"] objectAtIndex:1]objectForKey:@"text"];
+    }else if(dateComponents.hour >=13 && 19 > dateComponents.hour){
+        rainfallchance = [[[[weather objectForKey:@"rainfallchance"]objectForKey:@"period"] objectAtIndex:2]objectForKey:@"text"];
+    }else{
+        rainfallchance = [[[[weather objectForKey:@"rainfallchance"]objectForKey:@"period"] objectAtIndex:3]objectForKey:@"text"];
+    }
+    
+    [self.delegate
+     weatherInfomationFetched: [[weather objectForKey:@"weather"]objectForKey:@"text"]
+     img:image
+     maxTemp:[[[[weather objectForKey:@"temperature"]objectForKey:@"range"]objectAtIndex:0]objectForKey:@"text"]
+     minTemp:[[[[weather objectForKey:@"temperature"]objectForKey:@"range"]objectAtIndex:1]objectForKey:@"text"]
+     rainProbablity:rainfallchance];
+    
 }
 
 - (NSDictionary*)encodingDataToDictionary:(NSData*)data{

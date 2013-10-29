@@ -10,9 +10,15 @@
 #import "XMLReader.h"
 #import "NFLocation.h"
 
+@protocol NFWeatherInfomationDelegate <NSObject>
+@required
+- (void) weatherInfomationFetched:(NSString*)weather img:(UIImage*)image maxTemp:(NSString*)maxTemp minTemp:(NSString*)minTemp rainProbablity:(NSString*)rainProb;
+@end
+
 @interface NFWeather : NSObject
 
 @property (readonly) NSString *myWeather;
+@property id<NFWeatherInfomationDelegate> delegate;
 
 - (id)init;
 + (NFWeather*)sharedManager;
