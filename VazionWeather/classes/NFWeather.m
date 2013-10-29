@@ -113,22 +113,25 @@
     
     NSString* rainfallchance;
     
+    NSArray *rainDataArray = [[weather objectForKey:@"rainfallchance"]objectForKey:@"period"];
     
     if(dateComponents.hour >= 0 && 7 > dateComponents.hour){
-        rainfallchance = [[[[weather objectForKey:@"rainfallchance"]objectForKey:@"period"] objectAtIndex:0]objectForKey:@"text"];
+        rainfallchance = [[rainDataArray objectAtIndex:0]objectForKey:@"text"];
     }else if(dateComponents.hour >= 7 && 13 > dateComponents.hour){
-        rainfallchance = [[[[weather objectForKey:@"rainfallchance"]objectForKey:@"period"] objectAtIndex:1]objectForKey:@"text"];
+        rainfallchance = [[rainDataArray objectAtIndex:1]objectForKey:@"text"];
     }else if(dateComponents.hour >=13 && 19 > dateComponents.hour){
-        rainfallchance = [[[[weather objectForKey:@"rainfallchance"]objectForKey:@"period"] objectAtIndex:2]objectForKey:@"text"];
+        rainfallchance = [[rainDataArray objectAtIndex:2]objectForKey:@"text"];
     }else{
-        rainfallchance = [[[[weather objectForKey:@"rainfallchance"]objectForKey:@"period"] objectAtIndex:3]objectForKey:@"text"];
+        rainfallchance = [[rainDataArray objectAtIndex:3]objectForKey:@"text"];
     }
+    
+    NSArray *temperatureArray = [[weather objectForKey:@"temperature"]objectForKey:@"range"];
     
     [self.delegate
      weatherInfomationFetched: [[weather objectForKey:@"weather"]objectForKey:@"text"]
      img:image
-     maxTemp:[[[[weather objectForKey:@"temperature"]objectForKey:@"range"]objectAtIndex:0]objectForKey:@"text"]
-     minTemp:[[[[weather objectForKey:@"temperature"]objectForKey:@"range"]objectAtIndex:1]objectForKey:@"text"]
+     maxTemp:[[temperatureArray objectAtIndex:0]objectForKey:@"text"]
+     minTemp:[[temperatureArray objectAtIndex:1]objectForKey:@"text"]
      rainProbablity:rainfallchance];
     
 }
