@@ -89,7 +89,7 @@
     [_weatherLabel setText:weather];
     [_weatherImageView setImage:image];
     [_rainProbablityLabel setText:[NSString stringWithFormat:@"%@%%",rainProb]];
-    [_temprature setText:[NSString stringWithFormat:@"%@ / %@ ",maxTemp,minTemp]];
+    [_temprature setText:[NSString stringWithFormat:@"%@℃/ %@℃",maxTemp,minTemp]];
 }
 
 @end
