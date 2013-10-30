@@ -62,7 +62,8 @@
 }
 
 - (void)addressUpdated:(NSString *)address prefName:(NSString *)prefName cityName:(NSString *)cityName{
-    [_addressLabel setText:[NSString stringWithFormat:@"%@%@",address,@"の天気"]];
+    [_addressLabel setText:address];
+    //[_addressLabel setText:[NSString stringWithFormat:@"%@%@",address,@"の天気"]];
     [_updateTimeLabel setText:[self getDate]];
     [_activityIndicator stopAnimating];
     [[NFWeather sharedManager] fetchXMLData:prefName];
@@ -89,7 +90,7 @@
     [_weatherLabel setText:weather];
     [_weatherImageView setImage:image];
     [_rainProbablityLabel setText:[NSString stringWithFormat:@"%@%%",rainProb]];
-    [_temprature setText:[NSString stringWithFormat:@"%@℃/ %@℃",maxTemp,minTemp]];
+    [_temprature setText:[NSString stringWithFormat:@"%@℃ / %@℃",maxTemp,minTemp]];
 }
 
 @end
