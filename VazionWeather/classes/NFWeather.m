@@ -89,7 +89,6 @@
     NSURL *url = [NSURL URLWithString:[NSString
                                        stringWithFormat:@"%@%@",@"http://www.drk7.jp/weather/xml/",
                                        [prefectureNameDictionary objectForKey:prefName]]];
-    NSLog(@"URL:%@",url);
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     NSData *fetchedXMLData = [NSURLConnection
                               sendSynchronousRequest:request
@@ -169,7 +168,6 @@
             minDiff = latDiff * lonDiff;
             nearestIndex = i;
         }
-        NSLog(@"Diff:%lf",minDiff);
         i++;
     }
     return nearestIndex;
