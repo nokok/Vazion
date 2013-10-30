@@ -12,7 +12,17 @@
 
 @end
 
-@implementation NFWeatherSendViewController
+@implementation NFWeatherSendViewController{
+    @private
+    Boolean isWithThunderbolt;
+    Boolean isWithStrongwind;
+    Boolean isWithHail;
+    Boolean isWithFog;
+    Boolean isPublic;
+    Boolean isAnonymousPost;
+    UIColor *selectedColor;
+    UIColor *whiteColor;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,6 +37,14 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    isWithThunderbolt = NO;
+    isWithStrongwind = NO;
+    isWithHail = NO;
+    isWithFog = NO;
+    isPublic = YES;
+    isAnonymousPost = NO;
+    selectedColor = [[UIColor alloc]initWithRed:0.8f green:0.8f blue:0.8f alpha:1.0f];
+    whiteColor = [UIColor whiteColor];
 }
 
 - (void)didReceiveMemoryWarning
@@ -36,23 +54,40 @@
 }
 
 - (IBAction)withThunderboltButtonPushed:(id)sender {
+    isWithThunderbolt = !isWithThunderbolt;
+    if(isWithThunderbolt){
+        _thunderboltButton.backgroundColor = selectedColor;
+    }else{
+        _thunderboltButton.backgroundColor = whiteColor;
+    }
 }
 
 - (IBAction)withStrongwindButtonPushed:(id)sender {
+    isWithStrongwind = !isWithStrongwind;
+    if(isWithStrongwind){
+        _strongwindButton.backgroundColor = selectedColor;
+    }else{
+        _strongwindButton.backgroundColor = whiteColor;
+    }
 }
 
 - (IBAction)withHailButtonPushed:(id)sender {
+    isWithHail = !isWithHail;
+    if(isWithHail){
+        _hailButton.backgroundColor = selectedColor;
+    }else{
+        _hailButton.backgroundColor = whiteColor;
+    }
 }
 
 - (IBAction)withFogButtonPushed:(id)sender {
+    isWithFog = !isWithFog;
+    if(isWithFog){
+        _fogButton.backgroundColor = selectedColor;
+    }else{
+        _fogButton.backgroundColor = whiteColor;
+    }
 }
-
-- (IBAction)publishValueChanged:(id)sender {
-}
-
-- (IBAction)allowAnonymousPostValueChanged:(id)sender {
-}
-
 - (IBAction)sendButtonPushed:(id)sender {
 }
 

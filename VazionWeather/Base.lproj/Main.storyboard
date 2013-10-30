@@ -70,7 +70,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="天気" id="e5p-pf-EEm"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
@@ -86,7 +86,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DT3-1g-gy0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3029" y="1810"/>
+            <point key="canvasLocation" x="3020" y="1810"/>
         </scene>
         <!--Around Infomation View Controller - みんなの天気-->
         <scene sceneID="hoV-tW-0c4">
@@ -240,7 +240,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="withThunderboltButtonPushed:" destination="RGL-TI-rnm" eventType="touchUpInside" id="V6q-fX-SaI"/>
+                                    <action selector="withThunderboltButtonPushed:" destination="RGL-TI-rnm" eventType="touchUpInside" id="8tb-bE-dqc"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="vOi-wd-In3">
@@ -250,7 +250,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="withStrongwindButtonPushed:" destination="RGL-TI-rnm" eventType="touchUpInside" id="QoF-JB-CCR"/>
+                                    <action selector="withStrongwindButtonPushed:" destination="RGL-TI-rnm" eventType="touchUpInside" id="AdD-cO-RMN"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="QuT-kJ-lcQ">
@@ -303,8 +303,13 @@
                     <tabBarItem key="tabBarItem" title="送信" id="7zB-pG-Twg"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="anonymousPostSwitch" destination="RwB-rd-1jw" id="aL1-ZX-Q3d"/>
+                        <outlet property="fogButton" destination="QuT-kJ-lcQ" id="1AP-EW-2ZX"/>
+                        <outlet property="hailButton" destination="PkD-GM-Eid" id="hFG-Fn-9Z1"/>
+                        <outlet property="publishSwitch" destination="zbp-a6-PGd" id="vdm-UY-pbF"/>
+                        <outlet property="strongwindButton" destination="vOi-wd-In3" id="Hav-BT-OLu"/>
+                        <outlet property="thunderboltButton" destination="MrP-YJ-THm" id="eeA-lS-UuU"/>
                         <outlet property="weatherSelector" destination="vlX-Wf-t4H" id="HBX-Zj-Op0"/>
-                        <outlet property="withThunderboltButton" destination="MrP-YJ-THm" id="Lov-71-Q1M"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iRG-is-sKr" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -10,6 +10,12 @@
 
 @interface NFWeatherSendViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UISegmentedControl *weatherSelector;
+@property (weak, nonatomic) IBOutlet UISwitch *publishSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *anonymousPostSwitch;
+@property (weak, nonatomic) IBOutlet UIButton *thunderboltButton;
+@property (weak, nonatomic) IBOutlet UIButton *strongwindButton;
+@property (weak, nonatomic) IBOutlet UIButton *hailButton;
+@property (weak, nonatomic) IBOutlet UIButton *fogButton;
 
 - (IBAction)withThunderboltButtonPushed:(id)sender;
 - (IBAction)withStrongwindButtonPushed:(id)sender;
