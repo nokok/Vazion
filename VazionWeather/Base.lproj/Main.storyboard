@@ -20,7 +20,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="取得中" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Zc5-vF-kM7">
-                                <rect key="frame" x="20" y="379" width="167" height="21"/>
+                                <rect key="frame" x="20" y="384" width="167" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                 <color key="textColor" red="0.17021908967391308" green="0.17021908967391308" blue="0.17021908967391308" alpha="1" colorSpace="calibratedRGB"/>
@@ -73,7 +73,7 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="天気" id="e5p-pf-EEm"/>
+                    <tabBarItem key="tabBarItem" title="天気" image="brightness-half.png" id="e5p-pf-EEm"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="activityIndicator" destination="EQA-vh-KxB" id="QUY-SZ-2Dx"/>
@@ -130,7 +130,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="みんなの天気" id="Zrc-LJ-olA"/>
+                    <tabBarItem key="tabBarItem" title="みんなの天気" image="pin-alt.png" id="Zrc-LJ-olA"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3m1-hY-v5Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -150,6 +150,7 @@
                     <connections>
                         <segue destination="8ba-r3-BVk" kind="relationship" relationship="viewControllers" id="AHC-Ar-YtQ"/>
                         <segue destination="W83-MC-iOB" kind="relationship" relationship="viewControllers" id="4BB-Zi-iCF"/>
+                        <segue destination="NFJ-G8-hGM" kind="relationship" relationship="viewControllers" id="apn-63-LCL"/>
                         <segue destination="RGL-TI-rnm" kind="relationship" relationship="viewControllers" id="Fh6-TX-Az9"/>
                     </connections>
                 </tabBarController>
@@ -157,21 +158,63 @@
             </objects>
             <point key="canvasLocation" x="3926" y="764"/>
         </scene>
-        <!--View Controller - 設定-->
+        <!--View Controller - 履歴-->
         <scene sceneID="KDf-FK-fQ1">
             <objects>
                 <viewController id="NFJ-G8-hGM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RUk-ae-WUT">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今まで送信した天気" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wh7-IN-T3G">
+                                <rect key="frame" x="20" y="20" width="280" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="uHc-Da-nwl">
+                                <rect key="frame" x="0.0" y="88" width="320" height="343"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="hDV-Aa-Pyc">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hDV-Aa-Pyc" id="7C8-rc-6JM">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="U3S-A6-PYM">
+                                                    <rect key="frame" x="93" y="0.0" width="227" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1月1日" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1f2-Ly-YsR">
+                                                    <rect key="frame" x="20" y="2" width="54" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="晴れ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dGZ-LG-8kj">
+                                                    <rect key="frame" x="26" y="20" width="34" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="設定" id="ChZ-Dt-5Bz"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <tabBarItem key="tabBarItem" title="履歴" image="inbox.png" id="ChZ-Dt-5Bz"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hoC-r6-X3p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4372" y="1848"/>
+            <point key="canvasLocation" x="4341" y="1810"/>
         </scene>
         <!--Weather Send View Controller - 送信-->
         <scene sceneID="El5-nc-9kn">
@@ -221,8 +264,8 @@
                                     <action selector="allowAnonymousPostValueChanged:" destination="RGL-TI-rnm" eventType="valueChanged" id="Jfw-eB-k5r"/>
                                 </connections>
                             </switch>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="公開する" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="d6O-WF-h0A">
-                                <rect key="frame" x="20" y="205" width="135" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="サーバーに公開する" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="d6O-WF-h0A">
+                                <rect key="frame" x="20" y="205" width="152" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                 <nil key="highlightedColor"/>
@@ -231,7 +274,7 @@
                                 <rect key="frame" x="251" y="200" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="publishValueChanged:" destination="RGL-TI-rnm" eventType="valueChanged" id="Jje-Xp-tWl"/>
+                                    <action selector="publishSwitchValueChanged:" destination="RGL-TI-rnm" eventType="valueChanged" id="aCc-Fx-yLs"/>
                                 </connections>
                             </switch>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="MrP-YJ-THm">
@@ -274,15 +317,22 @@
                                     <action selector="withHailButtonPushed:" destination="RGL-TI-rnm" eventType="touchUpInside" id="S3t-S7-dw0"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="マップに表示される時の名前が非表示になります" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jA2-Fp-JzG">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="サーバーにデータは送信されますが名前が非表示になります" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jA2-Fp-JzG">
+                                <rect key="frame" x="20" y="289" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="「匿名で投稿する」をONにすると" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xPA-lB-y4B">
                                 <rect key="frame" x="20" y="278" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="また、表示される位置にランダムにゆらぎが加わります" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="O8e-iK-Cyx">
-                                <rect key="frame" x="20" y="292" width="280" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="また、表示される位置にランダムなゆらぎが加わります" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="O8e-iK-Cyx">
+                                <rect key="frame" x="20" y="301" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -301,13 +351,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="送信" id="7zB-pG-Twg"/>
+                    <tabBarItem key="tabBarItem" title="送信" image="out.png" id="7zB-pG-Twg"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="anonymousPostSwitch" destination="RwB-rd-1jw" id="aL1-ZX-Q3d"/>
                         <outlet property="fogButton" destination="QuT-kJ-lcQ" id="1AP-EW-2ZX"/>
                         <outlet property="hailButton" destination="PkD-GM-Eid" id="hFG-Fn-9Z1"/>
                         <outlet property="publishSwitch" destination="zbp-a6-PGd" id="vdm-UY-pbF"/>
+                        <outlet property="sendButton" destination="jnN-E3-6Bd" id="1Xf-k8-tSq"/>
                         <outlet property="strongwindButton" destination="vOi-wd-In3" id="Hav-BT-OLu"/>
                         <outlet property="thunderboltButton" destination="MrP-YJ-THm" id="eeA-lS-UuU"/>
                         <outlet property="weatherSelector" destination="vlX-Wf-t4H" id="HBX-Zj-Op0"/>
@@ -318,6 +369,12 @@
             <point key="canvasLocation" x="3913" y="1810"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="brightness-half.png" width="30" height="30"/>
+        <image name="inbox.png" width="30" height="30"/>
+        <image name="out.png" width="30" height="30"/>
+        <image name="pin-alt.png" width="30" height="30"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

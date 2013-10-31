@@ -60,6 +60,7 @@
     }else{
         _thunderboltButton.backgroundColor = whiteColor;
     }
+    //hogehoge
 }
 
 - (IBAction)withStrongwindButtonPushed:(id)sender {
@@ -89,8 +90,18 @@
     }
 }
 - (IBAction)sendButtonPushed:(id)sender {
+    NSURL *url = [[NSURL alloc] initWithString:@"http://nokok.dip.jp/"];
 }
 
 - (IBAction)addPictureButtonPushed:(id)sender {
+}
+
+- (IBAction)publishSwitchValueChanged:(id)sender {
+    isPublic = !isPublic;
+    if(isPublic){
+        [_sendButton setTitle:@"入力した情報をサーバーに送信" forState:UIControlStateNormal];
+    }else{
+        [_sendButton setTitle:@"カレンダーにだけ保存" forState:UIControlStateNormal];
+    }
 }
 @end

@@ -16,14 +16,14 @@
 @property (weak, nonatomic) IBOutlet UIButton *strongwindButton;
 @property (weak, nonatomic) IBOutlet UIButton *hailButton;
 @property (weak, nonatomic) IBOutlet UIButton *fogButton;
+@property (weak, nonatomic) IBOutlet UIButton *sendButton;
 
 - (IBAction)withThunderboltButtonPushed:(id)sender;
 - (IBAction)withStrongwindButtonPushed:(id)sender;
 - (IBAction)withHailButtonPushed:(id)sender;
 - (IBAction)withFogButtonPushed:(id)sender;
-- (IBAction)publishValueChanged:(id)sender;
-- (IBAction)allowAnonymousPostValueChanged:(id)sender;
 - (IBAction)sendButtonPushed:(id)sender;
 - (IBAction)addPictureButtonPushed:(id)sender;
+- (IBAction)publishSwitchValueChanged:(id)sender;
 
 @end
