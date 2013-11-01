@@ -90,7 +90,7 @@
     }
 }
 - (IBAction)sendButtonPushed:(id)sender {
-    NSURL *url = [[NSURL alloc] initWithString:@"http://nokok.dip.jp/"];
+    //NSURL *url = [[NSURL alloc] initWithString:@"http://nokok.dip.jp/"];
 }
 
 - (IBAction)addPictureButtonPushed:(id)sender {
