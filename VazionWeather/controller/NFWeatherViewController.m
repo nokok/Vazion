@@ -30,9 +30,12 @@
 	// Do any additional setup after loading the view.
     NFLocation *locationInstance = [NFLocation sharedManager];
     locationInstance.delegate = self;
+    NFWeather *weatherInstance = [NFWeather sharedManager];
+    weatherInstance.delegate = self;
     [locationInstance updateMyGPSInfomation];
     [_addressLabel setText:@"取得中..."];
     [_activityIndicator startAnimating];
+    [_weatherImageView layer].magnificationFilter = kCAFilterNearest;
 }
 
 - (void)didReceiveMemoryWarning
@@ -80,6 +83,13 @@
             dateComponents.minute,
             dateComponents.second,
             @"に更新しました"];
+}
+
+- (void)weatherInfomationFetched:(NSString *)weather img:(UIImage *)image maxTemp:(NSString*)maxTemp minTemp:(NSString*)minTemp rainProbablity:(NSString*)rainProb{
+    [_weatherLabel setText:weather];
+    [_weatherImageView setImage:image];
+    [_rainProbablityLabel setText:[NSString stringWithFormat:@"%@%%",rainProb]];
+    [_temprature setText:[NSString stringWithFormat:@"%@ / %@ ",maxTemp,minTemp]];
 }
 
 @end

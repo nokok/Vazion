@@ -33,7 +33,7 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="C6f-IV-WiX">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="C6f-IV-WiX">
                                 <rect key="frame" x="64" y="117" width="192" height="192"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -43,14 +43,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ofr-2b-A0p">
-                                <rect key="frame" x="64" y="346" width="37" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ofr-2b-A0p">
+                                <rect key="frame" x="20" y="346" width="128" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21/32" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Akk-h0-m5g">
-                                <rect key="frame" x="212" y="346" width="44" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21/32" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Akk-h0-m5g">
+                                <rect key="frame" x="156" y="346" width="144" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
@@ -77,7 +77,11 @@
                     <connections>
                         <outlet property="activityIndicator" destination="EQA-vh-KxB" id="QUY-SZ-2Dx"/>
                         <outlet property="addressLabel" destination="mU8-1a-0Kj" id="VCR-Ru-Tf8"/>
+                        <outlet property="rainProbablityLabel" destination="Ofr-2b-A0p" id="efq-dD-YYa"/>
+                        <outlet property="temprature" destination="Akk-h0-m5g" id="l0a-f5-1T2"/>
                         <outlet property="updateTimeLabel" destination="Zc5-vF-kM7" id="zfi-uV-A2s"/>
+                        <outlet property="weatherImageView" destination="C6f-IV-WiX" id="qoj-GE-9H4"/>
+                        <outlet property="weatherLabel" destination="Lyf-LL-2Zg" id="uBG-Yl-Guu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DT3-1g-gy0" userLabel="First Responder" sceneMemberID="firstResponder"/>

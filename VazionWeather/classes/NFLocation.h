@@ -11,14 +11,14 @@
 #import <CoreLocation/CLGeocoder.h>
 #import <CoreLocation/CLPlacemark.h>
 
-@protocol NFWeatherInfomationDelegate <NSObject>
+@protocol NFGPSInfomationDelegate <NSObject>
 @optional
 - (void) gpsInfomationUpdating;
 - (void) gpsInfomationUpdated;
 - (void) addressUpdated:(NSString*)address prefName:(NSString*)prefName cityName:(NSString*)cityName;
 @end
 
-@interface NFLocation : NSObject<CLLocationManagerDelegate,NFWeatherInfomationDelegate>
+@interface NFLocation : NSObject<CLLocationManagerDelegate,NFGPSInfomationDelegate>
 
 @property (nonatomic, readonly)NSString *myPrefectureName;
 @property (nonatomic, readonly)NSString *myCityName;
@@ -26,7 +26,7 @@
 @property (nonatomic, readonly)Boolean isGPSEnabled;
 @property (nonatomic, readonly)double latitude;
 @property (nonatomic, readonly)double longitude;
-@property id<NFWeatherInfomationDelegate> delegate;
+@property id<NFGPSInfomationDelegate> delegate;
 
 -(id)init;
 -(void)updateMyGPSInfomation;
