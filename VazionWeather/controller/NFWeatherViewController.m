@@ -78,19 +78,25 @@
     NSDateComponents *dateComponents = [calendar components:flags fromDate:now];
     
     return [NSString stringWithFormat:@"%d月%d日 %d:%d:%d %@",
-            dateComponents.month,
-            dateComponents.day,
-            dateComponents.hour,
-            dateComponents.minute,
-            dateComponents.second,
+            (int)dateComponents.month,
+            (int)dateComponents.day,
+            (int)dateComponents.hour,
+            (int)dateComponents.minute,
+            (int)dateComponents.second,
             @"に更新しました"];
 }
 
 - (void)weatherInfomationFetched:(NSString *)weather img:(UIImage *)image maxTemp:(NSString*)maxTemp minTemp:(NSString*)minTemp rainProbablity:(NSString*)rainProb{
-    [_weatherLabel setText:weather];
-    [_weatherImageView setImage:image];
-    [_rainProbablityLabel setText:[NSString stringWithFormat:@"%@%%",rainProb]];
-    [_temprature setText:[NSString stringWithFormat:@"%@℃ / %@℃",maxTemp,minTemp]];
+    if(maxTemp == nil){
+        [_weatherLabel setText:@"国内専用です"];
+        [_rainProbablityLabel setText:@"---"];
+        [_temprature setText:@"---℃ ---℃"];
+    }else{
+        [_weatherLabel setText:weather];
+        [_weatherImageView setImage:image];
+        [_rainProbablityLabel setText:[NSString stringWithFormat:@"%@%%",rainProb]];
+        [_temprature setText:[NSString stringWithFormat:@"%@℃ / %@℃",maxTemp,minTemp]];
+    }
 }
 
 @end
