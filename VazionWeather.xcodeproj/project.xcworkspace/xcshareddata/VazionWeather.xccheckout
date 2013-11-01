@@ -5,36 +5,36 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>1688EC33-E220-48F0-BBB0-E1B5DB3F9A2B</string>
+	<string>02351858-62AA-4F3C-8637-ED4055392716</string>
 	<key>IDESourceControlProjectName</key>
 	<string>VazionWeather</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>4CCDD8FE-5589-4C36-A27B-BDE96335A766</key>
-		<string>https://github.com/nokok/VazionWeather.git</string>
+		<key>BA8E06C5-3553-45A0-8F3E-DB5C155EE447</key>
+		<string>https://github.com/techcamp15-tokyo-1/Vazion.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>VazionWeather.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>4CCDD8FE-5589-4C36-A27B-BDE96335A766</key>
+		<key>BA8E06C5-3553-45A0-8F3E-DB5C155EE447</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/nokok/VazionWeather.git</string>
+	<string>https://github.com/techcamp15-tokyo-1/Vazion.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>4CCDD8FE-5589-4C36-A27B-BDE96335A766</string>
+	<string>BA8E06C5-3553-45A0-8F3E-DB5C155EE447</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>4CCDD8FE-5589-4C36-A27B-BDE96335A766</string>
+			<string>BA8E06C5-3553-45A0-8F3E-DB5C155EE447</string>
 			<key>IDESourceControlWCCName</key>
-			<string>VazionWeather</string>
+			<string>Vazion</string>
 		</dict>
 	</array>
 </dict>
