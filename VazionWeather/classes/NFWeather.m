@@ -13,7 +13,9 @@
     NSDictionary *prefectureNameDictionary;
 }
 
--(id)initSharedInstance{
+#pragma mark -
+#pragma mark Initializer
+- (id)initSharedInstance{
     self = [super init];
     if(self){
         prefectureNameDictionary = @{
@@ -68,6 +70,8 @@
     return self;
 }
 
+#pragma mark -
+#pragma mark Singleton SharedInstanceManager
 +(NFWeather*)sharedManager{
     static NFWeather* sharedInstance;
     static dispatch_once_t onceToken;
@@ -85,6 +89,8 @@
     return self;
 }
 
+#pragma mark -
+#pragma mark Fetch from drk7.jp server
 -(void)fetchXMLData:(NSString *)prefName{
     NSURL *url = [NSURL URLWithString:[NSString
                                        stringWithFormat:@"%@%@",@"http://www.drk7.jp/weather/xml/",

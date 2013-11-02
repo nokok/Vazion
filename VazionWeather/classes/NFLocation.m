@@ -14,6 +14,8 @@
     CLLocationManager *locationManager;
 }
 
+#pragma mark -
+#pragma mark Initializer
 -(id)init{
     [self doesNotRecognizeSelector:_cmd];
     return nil;
@@ -30,6 +32,9 @@
     return self;
 }
 
+#pragma mark -
+#pragma mark Singleton SharedInstanceManager
+
 +(NFLocation*)sharedManager{
     static NFLocation* sharedInstance;
     static dispatch_once_t onceToken;
@@ -39,6 +44,8 @@
     return sharedInstance;
 }
 
+#pragma mark -
+#pragma mark GPS
 -(void)updateMyGPSInfomation{
     [locationManager stopUpdatingLocation];
     [locationManager startUpdatingLocation];

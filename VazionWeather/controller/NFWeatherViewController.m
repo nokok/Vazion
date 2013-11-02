@@ -15,6 +15,7 @@
     NFLocation *location;
 }
 
+#pragma mark -
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -33,10 +34,8 @@
     [[NFLocation sharedManager]updateMyGPSInfomation];
 }
 
-- (void)didUpdate{
-    [_addressLabel setText:[NSString stringWithFormat:@"%@%@",[NFLocation sharedManager].myAddress,@"の天気"]];
-}
-
+#pragma mark -
+#pragma mark NFGPSInfomationDelegate implementation
 - (void)gpsInfomationUpdating{
     [_addressLabel setText:@"GPS測位中..."];
     [_activityIndicator startAnimating];
@@ -46,21 +45,26 @@
     [_addressLabel setText:@"住所を取得しています..."];
 }
 
-- (void)addressUpdated:(NSString *)address prefName:(NSString *)prefName cityName:(NSString *)cityName{
+- (void)addressUpdated:(NSString *)address
+              prefName:(NSString *)prefName
+              cityName:(NSString *)cityName{
+    
     [_addressLabel setText:address];
-    //[_addressLabel setText:[NSString stringWithFormat:@"%@%@",address,@"の天気"]];
     [_updateTimeLabel setText:[self getDate]];
     [_activityIndicator stopAnimating];
     [[NFWeather sharedManager] fetchXMLData:prefName];
 }
 
+#pragma mark -
+#pragma mark Update View
 - (NSString*)getDate{
     NSDate *now = [NSDate date];
     
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSUInteger flags = NSMonthCalendarUnit | NSDayCalendarUnit |  NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;
     
-    NSDateComponents *dateComponents = [calendar components:flags fromDate:now];
+    NSDateComponents *dateComponents = [calendar components:flags
+                                                   fromDate:now];
     
     return [NSString stringWithFormat:@"%d月%d日 %d:%d:%d %@",
             (int)dateComponents.month,
@@ -71,17 +75,43 @@
             @"に更新しました"];
 }
 
-- (void)weatherInfomationFetched:(NSString *)weather img:(UIImage *)image maxTemp:(NSString*)maxTemp minTemp:(NSString*)minTemp rainProbablity:(NSString*)rainProb{
+- (void)weatherInfomationFetched:(NSString *)weather
+                             img:(UIImage *)image
+                         maxTemp:(NSString*)maxTemp
+                         minTemp:(NSString*)minTemp
+                  rainProbablity:(NSString*)rainProb{
+    
     if(maxTemp == nil){
-        [_weatherLabel setText:@"国内専用です"];
-        [_rainProbablityLabel setText:@"---"];
-        [_temprature setText:@"---℃ ---℃"];
+        [self commonViewCreator:@"国内専用です"
+                 rainProbablity:@"0"
+                  maxTemprature:@"--"
+                  minTemprature:@"--"
+                   weatherImage:nil
+         ];
     }else{
-        [_weatherLabel setText:weather];
-        [_weatherImageView setImage:image];
-        [_rainProbablityLabel setText:[NSString stringWithFormat:@"%@%%",rainProb]];
-        [_temprature setText:[NSString stringWithFormat:@"%@℃ / %@℃",maxTemp,minTemp]];
+        [self commonViewCreator:weather
+                 rainProbablity:rainProb
+                  maxTemprature:maxTemp
+                  minTemprature:minTemp
+                   weatherImage:image];
     }
+    
+}
+
+- (void)didGPSInfomationUpdated{
+    [_addressLabel setText:[NSString stringWithFormat:@"%@%@",[NFLocation sharedManager].myAddress,@"の天気"]];
+}
+
+- (void)commonViewCreator:(NSString*)weatherText
+           rainProbablity:(NSString*)rainProbablityText
+            maxTemprature:(NSString*)maxTemp
+            minTemprature:(NSString*)minTemp
+             weatherImage:(UIImage*)image
+{
+    [_weatherLabel setText:weatherText];
+    [_rainProbablityLabel setText:[NSString stringWithFormat:@"%@%%",rainProbablityText]];
+    [_temprature setText:[NSString stringWithFormat:@"%@℃ / %@℃",maxTemp,minTemp]];
+    [_weatherImageView setImage:image];
 }
 
 @end

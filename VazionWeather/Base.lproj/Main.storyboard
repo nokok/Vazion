@@ -132,6 +132,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="みんなの天気" image="pin-alt.png" id="Zrc-LJ-olA"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="mapView" destination="Wyd-NK-426" id="4eP-kc-7Uq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3m1-hY-v5Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

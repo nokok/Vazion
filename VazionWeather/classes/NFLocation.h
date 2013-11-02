@@ -15,21 +15,23 @@
 @optional
 - (void) gpsInfomationUpdating;
 - (void) gpsInfomationUpdated;
-- (void) addressUpdated:(NSString*)address prefName:(NSString*)prefName cityName:(NSString*)cityName;
+- (void) addressUpdated:(NSString*)address
+               prefName:(NSString*)prefName
+               cityName:(NSString*)cityName;
 @end
 
 @interface NFLocation : NSObject<CLLocationManagerDelegate,NFGPSInfomationDelegate>
 
-@property (nonatomic, readonly)NSString *myPrefectureName;
-@property (nonatomic, readonly)NSString *myCityName;
-@property (nonatomic, readonly)NSString *myAddress;
-@property (nonatomic, readonly)Boolean isGPSEnabled;
-@property (nonatomic, readonly)double latitude;
-@property (nonatomic, readonly)double longitude;
-@property id<NFGPSInfomationDelegate> delegate;
+@property (nonatomic, readonly) NSString *myPrefectureName;
+@property (nonatomic, readonly) NSString *myCityName;
+@property (nonatomic, readonly) NSString *myAddress;
+@property (nonatomic, readonly) Boolean isGPSEnabled;
+@property (nonatomic, readonly) double latitude;
+@property (nonatomic, readonly) double longitude;
+@property (nonatomic, weak)     id<NFGPSInfomationDelegate> delegate;
 
--(id)init;
--(void)updateMyGPSInfomation;
-+(NFLocation*)sharedManager;
+- (id)init;
+- (void)updateMyGPSInfomation;
++ (NFLocation*)sharedManager;
 
 @end

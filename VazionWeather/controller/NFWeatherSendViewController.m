@@ -24,6 +24,7 @@
     UIColor *whiteColor;
 }
 
+#pragma mark -
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -38,42 +39,33 @@
     whiteColor = [UIColor whiteColor];
 }
 
+#pragma mark -
+#pragma mark Button action method
 - (IBAction)withThunderboltButtonPushed:(id)sender {
     isWithThunderbolt = !isWithThunderbolt;
-    if(isWithThunderbolt){
-        _thunderboltButton.backgroundColor = selectedColor;
-    }else{
-        _thunderboltButton.backgroundColor = whiteColor;
-    }
-    //hogehoge
+    [self commonButtonChangeColor:_thunderboltButton
+                       buttonFlag:isWithThunderbolt];
 }
 
 - (IBAction)withStrongwindButtonPushed:(id)sender {
     isWithStrongwind = !isWithStrongwind;
-    if(isWithStrongwind){
-        _strongwindButton.backgroundColor = selectedColor;
-    }else{
-        _strongwindButton.backgroundColor = whiteColor;
-    }
+    
+    [self commonButtonChangeColor:_strongwindButton
+                       buttonFlag:isWithStrongwind];
 }
 
 - (IBAction)withHailButtonPushed:(id)sender {
     isWithHail = !isWithHail;
-    if(isWithHail){
-        _hailButton.backgroundColor = selectedColor;
-    }else{
-        _hailButton.backgroundColor = whiteColor;
-    }
+    [self commonButtonChangeColor:_hailButton
+                       buttonFlag:isWithHail];
 }
 
 - (IBAction)withFogButtonPushed:(id)sender {
     isWithFog = !isWithFog;
-    if(isWithFog){
-        _fogButton.backgroundColor = selectedColor;
-    }else{
-        _fogButton.backgroundColor = whiteColor;
-    }
+    [self commonButtonChangeColor:_fogButton
+                       buttonFlag:isWithFog];
 }
+
 - (IBAction)sendButtonPushed:(id)sender {
     //NSURL *url = [[NSURL alloc] initWithString:@"http://nokok.dip.jp/"];
 }
@@ -81,12 +73,22 @@
 - (IBAction)addPictureButtonPushed:(id)sender {
 }
 
+#pragma mark -
 - (IBAction)publishSwitchValueChanged:(id)sender {
     isPublic = !isPublic;
     if(isPublic){
         [_sendButton setTitle:@"入力した情報をサーバーに送信" forState:UIControlStateNormal];
     }else{
         [_sendButton setTitle:@"カレンダーにだけ保存" forState:UIControlStateNormal];
+    }
+}
+
+- (void)commonButtonChangeColor:(UIButton*)button
+                     buttonFlag:(Boolean)enableButtonFlag{
+    if(enableButtonFlag){
+        button.backgroundColor = selectedColor;
+    }else{
+        button.backgroundColor = whiteColor;
     }
 }
 @end
