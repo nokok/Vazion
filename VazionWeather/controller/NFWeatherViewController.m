@@ -15,15 +15,6 @@
     NFLocation *location;
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -36,12 +27,6 @@
     [_addressLabel setText:@"取得中..."];
     [_activityIndicator startAnimating];
     [_weatherImageView layer].magnificationFilter = kCAFilterNearest;
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (IBAction)updateButtonClicked:(id)sender {

@@ -24,15 +24,6 @@
     UIColor *whiteColor;
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -45,12 +36,6 @@
     isAnonymousPost = NO;
     selectedColor = [[UIColor alloc]initWithRed:0.8f green:0.8f blue:0.8f alpha:1.0f];
     whiteColor = [UIColor whiteColor];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (IBAction)withThunderboltButtonPushed:(id)sender {
