@@ -21,6 +21,7 @@
     Boolean isPublic;
     Boolean isAnonymousPost;
     UIColor *selectedColor;
+    UIColor *selectedTextColor;
     UIColor *whiteColor;
 }
 
@@ -35,8 +36,9 @@
     isWithFog = NO;
     isPublic = YES;
     isAnonymousPost = NO;
-    selectedColor = [[UIColor alloc]initWithRed:0.8f green:0.8f blue:0.8f alpha:1.0f];
+    selectedColor = [[UIColor alloc]initWithRed:0.0f green:0.478f blue:1.0f alpha:1.0f]; //iOS Button Color
     whiteColor = [UIColor whiteColor];
+    selectedTextColor = whiteColor;
 }
 
 #pragma mark -
@@ -78,17 +80,24 @@
     isPublic = !isPublic;
     if(isPublic){
         [_sendButton setTitle:@"入力した情報をサーバーに送信" forState:UIControlStateNormal];
+        _anonymousPostSwitch.enabled = YES;
     }else{
         [_sendButton setTitle:@"カレンダーにだけ保存" forState:UIControlStateNormal];
+        _anonymousPostSwitch.enabled = NO;
     }
+}
+
+- (IBAction)anonymousPostValueChanged:(id)sender {
 }
 
 - (void)commonButtonChangeColor:(UIButton*)button
                      buttonFlag:(Boolean)enableButtonFlag{
     if(enableButtonFlag){
         button.backgroundColor = selectedColor;
+        [button setTitleColor:selectedTextColor forState:UIControlStateNormal];
     }else{
         button.backgroundColor = whiteColor;
+        [button setTitleColor:selectedColor forState:UIControlStateNormal];
     }
 }
 @end

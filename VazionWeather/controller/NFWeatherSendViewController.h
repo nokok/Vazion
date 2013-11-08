@@ -25,5 +25,6 @@
 - (IBAction)sendButtonPushed:(id)sender;
 - (IBAction)addPictureButtonPushed:(id)sender;
 - (IBAction)publishSwitchValueChanged:(id)sender;
+- (IBAction)anonymousPostValueChanged:(id)sender;
 
 @end

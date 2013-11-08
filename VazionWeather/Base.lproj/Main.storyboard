@@ -247,9 +247,8 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="HAi-NH-r9a">
                                 <rect key="frame" x="20" y="162" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="画像を添付する">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="0.050000000000000003" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="画像を添付する"/>
                                 <connections>
                                     <action selector="addPictureButtonPushed:" destination="RGL-TI-rnm" eventType="touchUpInside" id="FaL-Ci-VR4"/>
                                 </connections>
@@ -264,7 +263,7 @@
                                 <rect key="frame" x="251" y="239" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="allowAnonymousPostValueChanged:" destination="RGL-TI-rnm" eventType="valueChanged" id="Jfw-eB-k5r"/>
+                                    <action selector="anonymousPostValueChanged:" destination="RGL-TI-rnm" eventType="valueChanged" id="nmF-w6-XlU"/>
                                 </connections>
                             </switch>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="サーバーに公開する" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="d6O-WF-h0A">
@@ -344,6 +343,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="jnN-E3-6Bd">
                                 <rect key="frame" x="20" y="361" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="0.050000000000000003" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="入力した天気を送信する">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
