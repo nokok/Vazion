@@ -25,6 +25,7 @@
 		E356013618018DC60021FDD5 /* NFLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = E356013518018DC60021FDD5 /* NFLocation.m */; };
 		E356013C18018E050021FDD5 /* NFWeather.m in Sources */ = {isa = PBXBuildFile; fileRef = E356013B18018E050021FDD5 /* NFWeather.m */; };
 		E356014718019E950021FDD5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E356014618019E950021FDD5 /* MapKit.framework */; };
+		E38C2413182CDC4200CA53FA /* prefList.plist in Resources */ = {isa = PBXBuildFile; fileRef = E38C2412182CDC4200CA53FA /* prefList.plist */; };
 		E393EC8D1821E098006F0902 /* brightness-half@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E393EC891821E098006F0902 /* brightness-half@2x.png */; };
 		E393EC8E1821E098006F0902 /* inbox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E393EC8A1821E098006F0902 /* inbox@2x.png */; };
 		E393EC8F1821E098006F0902 /* out@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E393EC8B1821E098006F0902 /* out@2x.png */; };
@@ -71,6 +72,7 @@
 		E356013A18018E050021FDD5 /* NFWeather.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFWeather.h; sourceTree = "<group>"; };
 		E356013B18018E050021FDD5 /* NFWeather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFWeather.m; sourceTree = "<group>"; };
 		E356014618019E950021FDD5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		E38C2412182CDC4200CA53FA /* prefList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = prefList.plist; sourceTree = "<group>"; };
 		E393EC891821E098006F0902 /* brightness-half@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "brightness-half@2x.png"; sourceTree = "<group>"; };
 		E393EC8A1821E098006F0902 /* inbox@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inbox@2x.png"; sourceTree = "<group>"; };
 		E393EC8B1821E098006F0902 /* out@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "out@2x.png"; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				E356010618018A050021FDD5 /* InfoPlist.strings */,
 				E356010918018A050021FDD5 /* main.m */,
 				E356010B18018A050021FDD5 /* VazionWeather-Prefix.pch */,
+				E38C2412182CDC4200CA53FA /* prefList.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E393EC8E1821E098006F0902 /* inbox@2x.png in Resources */,
+				E38C2413182CDC4200CA53FA /* prefList.plist in Resources */,
 				E393EC8D1821E098006F0902 /* brightness-half@2x.png in Resources */,
 				E356011618018A050021FDD5 /* Images.xcassets in Resources */,
 				E393EC8F1821E098006F0902 /* out@2x.png in Resources */,
